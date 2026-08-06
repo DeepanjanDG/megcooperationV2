@@ -1,213 +1,375 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Photo Galleries: Cooperation Department, Government of Meghalaya</title>
-	<meta name="description" content="The department works for the development of Co-operatives in the state.">
-	<meta name="keywords" content="Co-operatives, Cooperation Department of Meghalaya,  Voluntary and open membership, Democratic members control, Members economic participation, Autonomy and Independence Education , Training and Information, Cooperation among cooperatives, Concern for the community, Financial Assistance to Societies">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
- 	<link rel="stylesheet" href="css/zerogrid.css">
-	<link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/responsive.css">
-	<link rel="stylesheet" href="css/responsiveslides.css" />
-  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photo Gallery | Department of Cooperation, Government of Meghalaya</title>
+<meta name="description" content="Photographs from events, field visits, training programmes and cooperative week celebrations of the Department of Cooperation, Government of Meghalaya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="css/redesign.css">
+<style>
+.albums{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.album{background:var(--white);border:1px solid var(--line);border-radius:8px;overflow:hidden;text-align:left;padding:0;cursor:pointer;font-family:inherit;display:flex;flex-direction:column}
+.album:hover{border-color:var(--green-600)}
+.album:focus-visible{outline:3px solid var(--green-600);outline-offset:2px}
+.album img{width:100%;height:190px;object-fit:cover;display:block;background:var(--green-100)}
+.album .meta{padding:18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.album .a-title{font-size:16px;font-weight:700;line-height:1.35;color:var(--ink)}
+.album .a-count{font-size:12.5px;color:var(--muted)}
+@media (max-width:900px){.albums{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.albums{grid-template-columns:1fr}}
+
+.gal-back{background:transparent;border:0;color:var(--green-700);font-family:inherit;font-size:14px;font-weight:600;cursor:pointer;padding:0;margin-bottom:18px}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.thumbs button{padding:0;border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--green-100);cursor:pointer}
+.thumbs button:hover{border-color:var(--green-600)}
+.thumbs button:focus-visible{outline:3px solid var(--green-600);outline-offset:2px}
+.thumbs img{width:100%;height:150px;object-fit:cover;display:block}
+@media (max-width:900px){.thumbs{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:560px){.thumbs{grid-template-columns:repeat(2,1fr)}}
+
+.lb{position:fixed;inset:0;background:rgba(12,20,16,.93);z-index:200;display:none;align-items:center;justify-content:center}
+.lb.is-open{display:flex}
+.lb img{max-width:92vw;max-height:78vh;object-fit:contain;border-radius:4px}
+.lb-bar{position:absolute;top:0;left:0;right:0;display:flex;align-items:center;gap:16px;padding:16px 20px;color:#fff;font-size:13.5px}
+.lb-bar .spacer{margin-left:auto}
+.lb button{background:rgba(255,255,255,.14);border:0;color:#fff;font-family:inherit;font-size:15px;border-radius:6px;padding:9px 14px;cursor:pointer;line-height:1}
+.lb button:hover{background:rgba(255,255,255,.28)}
+.lb .nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:999px;font-size:20px;padding:0}
+.lb .prev{left:20px}
+.lb .next{right:20px}
+.lb-cap{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:rgba(255,255,255,.85);font-size:13.5px;padding:0 24px}
+</style>
 </head>
 <body>
-
-<header>
-	<div class="subnav">
-		<div class="wrap-subnav zerogrid">
-			<ul role="menu">
- <li role="menuitem"><a href="screen-reader-access.html">Screen Reader Access</a></li>
- <li role="menuitem" id="magnifier"><a href="#" class="zoom_in_out">Text Magnifier <img src="images/play.png" id="zoom_in_out_img" alt="On or Off"/></a></li>
- <li role="menuitem"><a href="#" id="char1" onClick="set()" aria-label="on or off Character Spacing">Enable Character Spacing</a>
-<a href="#" id="char2" onClick="unset()" style="display:none;">Disable Character Spacing</a></li>
-	 <li role="menuitem"><a href="#main">Skip to main Content</a></li>
- <li role="menuitem">Font Resize: <a href="#" id="incfont"><img src="images/increase_16.png" alt="Increase Font size of the Page" title="Increase Font size" /></a>
-<a href="#" id="decfont"><img src="images/decrease_16.png" alt="Decrease Font size" title="Decrease Font size of the Page"/></a>
-<a href="#" id="rst"><img src="images/normal_16.png" alt="Reset to normal font size of the Page" title="Reset to normal font size"/></a></li>
- <li role="menuitem">Color Contrast: <a href="#" id="more1"><img src="images/black_white_16.png" alt="White and Black Color Contrast" title="White text on Black background"/></a>
- <a href="#" id="more2"><img src="images/white_black.png" alt="Black and White Color Contrast" title="Black text on White background"/></a>
-<a href="#" id="more3"><img src="images/standard.png" alt="Default Color Scheme" title="Reset to the default Color Scheme."/></a>
-</li>
- </ul>
- 
-			<div class="share"> <form method="get" action="https://www.google.com/search" onSubmit="this.target='_blank'" autocomplete="off">
-<label>Search <input type="text" name="q" size="8" maxlength=200 
-onfocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;" aria-label="Enter your search terms" /></label>
-<input type="submit" value="Go"/>
-<input type="hidden" name="sitesearch" value="http://megcooperation.gov.in/" />
-</form></div>
-</div>
-	</div>
-    
-	<div class="wrap-header zerogrid">
-		<h1 id="logo"><img src="img/top.jpg" alt="Logo of Department of Cooperation, Government of Meghalaya"></h1>
-	</div>
-</header>
-
-<div id="spacing"><nav>
-	<div class="wrap-nav zerogrid">
-		<div class="menu">
-			<ul>
-			 <li><a href="index.html">Home</a></li>
-			 <li><a href="introduction.html">Introduction</a></li>
-			 <li><a href="orgsetup.html">Organisational Setup</a></li>
-       <li><a href="committee.html">Committees</a></li>
-			 <li><a href="contact.html">Contact Persons</a></li>
-       <li><a href="contactus.html">Contact us</a></li>
-        <li><a href="desk-rcs.html" aria-label="Registrar of Cooperative Societies Desk">RCS Desk</a></li>  
-        <li><a href="sitemap.html">Sitemap</a></li>      
-			</ul>
-		</div>
-	</div>
-</nav>
-
-<a id="main"></a>
-<div id="content">
-
-<div id="zoom"><div class="small">
-	<div class="wrap-content zerogrid">
-		<div class="row">
-			<div id="main-content" class="col-2-3">
-				<div class="wrap-col">
-				  <article>
-					  <h2><span class="info">Photo Galleries</span></h2>
-
-
-      <div class="pg">
-        <table width="100%" border="3" cellspacing="2" cellpadding="2">
-          <tr>
-            <td><div align="center"><a href="pict_training_rocs.html"><img src="photogallery/12.jpeg" alt="Training on Online Registration of Cooperative Societies"></a></div></td>
-            <td><div align="center"><a href="pict_66coop_week.html"><img src="photogallery/11.jpg" alt="Financial Literacy Programme (FLP) of Mupliang"></a></div></td>
-            <td><div align="center"><a href="pict_sial_innovation.html"><img src="photogallery/10.jpg" alt="Financial Literacy Programme (FLP) of Mupliang"></a></div></td>
-            <td><div align="center"><a href="pict_flp_mupliang.html"><img src="photogallery/9.jpg" alt="Financial Literacy Programme (FLP) of Mupliang"></a></div></td>
-            <td><div align="center"><a href="pict_field_visit.html"><img src="photogallery/8.jpg" alt="Field Visit of Principal Secretary and Commissioner & Secretary"></a></div></td>
-          </tr>
-          <tr>
-            <td><div align="center"> Online Registration of Cooperative Societies</div></td>
-            <td><div align="center">
-              <p>66th Cooperative Week, 2019</p>
-            </div></td>
-            <td><div align="center">
-              <p>SIAL Innovation, New Delhi </p>
-            </div></td>
-            <td><div align="center">Financial Literacy Programme</div></td>
-            <td><div align="center">Field Visit</div></td>
-            </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td><div align="center"><a href="pict_mou_nabard.html"><img src="photogallery/1.jpg" alt="MoU Signed between Cooperation Department and NABARD"></a></div></td>
-            <td><div align="center"><a href="pict_motivational_mawkyrwat.html"><img src="photogallery/2.jpg" alt="Motivational and Awareness Programme at Mawkyrwat"></a></div></td>
-            <td><div align="center"><a href="pict_mecofed.html"><img src="photogallery/3.jpg" alt="Meghalaya State Cooperative Marketing and Consumers' Federation Ltd."></a></div></td>
-            <td><div align="center"><a href="pict_mou_nabard.html"></a><a href="pict_damas_rubber.html"><img src="photogallery/4.jpg" alt="Damas Rubber Grower cum ProcessingCooperative Society"></a></div></td>
-            <td><div align="center"><a href="pict_motivational_mawkyrwat.html"></a><a href="pict_motivational_amlarem.html"><img src="photogallery/5.jpg" alt="Motivational and Awareness Programme at Amlarem"></a></div></td>
-          </tr>
-          <tr>
-            <td><div align="center">Signing of MOU</div></td>
-            <td>Motivational Mawkyrwat</td>
-            <td><div align="center">MeCOFED</div></td>
-            <td><div align="center">Damas Rubber</div></td>
-            <td><div align="center">Motivational Amlarem</div></td>
-            </tr>
-          <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td><div align="center"><a href="pict_women_mawkyndeng.html"><img src="photogallery/6.jpg" alt="Mawkyndeng Multi-Purpose Cooperative Society"></a></div></td>
-            <td><div align="center"><a href="pict_icdp_wkh.html"><img src="photogallery/7.jpg" alt="I.C.D.P. West Khasi Hills District"></a></div></td>
-            <td><div align="center"></div></td>
-            <td><div align="center"></div></td>
-            <td><div align="center"></div></td>
-          </tr>
-          <tr>
-            <td><div align="center">Women's Mawkyndeng</div></td>
-            <td><div align="center">ICDP West Khasi Hills</div></td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
-        </table>
+  <div class="topbar">
+    <div class="wrap">
+      <a class="skip" href="#main">Skip to Main Content</a>
+      <div class="right">
+        <a href="screen-reader-access.html">Screen Reader Access</a>
+        <div class="tb-group" role="group" aria-label="Text size">
+          <button type="button" class="tb-btn" id="rd-font-dec" aria-label="Decrease text size" style="font-size:12.5px">A-</button>
+          <button type="button" class="tb-btn" id="rd-font-rst" aria-label="Reset text size" style="font-size:14px">A</button>
+          <button type="button" class="tb-btn" id="rd-font-inc" aria-label="Increase text size" style="font-size:16px">A+</button>
+        </div>
+        <button type="button" class="tb-pill" id="rd-contrast" aria-pressed="false">High contrast</button>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang="en" class="is-on">English</button>
+          <button type="button" data-lang="kha">Khasi</button>
+          <button type="button" data-lang="gar">Garo</button>
+        </div>
       </div>
+    </div>
+  </div>
 
+  <div class="lang-note" id="rd-lang-note" style="display:none">
+    Regional-language pages are being prepared. Content is shown in English until the translated pages are published.
+  </div>
 
-				  </article>
-			  </div>
-			</div>
-			<div id="sidebar" class="col-1-3">
-            <div class="box">
-						<div class="heading"><h2>Categories</h2></div>
-						<div class="content">
-							<div class="linklist">
-								<ul>
-                                    <li><a href="suballocated.html">Subject Allocated</a></li>
-									<li><a href="functionnduties.html">Functions and Duties</a></li>
-                                    <li><a href="rules.html">Rules and Regulations</a></li>
-									<li><a href="schemes.html">Development Schemes</a></li>
-									<li><a href="subsidy.html">Subsidy Programme</a></li>
-									<li><a href="icdp.html" aria-label="Integrated Cooperative Development Project in Meghalaya">ICDP in Meghalaya</a></li>
-									<li><a href="statistics.html">Statistical Data</a></li>
-                                    <li><a href="training.html">Education and Training</a></li>
-                                    <li><a href="faqs.html">Frequently Asked Questions</a></li>
-									<li><a href="success.html">Success Stories</a></li>
-                                    <li><a href="relatedsite.html">Related Websites</a></li>
-                                    <!-- <li><a href="photogallery.html">Photo Galleries</a></li> -->                  
-									<li><a href="notifications.html">Notifications</a></li>
-									<li><a href="publications.html">Publications</a></li>
-                                    <li><a href="citizencharter.html">Citizen's Charter</a></li>
-                                    <li><a href="newsclips.html">News Clips</a></li>
-                                    <li><a href="advertisements.html">Advertisements</a></li>
-									<li><a href="finassistance.html">Financial Assistance</a></li>
-									<li><a href="piggery_mission.html">Piggery Mission (MLEADS)</a></li>
-									<li><a href="duckfarming_Coop.html">Duck Farming through Cooperative Societies</a></li>
-									<li><a href="judgments.html">Important Judgments</a></li>                                    
-									<li><a href="rtimanuals.html">Right to Information (R.T.I.) Manuals</a></li>
-							  </ul>
-							</div>
-						</div>
-			  </div>
-			</div>
-			</div>
-		</div>
-</div></div><!--zoom-->
-    </div><!--spacing-->
-</div>
-<footer>
-	<div class="copyright">
-		<p>Site Designed and Maintained by National Informatics Centre, Meghalaya State Centre.
-     <br>
-     Content Owned and Updated by Department of Co-operation, Government of Meghalaya
-     <br>
-     All queries/ comments regarding the content on this site may be sent to:</p>
-		<p>The Registrar of Cooperative Societies, Department of Co-operation, Government of Meghalaya<br>
-   <script>
-function initArray() { 
-this.length = initArray.arguments.length
-for (var i = 0; i < this.length; i++) this[i+1] = initArray.arguments[i]
-} 
-var MOYArray = new initArray('January','February','March','April', 'May','June','July','August','September', 'October','November','December');
-var LastModDate = new Date(document.lastModified); 
-document.write('Last updated on ');
-document.write(MOYArray[(LastModDate.getMonth()+1)],' ');
-document.write(LastModDate.getDate(),', ',(LastModDate.getYear()+1900));
-document.write('');
-</script></p>
-	</div>
-<p><a href="terms-use.html">Term of Use</a> | <a href="help.html">Help</a> | <a href="accessibility-statement.html">Accessibility Statement</a></p></footer>
-<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="js/acsblt.js"></script>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <img class="emblem" src="img/rd-emblem.png" alt="State Emblem of India">
+        <span>
+          <span class="b-gov">Government of Meghalaya</span>
+          <span class="b-dept" style="display:block">Department of</span>
+          <span class="b-name" style="display:block">COOPERATION</span>
+          <span class="b-tag" style="display:block">Together for Growth, Together for All</span>
+        </span>
+      </a>
 
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="rd-nav">&#9776; Menu</button>
 
+      <nav class="main-nav" id="rd-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true" aria-expanded="false">About Us<span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="dropdown">
+            <a href="introduction.html">Introduction</a>
+            <a href="orgsetup.html">Organisational Setup</a>
+            <a href="suballocated.html">Subject Allocated</a>
+            <a href="functionnduties.html">Functions and Duties</a>
+            <a href="committee.html">Committees</a>
+            <a href="desk-rcs.html">RCS Desk</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true" aria-expanded="false">Schemes &amp; Programs<span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="dropdown">
+            <a href="schemes.html">Development Schemes</a>
+            <a href="subsidy.html">Subsidy Programme</a>
+            <a href="finassistance.html">Financial Assistance</a>
+            <a href="icdp.html">ICDP in Meghalaya</a>
+            <a href="piggery_mission.html">Piggery Mission (MLEADS)</a>
+            <a href="duckfarming_Coop.html">Duck Farming through Societies</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true" aria-expanded="false">Cooperative Societies<span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="dropdown">
+            <a href="mcab.html">Meghalaya Co-op Apex Bank</a>
+            <a href="mecofed.html">MECOFED</a>
+            <a href="mshfcsl.html">State Housing Finance Society</a>
+            <a href="mahwhcfl.html">Apex Handloom Weavers Federation</a>
+            <a href="list_coop_300319.html">Registered Societies — lists</a>
+            <a href="statistics.html">Statistical Data</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true" aria-expanded="false">Reports &amp; Publications<span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="dropdown">
+            <a href="notifications.html">Notifications</a>
+            <a href="publications.html">Publications</a>
+            <a href="rules.html">Rules and Regulations</a>
+            <a href="judgments.html">Important Judgments</a>
+            <a href="newsclips.html">News Clips</a>
+            <a href="advertisements.html">Advertisements</a>
+          </div>
+        </div>
+        <a href="rtimanuals.html">RTI</a>
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true" aria-expanded="false">Contact Us<span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="dropdown">
+            <a href="contactus.html">Contact Us</a>
+            <a href="contact.html">Contact Persons</a>
+            <a href="citizencharter.html">Citizen's Charter</a>
+            <a href="faqs.html">Frequently Asked Questions</a>
+          </div>
+        </div>
+      </nav>
 
+      <form class="site-search" id="rd-search-form" role="search">
+        <label class="sr-only" for="rd-search-input">Search this website</label>
+        <input type="search" id="rd-search-input" placeholder="Search here..." autocomplete="off">
+        <button type="submit" aria-label="Search">Go</button>
+        <div class="search-results" id="rd-search-results" role="listbox"></div>
+      </form>
+    </div>
+  </header>
+
+  <main id="main">
+  <div class="page-head">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span>Photo Gallery</nav>
+      <h1>Photo Gallery</h1>
+      <p>Events, field visits, training programmes and cooperative week celebrations across Meghalaya.</p>
+    </div>
+  </div>
+
+    <div class="section">
+      <div class="wrap">
+
+        <div id="gal-index">
+          <p style="max-width:76ch;margin:0 0 32px;font-size:17px;line-height:1.7;color:var(--muted)">Choose an album to see the photographs. Select any photograph to view it full size.</p>
+          <div class="albums" id="gal-albums"></div>
+        </div>
+
+        <div id="gal-album" hidden>
+          <button type="button" class="gal-back" id="gal-back">&larr; &nbsp;All albums</button>
+          <h2 class="section-title" id="gal-album-title" style="margin-bottom:8px" tabindex="-1"></h2>
+          <p id="gal-album-count" style="font-size:14px;color:var(--muted);margin:0 0 28px"></p>
+          <div class="thumbs" id="gal-thumbs"></div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photograph viewer">
+    <div class="lb-bar">
+      <span id="lb-counter"></span>
+      <span class="spacer"></span>
+      <button type="button" id="lb-close" aria-label="Close viewer">Close &times;</button>
+    </div>
+    <button type="button" class="nav prev" id="lb-prev" aria-label="Previous photograph">&#8249;</button>
+    <img id="lb-img" alt="">
+    <button type="button" class="nav next" id="lb-next" aria-label="Next photograph">&#8250;</button>
+    <div class="lb-cap" id="lb-cap"></div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap f-top">
+      <div>
+        <div class="f-brand">
+          <img src="img/rd-emblem.png" alt="">
+          <span>
+            <span class="f-name">DEPARTMENT OF<br>COOPERATION</span>
+            <span class="f-gov" style="display:block">Government of Meghalaya</span>
+          </span>
+        </div>
+        <p class="f-blurb">Building stronger communities through cooperation, for inclusive growth and self-reliance across Meghalaya.</p>
+      </div>
+      <div>
+        <div class="f-head">Quick Links</div>
+        <div class="f-links">
+          <a href="index.html">Home</a>
+          <a href="introduction.html">Introduction</a>
+          <a href="orgsetup.html">Organisational Setup</a>
+          <a href="schemes.html">Schemes &amp; Programs</a>
+          <a href="notifications.html">Notifications</a>
+          <a href="contact.html">Contact Persons</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+      <div>
+        <div class="f-head">Useful Links</div>
+        <div class="f-links">
+          <a href="http://meghalaya.gov.in" target="_blank" rel="noopener" title="External site that opens in a new window">Meghalaya Government</a>
+          <a href="https://cooperation.gov.in" target="_blank" rel="noopener" title="External site that opens in a new window">Ministry of Cooperation, GoI</a>
+          <a href="https://ncui.coop" target="_blank" rel="noopener" title="External site that opens in a new window">NCUI</a>
+          <a href="https://www.nabard.org" target="_blank" rel="noopener" title="External site that opens in a new window">NABARD</a>
+          <a href="https://www.ncdc.in" target="_blank" rel="noopener" title="External site that opens in a new window">NCDC</a>
+          <a href="relatedsite.html">Other resources</a>
+        </div>
+      </div>
+      <div>
+        <div class="f-head">Contact Us</div>
+        <div class="f-contact">
+          <span class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Office of the Registrar of Cooperative Societies,<br>New Administrative Building, Lower Lachumiere,<br>Shillong &mdash; 793001, Meghalaya</span></span>
+          <span class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><span>0364 - 2223949</span></span>
+          <span class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg><a href="mailto:jrcs.estt@gmail.com">jrcs.estt@gmail.com</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <div class="wrap">
+        <span>&copy; Department of Cooperation, Government of Meghalaya. All rights reserved. Last updated on <span id="rd-last-updated">&mdash;</span>.</span>
+        <span class="legal">
+          <a href="terms-use.html">Terms of Use</a>
+          <a href="help.html">Help</a>
+          <a href="sitemap.html">Sitemap</a>
+          <a href="accessibility-statement.html">Accessibility Statement</a>
+        </span>
+      </div>
+    </div>
+    <div class="wrap" style="padding-bottom:24px">
+      <p class="f-credit">Site designed and maintained by National Informatics Centre, Meghalaya State Centre. Content owned and updated by the Department of Cooperation, Government of Meghalaya.</p>
+    </div>
+  </footer>
+
+<script src="js/redesign.js"></script>
+<script>
+(function () {
+  var ALBUMS = [
+    { id:'training_rocs', title:'Training on online registration of cooperative societies', note:'Conducted by the National Informatics Centre, Meghalaya', cover:'photogallery/12.jpeg', dir:'photogallery/training_rocs/', ext:'.jpeg', count:14 },
+    { id:'coop_week_66', title:'66th All India Cooperative Week, 2019', note:'Celebrations across the state', cover:'photogallery/11.jpg', dir:'photogallery/66th_coop_week_2019/', ext:'.jpg', count:17 },
+    { id:'sial_innovation', title:'SIAL Innovation, New Delhi', note:'Meghalaya cooperatives at the SIAL exhibition', cover:'photogallery/10.jpg', dir:'photogallery/sial_innovation/', ext:'.jpg', count:13 },
+    { id:'flp_mupliang', title:'Financial Literacy Programme, Mupliang', note:'', cover:'photogallery/9.jpg', dir:'photogallery/flp_mupliang/', ext:'.jpg', count:5 },
+    { id:'field_visit', title:'Field visit by the Principal Secretary and the Commissioner and Secretary', note:'Department of Cooperation', cover:'photogallery/8.jpg', dir:'photogallery/field_visit/', ext:'.jpg', count:5 },
+    { id:'mou_nabard', title:'Signing of the MoU with NABARD', note:'Between the Department of Cooperation and NABARD', cover:'photogallery/1.jpg', dir:'photogallery/mou_nabard/', ext:'.jpg', count:8 },
+    { id:'motivational_mawkyrwat', title:'Motivational and awareness programme, Mawkyrwat', note:'', cover:'photogallery/2.jpg', dir:'photogallery/motivational_mawkyrwat/', ext:'.jpg', count:9 },
+    { id:'mecofed', title:'MECOFED', note:'Meghalaya State Cooperative Marketing and Consumers’ Federation Ltd', cover:'photogallery/3.jpg', dir:'photogallery/mecofed/', ext:'.jpg', count:7 },
+    { id:'damas_rubber', title:'Damas Rubber Growers cum Processing Cooperative Society', note:'', cover:'photogallery/4.jpg', dir:'photogallery/damas_rubber/', ext:'.jpg', count:8 },
+    { id:'motivational_amlarem', title:'Motivational and awareness programme, Amlarem', note:'', cover:'photogallery/5.jpg', dir:'photogallery/motivational_amlarem/', ext:'.jpg', count:9 },
+    { id:'women_mawkyndeng', title:'Mawkyndeng Multipurpose Cooperative Society', note:'Women’s group and handicraft society', cover:'photogallery/6.jpg', dir:'photogallery/women_mawkyndeng/', ext:'.jpg', count:9 },
+    { id:'icdp_wkh', title:'ICDP, West Khasi Hills District', note:'Integrated Cooperative Development Project', cover:'photogallery/7.jpg', dir:'photogallery/icdp_wkh/', ext:'.jpg', count:15 }
+  ];
+
+  var indexEl   = document.getElementById('gal-index');
+  var albumEl   = document.getElementById('gal-album');
+  var albumsEl  = document.getElementById('gal-albums');
+  var thumbsEl  = document.getElementById('gal-thumbs');
+  var titleEl   = document.getElementById('gal-album-title');
+  var countEl   = document.getElementById('gal-album-count');
+  var backEl    = document.getElementById('gal-back');
+
+  var lb        = document.getElementById('lb');
+  var lbImg     = document.getElementById('lb-img');
+  var lbCap     = document.getElementById('lb-cap');
+  var lbCounter = document.getElementById('lb-counter');
+
+  var current = null, idx = 0, lastFocus = null;
+
+  function shots(a) {
+    var out = [];
+    for (var i = 1; i <= a.count; i++) out.push(a.dir + i + a.ext);
+    return out;
+  }
+
+  ALBUMS.forEach(function (a) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'album';
+    b.innerHTML =
+      '<img src="' + a.cover + '" alt="" loading="lazy">' +
+      '<span class="meta"><span class="a-title">' + a.title + '</span>' +
+      '<span class="a-count">' + a.count + ' photograph' + (a.count === 1 ? '' : 's') +
+      (a.note ? ' &middot; ' + a.note : '') + '</span></span>';
+    b.addEventListener('click', function () { openAlbum(a); });
+    albumsEl.appendChild(b);
+  });
+
+  function openAlbum(a) {
+    current = a;
+    titleEl.textContent = a.title;
+    countEl.textContent = a.count + ' photograph' + (a.count === 1 ? '' : 's') + (a.note ? ' — ' + a.note : '');
+    thumbsEl.innerHTML = '';
+    shots(a).forEach(function (src, i) {
+      var t = document.createElement('button');
+      t.type = 'button';
+      t.setAttribute('aria-label', 'View photograph ' + (i + 1) + ' of ' + a.count);
+      t.innerHTML = '<img src="' + src + '" alt="" loading="lazy">';
+      t.addEventListener('click', function () { openLb(i, t); });
+      thumbsEl.appendChild(t);
+    });
+    indexEl.hidden = true;
+    albumEl.hidden = false;
+    titleEl.focus();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  backEl.addEventListener('click', function () {
+    albumEl.hidden = true;
+    indexEl.hidden = false;
+    current = null;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  function openLb(i, origin) {
+    if (!current) return;
+    lastFocus = origin || document.activeElement;
+    idx = i;
+    render();
+    lb.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    document.getElementById('lb-close').focus();
+  }
+
+  function render() {
+    var list = shots(current);
+    lbImg.src = list[idx];
+    lbImg.alt = current.title + ', photograph ' + (idx + 1);
+    lbCap.textContent = current.title;
+    lbCounter.textContent = (idx + 1) + ' of ' + list.length;
+  }
+
+  function step(d) {
+    var n = current.count;
+    idx = (idx + d + n) % n;
+    render();
+  }
+
+  function closeLb() {
+    lb.classList.remove('is-open');
+    lbImg.removeAttribute('src');
+    document.body.style.overflow = '';
+    if (lastFocus) lastFocus.focus();
+  }
+
+  document.getElementById('lb-prev').addEventListener('click', function () { step(-1); });
+  document.getElementById('lb-next').addEventListener('click', function () { step(1); });
+  document.getElementById('lb-close').addEventListener('click', closeLb);
+  lb.addEventListener('click', function (e) { if (e.target === lb) closeLb(); });
+
+  document.addEventListener('keydown', function (e) {
+    if (!lb.classList.contains('is-open')) return;
+    if (e.key === 'Escape') closeLb();
+    else if (e.key === 'ArrowLeft') step(-1);
+    else if (e.key === 'ArrowRight') step(1);
+  });
+})();
+</script>
 </body>
 </html>

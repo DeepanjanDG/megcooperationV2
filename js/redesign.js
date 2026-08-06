@@ -186,15 +186,21 @@
 
   /* --------------------------------------------------------------- search */
   var SEARCH_INDEX = [
-    { kind: "Page",     title: "Introduction to the Department",                    url: "introduction-new.html" },
-    { kind: "Page",     title: "Organisational Setup",                              url: "orgsetup-new.html" },
-    { kind: "Page",     title: "Development Schemes",                               url: "schemes-new.html" },
-    { kind: "Page",     title: "Notifications",                                     url: "notifications-new.html" },
-    { kind: "Page",     title: "Contact Us",                                        url: "contactus-new.html" },
-    { kind: "Page",     title: "Contact Persons — full directory",                  url: "contact-new.html" },
-    { kind: "Scheme",   title: "Share Capital Contribution to cooperative societies", url: "schemes-new.html#state-plan" },
-    { kind: "Scheme",   title: "Managerial Subsidy",                                url: "schemes-new.html#state-plan" },
-    { kind: "Scheme",   title: "Godown loan, repair and renovation",                url: "schemes-new.html#css" },
+    { kind: "Page",     title: "Introduction to the Department",                    url: "introduction.html" },
+    { kind: "Page",     title: "Organisational Setup",                              url: "orgsetup.html" },
+    { kind: "Page",     title: "Development Schemes",                               url: "schemes.html" },
+    { kind: "Page",     title: "Notifications",                                     url: "notifications.html" },
+    { kind: "Page",     title: "Contact Us",                                        url: "contactus.html" },
+    { kind: "Page",     title: "Contact Persons — full directory",                  url: "contact.html" },
+    { kind: "Page",     title: "Subject Allocated to the Department",               url: "suballocated.html" },
+    { kind: "Page",     title: "Functions and Duties",                              url: "functionnduties.html" },
+    { kind: "Page",     title: "Committees under the Department",                   url: "committee.html" },
+    { kind: "Page",     title: "From the desk of the Registrar",                    url: "desk-rcs.html" },
+    { kind: "Page",     title: "Registrars of Cooperative Societies since 1970",    url: "registrar_list.html" },
+    { kind: "Page",     title: "Photo gallery",                                     url: "photogallery.html" },
+    { kind: "Scheme",   title: "Share Capital Contribution to cooperative societies", url: "schemes.html#state-plan" },
+    { kind: "Scheme",   title: "Managerial Subsidy",                                url: "schemes.html#state-plan" },
+    { kind: "Scheme",   title: "Godown loan, repair and renovation",                url: "schemes.html#css" },
     { kind: "Scheme",   title: "ICDP — Integrated Cooperative Development Project", url: "icdp.html" },
     { kind: "Scheme",   title: "Subsidy Programme",                                 url: "subsidy.html" },
     { kind: "Scheme",   title: "Piggery Mission (MLEADS)",                          url: "piggery_mission.html" },
@@ -210,6 +216,13 @@
     { kind: "Act",      title: "The Meghalaya Cooperative Societies Act, 2015",     url: "actsnrules/The Meghalaya Cooperative Societies Act 2015.pdf" },
     { kind: "Act",      title: "The Meghalaya Cooperative Service Rules, 2003",     url: "actsnrules/Meghalaya_Cooperative_Service_Rule_2003.pdf" },
     { kind: "RTI",      title: "Right to Information manuals",                      url: "rtimanuals.html" },
+    { kind: "Report",   title: "Rules and Regulations — Acts, rules and service rules", url: "rules.html" },
+    { kind: "Report",   title: "Personnel Department instructions",                 url: "rules_personnel.html" },
+    { kind: "Report",   title: "Important judgments",                               url: "judgments.html" },
+    { kind: "Report",   title: "News clips",                                        url: "newsclips.html" },
+    { kind: "Report",   title: "Registered societies as on 31 March 2019",          url: "list_coop_300319.html" },
+    { kind: "Report",   title: "Archives — success stories and older lists",        url: "archives.html" },
+    { kind: "Report",   title: "What's New archive",                                url: "news-archive.html" },
     { kind: "Report",   title: "Statistical data on cooperative societies",         url: "statistics.html" },
     { kind: "Report",   title: "Publications of the Department",                    url: "publications.html" },
     { kind: "Page",     title: "Citizen's Charter",                                 url: "citizencharter.html" },
@@ -217,7 +230,9 @@
     { kind: "Page",     title: "Success stories",                                   url: "success.html" },
     { kind: "Page",     title: "Education and training",                            url: "training.html" },
     { kind: "Page",     title: "Financial assistance to societies",                 url: "finassistance.html" },
-    { kind: "Page",     title: "Advertisements and recruitment",                    url: "advertisements.html" }
+    { kind: "Page",     title: "Advertisements and recruitment",                    url: "advertisements.html" },
+    { kind: "Page",     title: "Related websites and useful links",                 url: "relatedsite.html" },
+    { kind: "Page",     title: "Sitemap — index of all pages",                      url: "sitemap.html" }
   ];
 
   function initSearch() {
