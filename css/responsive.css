@@ -1,0 +1,122 @@
+
+.video embed,.video object,.video iframe {width: 100%; height: auto;}
+img{
+	max-width:100%;height: auto;width: auto; /* ie8 */
+}
+
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	/* -------------------------------------------- */
+	/* ------------------Header-------------------- */
+	
+	/* -------------------------------------------- */
+	/* ------------------Content------------------- */
+	
+	/* -------------------------------------------- */
+	/* ------------------Footer-------------------- */
+	
+	/* -------------------------------------------- */
+	/* ------------------Other----------------*---- */
+	
+}
+
+@media only screen and (max-width: 767px) {
+	/* -------------------------------------------- */
+	/* ------------------Header-------------------- */
+	header {margin-top: 0px;height:auto;}
+	header #logo{top:0px;}
+	
+	/* -------------------------------------------- */
+	/* ------------------Featured------------------ */
+	
+	/* -------------------------------------------- */
+	/* ------------------Content------------------- */
+	
+	/* -------------------------------------------- */
+	/* ------------------Footer-------------------- */
+	
+	/* -------------------------------------------- */
+	/* ------------------Other----------------*---- */
+}
+
+@media only screen and (min-width: 620px) and (max-width: 767px) {
+	/* -------------------------------------------- */
+	/* ------------------Header-------------------- */
+	
+	/* -------------------------------------------- */
+	/* ------------------Content------------------- */
+	
+	/* -------------------------------------------- */
+	/* ------------------Footer-------------------- */
+	
+	/* -------------------------------------------- */
+	/* ------------------Other----------------*---- */
+}
+
+@media only screen and (min-width: 480px) and (max-width: 619px) {
+	/* -------------------------------------------- */
+	/* ------------------Header-------------------- */
+	
+	/* -------------------------------------------- */
+	/* ------------------Content------------------- */
+	
+	/* -------------------------------------------- */
+	/* ------------------Footer-------------------- */
+	
+	/* -------------------------------------------- */
+	/* ------------------Other----------------*---- */
+}
+
+@media only screen and (max-width: 479px) {
+	/* -------------------------------------------- */
+	/* ------------------Header-------------------- */
+	header{height: 195px;}
+	header #logo{top:0px;}
+	header #search{bottom: 15px; width: 230px; top:auto; left: 5px;}
+	header #search input{width: 194px;}
+	.cubeleft, .cube{height:auto; float:none; width:auto; display:block;clear: both;}
+	.cube p{margin-bottom:12px;}
+	.cube img.left {margin-right:5px; display:block; clear: both; margin-bottom: 12px;}
+	
+	
+	.minimenu{display:block;}
+	
+	#main-content .comment input, #main-content .comment textarea{width:90%;}
+	/* -------------------------------------------- */
+	/* ------------------Content------------------- */
+	
+	/* -------------------------------------------- */
+	/* ------------------Footer-------------------- */
+	
+	/* -------------------------------------------- */
+	/* ------------------Other----------------*---- */
+}
+
+@media only screen and (max-width: 768px){
+.menu {
+    display: block;
+}
+.menu li{width:98%;padding:0px!important;}
+}
+@media screen and (max-width: 800px) {
+
+    table { width: 87%; height:auto;}
+    table th { display: block;width: 87%; }
+    table tr { margin-bottom: 10px; display: block; }
+    table td { display: block; text-align: left; font-size: 98%; border-bottom: 1px dotted #ccc; padding: 4px; word-wrap: break-word; width: 87%;}
+    table td:before { content: attr(data-label); float: left; font-weight: bold; color: #022d5a; margin-right: 9px; }	
+	    table td:before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+	}
+}
+
+@media screen and (max-width: 980px) {
+#magnifier { display:none;}
+.toplinks{background:none; border-bottom:none;}
+.subnav ul li{width:98%; float:left; border-bottom: 1px solid #95c5d0; border-left: 1px solid #95c5d0; display:block; padding:0px;}
+.subnav ul li ul { background: none;}
+.subnav .share{float:left; margin-top:5px;}
+}
+
+@media screen and (max-width: 310px) { #main-content {word-wrap: break-word;}}

@@ -1,0 +1,455 @@
+/*
+	AnythingSlider v1.8+ Default theme
+	By Chris Coyier: http://css-tricks.com
+	with major improvements by Doug Neiner: http://pixelgraphics.us/
+	based on work by Remy Sharp: http://jqueryfordesigners.com/
+*/
+
+/*****************************
+  SET DEFAULT DIMENSIONS HERE
+ *****************************/
+/* change the ID & dimensions to match your slider */
+#slider {
+	max-width: 932px;
+	max-height: 250px;
+	list-style: none;
+	/* Prevent FOUC (see FAQ page) and keep things readable if javascript is disabled */
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+
+/******************
+  SET STYLING HERE
+ ******************
+ =================================
+ Default state (no keyboard focus)
+ ==================================*/
+/* Overall Wrapper */
+.anythingSlider-default {
+	margin: 0 auto;
+	/* 45px right & left padding for the arrows, 28px @ bottom for navigation */
+	width:100%;
+	max-height:250px;
+}
+/* slider window - top & bottom borders, default state */
+.anythingSlider-default .anythingWindow {
+}
+/* Navigation buttons + start/stop button, default state */
+.anythingSlider-default .anythingControls a {
+	/* top shadow */
+	background: #777 url(../images/default.png) center -288px repeat-x;
+	color: #000;
+	border-radius: 0 0 5px 5px;
+	-moz-border-radius: 0 0 5px 5px;
+	-webkit-border-radius: 0 0 5px 5px;
+}
+/* Make sure navigation text is visible */
+.anythingSlider-default .anythingControls a span {
+	visibility: visible;
+}
+/* Navigation current button, default state */
+.anythingSlider-default .anythingControls a.cur {
+	background: #888;
+	color: #000;
+}
+
+/* start-stop button, stopped, default state */
+.anythingSlider-default .anythingControls a.start-stop {
+	background-color: #040;
+	color: #ddd;
+}
+/* start-stop button, playing, default state */
+.anythingSlider-default .anythingControls a.start-stop.playing {
+	background-color: #800;
+}
+
+/* start-stop button, default hovered text color (when visible) */
+/* hide nav/start-stop background image shadow on hover - makes the button appear to come forward */
+.anythingSlider-default .anythingControls a.start-stop:hover,
+.anythingSlider-default .anythingControls a.start-stop.hover,
+.anythingSlider-default .anythingControls a.start-stop .anythingControls ul a:hover {
+	background-image: none;
+	color: #ddd;
+}
+
+/*
+ =================================
+ Active State (has keyboard focus)
+ =================================
+*/
+/* slider window - top & bottom borders, active state */
+.anythingSlider-default.activeSlider .anythingWindow {
+
+}
+/* Navigation buttons, active state */
+.anythingSlider-default.activeSlider .anythingControls a {
+	/* background image = top shadow */
+	background-color: #7e7f80;
+}
+/* Navigation current & hovered button, active state */
+.anythingSlider-default.activeSlider .anythingControls a.cur,
+.anythingSlider-default.activeSlider .anythingControls a:hover {
+	/* background image removed */
+	background: #7e7f80;
+}
+
+/* start-stop button, stopped, active state */
+.anythingSlider-default.activeSlider .anythingControls a.start-stop {
+	background-color: #054286;
+    color: #ffffff;
+}
+
+/* start-stop button, playing, active state */
+.anythingSlider-default.activeSlider .anythingControls a.start-stop.playing {
+	background-color: #054286;
+    color: #ffffff;
+}
+/* start-stop button, active slider hovered text color (when visible) */
+.anythingSlider-default.activeSlider .start-stop:hover,
+.anythingSlider-default.activeSlider .start-stop.hover {
+	color: #fff;
+}
+
+/************************
+  NAVIGATION POSITIONING
+ ************************/
+/* Navigation Arrows */
+.anythingSlider-default .arrow {
+	top: 60%;
+	position: absolute;
+	display: block;
+}
+
+.anythingSlider-default .arrow a {
+	display: block;
+	width: 45px;
+	height: 95px;
+	margin: -70px 0 0 0; /* half height of image */
+	text-align: center;
+	background: url(../images/default.png) no-repeat;color: #fff;
+}
+
+/* back arrow */
+.anythingSlider-default .back { left: 0; }
+.anythingSlider-default .back a { background-position: left top; }
+.anythingSlider-default .back a:hover,
+.anythingSlider-default .back a.hover { background-position: left -140px; }
+/* forward arrow */
+.anythingSlider-default .forward { right: 0; }
+.anythingSlider-default .forward a { background-position: right top; }
+.anythingSlider-default .forward a:hover,
+.anythingSlider-default .forward a.hover { background-position: right -140px; }
+
+/* Navigation Links */
+.anythingSlider-default .anythingControls { display: none; }
+.anythingSlider-default .anythingControls ul { margin: 0; padding: 0; float: left; }
+.anythingSlider-default .anythingControls ul li { display: inline; }
+.anythingSlider-default .anythingControls ul a {
+	font: 11px/18px Georgia, Serif;
+	display: inline-block;
+	text-decoration: none;
+	padding: 2px 8px;
+	height: 18px;
+	margin: 0 5px 0 0;
+	text-align: center;
+}
+
+/* navigationSize window */
+.anythingSlider-default .anythingControls .anythingNavWindow {
+	overflow: hidden;
+	float: left;
+}
+
+/* Autoplay Start/Stop button */
+.anythingSlider-default .anythingControls .start-stop {
+	padding: 2px 5px;
+	width: 40px;
+	text-align: center;
+	text-decoration: none;
+	float: right;
+	z-index: 100;
+}
+
+/***********************
+  IE8 AND OLDER STYLING
+ ***********************/
+
+/* Navigation Arrows */
+.as-oldie .anythingSlider-default .arrow {
+	top: 30%;
+}
+.as-oldie .anythingSlider-default .arrow a {
+	margin: 0;
+}
+
+/* margin between nav buttons just looks better */
+.as-oldie .anythingSlider-default .anythingControls li {
+	margin-left: 3px;
+}
+
+/* When using the navigationSize option, the side margins need to be zero
+	None of the navigation panels look good in IE7 now =( */
+.as-oldie .anythingSlider-default .anythingControls a {
+	margin: 0;
+}
+.as-oldie .anythingSlider-default .anythingNavWindow {
+	margin: 0 2px;
+}
+.as-oldie .anythingSlider-default .anythingNavWindow li {
+	padding: 3px 0 0 0;
+}
+
+/***********************
+  COMMON SLIDER STYLING
+ ***********************/
+/* Overall Wrapper */
+.anythingSlider {
+	display: block;
+	overflow: visible !important;
+	position: relative;
+}
+/* anythingSlider viewport window */
+.anythingSlider .anythingWindow {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+/* anythingSlider base (original element) */
+.anythingSlider .anythingBase {
+	background: transparent;
+	list-style: none;
+	position: absolute;
+	overflow: visible !important;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+}
+
+/* Navigation arrow text; indent moved to span inside "a", for IE7;
+  apparently, a negative text-indent on an "a" link moves the link as well as the text */
+.anythingSlider .arrow span {
+	display: block;
+	visibility: hidden;
+}
+/* disabled arrows, hide or reduce opacity: opacity: .5; filter: alpha(opacity=50); */
+.anythingSlider .arrow.disabled {
+	display: none;
+}
+/* all panels inside the slider; horizontal mode */
+.anythingSlider .panel {
+	background: transparent;
+	display: block;
+	overflow: hidden;
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+/* vertical mode */
+.anythingSlider .vertical .panel {
+	float: none;
+}
+/* fade mode */
+.anythingSlider .fade .panel {
+	float: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
+/* fade mode active page - visible & on top */
+.anythingSlider .fade .activePage {
+	z-index: 1;
+}
+
+/***********************
+  RTL STYLING
+ ***********************/
+/* slider autoplay right-to-left, reverse order of nav links to look better */
+.anythingSlider.rtl .anythingWindow {
+	direction: ltr;
+	unicode-bidi: bidi-override;
+}
+.anythingSlider.rtl .anythingControls ul { float: left; } /* move nav link group to left */
+.anythingSlider.rtl .anythingControls ul a { float: right; } /* reverse order of nav links */
+.anythingSlider.rtl .start-stop { /* float: right; */ } /* move start/stop button - in case you want to switch sides */
+
+/* probably not necessary, but added just in case */
+.anythingSlider,
+.anythingSlider .anythingWindow,
+.anythingSlider .anythingControls ul a,
+.anythingSlider .arrow a,
+.anythingSlider .start-stop {
+	transition-duration: 0s;
+	-o-transition-duration: 0s;
+	-moz-transition-duration: 0s;
+	-webkit-transition-duration: 0s;
+}
+
+
+/* position caption close button */
+.caption-top .close,
+.caption-right .close,
+.caption-bottom .close,
+.caption-left .close   { font-size: 80%; cursor: pointer; float: right; display: inline-block; }
+
+
+#wrapper1              { width: 100%; height: 300px; margin: 0 auto; }
+#wrapper2              { width: 50%; height: 300px; margin: 0 auto; }
+
+/* div-wrappers for aspect ratio demos: */
+#wrapper3              { width: 75%; height: 500px; margin: 0 auto; border: solid red;    }
+#wrapper4              { width: 75%; height: 500px; margin: 0 auto; border: solid green;  }
+#wrapper5              { width: 75%; height: 500px; margin: 0 auto; border: solid green;  }
+#wrapper6              { width: 75%; height: 500px; margin: 0 auto; border: solid green;  }
+#wrapper7              { width: 75%; height: 200px; margin: 0 auto; border: solid green;  }
+#wrapper8              { width: 75%; height: 200px; margin: 0 auto; border: solid green;  }
+
+
+#expand #slider1,
+#expand #slider2       { width: 100%; height: 300px; list-style: none; }
+#expand p              { width: 75%; margin: 0 auto; }
+
+/* The next one is really vital since it is used to calculate the aspect ratio from. */
+#expand #slider4       { width: 680px; height: 317px; }
+
+body#expand h2,
+body#expand h3         { text-align: center; }
+
+/***************************
+  Video Compatibility table
+ ***************************/
+.video-info            { width: 700px; margin: 0 auto; margin-top: 50px; font-size: 18px; }
+.video-info h2         { text-align: center; }
+.video-info ul,
+.video-info li         { margin: 0; }
+.video-info sup        { font-size: 12px; }
+.video-info th.header  { width: 25px; }
+.good, .bad, .prob     { color: #ddd; text-align: center; }
+.good                  { background: #080; }
+.bad                   { background: #800; }
+.prob                  { background: #880; }
+.group                 { border: #000 1px solid; }
+
+/**************************
+  Updating Video
+ **************************/
+#updatingVideoDemo div#slider1, ul#slider1 div {
+  width: 300px;
+  height: 200px;
+  list-style: none;
+}
+
+#updatingVideoDemo div#slider2, div#slider2 div {
+  width: 300px;
+  height: 200px;
+  list-style: none;
+}
+
+#updatingVideoDemo .updatingVideoDemoInputs {
+  clear: both;
+  left: 50%;
+  margin-left: -200px;
+  position: relative;
+  width: 400px;
+}
+
+/******************
+  css3 demo page
+ ******************/
+.animations { margin: 20px 20px 20px 5px; }
+.ani        { margin-top: 10px; }
+
+/******************
+  tooltips (Jatt)
+ ******************/
+.tooltip { cursor: pointer; }
+#tooltip {
+  min-width: 100px;
+  color: #dddddd;
+  background: #444;
+  border: 1px solid #777;
+  padding: 8px;
+  display: none;
+  opacity: 0.9;
+  filter: alpha(opacity=90);
+  text-align: left;
+  border-radius: .5em;
+  -moz-border-radius: .5em;
+  -webkit-border-radius: .5em;
+  z-index: 1000;
+}
+#tooltip .body {
+  display: block;
+  text-align: center;
+}
+
+#slider3 {
+  width: 100%;
+  height: 100%;
+  list-style: none;
+ }
+ /* images with caption */
+ #slider3 img {
+  width: 100%;
+  height: 100%;
+ }
+ /* position the panels so the captions appear correctly */
+ #slider3 .panel { position: relative; }
+ /* captions */
+ #slider3 .caption-top, #slider3 .caption-right,
+ #slider3 .caption-bottom, #slider3 .caption-left {
+  background: rgba(0, 0, 0, 0.83);
+  color: #fff;
+  padding: 10px;
+  margin: 0;
+  position: relative;
+  z-index: 10;
+  opacity: .8;
+  filter: alpha(opacity=80);
+ }
+ /* Top caption - padding is included in the width (480px here, 500px in the script), same for height */
+ #slider3 .caption-top {
+  left: 0;
+  top: 0;
+  width: 480px;
+  height: 30px;
+ }
+ /* Right caption - padding is included in the width (130px here, 150px in the script), same for height */
+ #slider3 .caption-right {
+  right: 0;
+  bottom: 0;
+  width: 130px;
+  height: 180px;
+ }
+ /* Bottom caption - padding is included in the width (480px here, 500px in the script), same for height */
+ #slider3 .caption-bottom {
+  left: 0;
+  bottom: 0;
+ }
+ /* Left caption - padding is included in the width (130px here, 150px in the script), same for height */
+ #slider3 .caption-left {
+  left: 0;
+  bottom: 0;
+  width: 130px;
+  height: 180px;
+ }
+ /* Caption close button */
+ .caption-top .close, .caption-right .close,
+ .caption-bottom .close, .caption-left .close {
+  font-size: 80%;
+  cursor: pointer;
+  float: right;
+  display: inline-block;
+ }
+  @media only screen and (max-width: 979px) {
+ #wrapper1  { width: 100%; height: 260px; margin: 0 auto; }
+ }
+ @media only screen and (max-width: 767px) {
+ #wrapper1  { width: 100%; height: 200px; margin: 0 auto; }
+ .caption-bottom {display:none!important;}
+ }
+ @media only screen and (max-width: 480px) {
+ #wrapper1  { width: 100%; height: 150px; margin: 0 auto; }
+ }
