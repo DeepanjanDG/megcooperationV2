@@ -232,7 +232,12 @@
     { kind: "Page",     title: "Financial assistance to societies",                 url: "finassistance.html" },
     { kind: "Page",     title: "Advertisements and recruitment",                    url: "advertisements.html" },
     { kind: "Page",     title: "Related websites and useful links",                 url: "relatedsite.html" },
-    { kind: "Page",     title: "Sitemap — index of all pages",                      url: "sitemap.html" }
+    { kind: "Page",     title: "Sitemap — index of all pages",                      url: "sitemap.html" },
+    { kind: "Page",     title: "Help — using this website",                         url: "help.html" },
+    { kind: "Page",     title: "Accessibility statement",                           url: "accessibility-statement.html" },
+    { kind: "Page",     title: "Screen reader access and assistive technologies",   url: "screen-reader-access.html" },
+    { kind: "Page",     title: "Accessibility options in browsers",                 url: "accessible-browsers.html" },
+    { kind: "Page",     title: "Terms of use, copyright and privacy policy",        url: "terms-use.html" }
   ];
 
   function initSearch() {

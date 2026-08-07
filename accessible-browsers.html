@@ -1,222 +1,343 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Accessibility Options in Browsers: Cooperation Department, Government of Meghalaya</title>
-	<meta name="description" content="The department works for the development of Co-operatives in the state.">
-	<meta name="keywords" content="Co-operatives, Cooperation Department of Meghalaya,  Voluntary and open membership, Democratic members control, Members economic participation, Autonomy and Independence Education , Training and Information, Cooperation among cooperatives, Concern for the community, Financial Assistance to Societies">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
- 	<link rel="stylesheet" href="css/zerogrid.css">
-	<link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/responsive.css">
-	<link rel="stylesheet" href="css/responsiveslides.css" />
-  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Accessibility Options in Browsers | Department of Cooperation, Government of Meghalaya</title>
+<meta name="description" content="How to change text size, colours and other accessibility settings in Chrome, Edge, Firefox and Safari, and in Windows, macOS, Android and iOS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="css/redesign.css">
 </head>
 <body>
+  <div class="topbar">
+    <div class="wrap">
+      <a class="skip" href="#main">Skip to Main Content</a>
+      <div class="right">
+        <a href="screen-reader-access.html">Screen Reader Access</a>
+        <div class="tb-group" role="group" aria-label="Text size">
+          <button type="button" class="tb-btn" id="rd-font-dec" aria-label="Decrease text size" style="font-size:12.5px">A-</button>
+          <button type="button" class="tb-btn" id="rd-font-rst" aria-label="Reset text size" style="font-size:14px">A</button>
+          <button type="button" class="tb-btn" id="rd-font-inc" aria-label="Increase text size" style="font-size:16px">A+</button>
+        </div>
+        <button type="button" class="tb-pill" id="rd-contrast" aria-pressed="false">High contrast</button>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang="en" class="is-on">English</button>
+          <button type="button" data-lang="kha">Khasi</button>
+          <button type="button" data-lang="gar">Garo</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<header>
-	<div class="subnav">
-		<div class="wrap-subnav zerogrid">
-			<ul role="menu">
- <li role="menuitem"><a href="screen-reader-access.html">Screen Reader Access</a></li>
- <li role="menuitem" id="magnifier"><a href="#" class="zoom_in_out">Text Magnifier <img src="images/play.png" id="zoom_in_out_img" alt="On or Off"/></a></li>
- <li role="menuitem"><a href="#" id="char1" onClick="set()" aria-label="on or off Character Spacing">Enable Character Spacing</a>
-<a href="#" id="char2" onClick="unset()" style="display:none;">Disable Character Spacing</a></li>
-	 <li role="menuitem"><a href="#main">Skip to main Content</a></li>
- <li role="menuitem">Font Resize: <a href="#" id="incfont"><img src="images/increase_16.png" alt="Increase Font size of the Page" title="Increase Font size" /></a>
-<a href="#" id="decfont"><img src="images/decrease_16.png" alt="Decrease Font size" title="Decrease Font size of the Page"/></a>
-<a href="#" id="rst"><img src="images/normal_16.png" alt="Reset to normal font size of the Page" title="Reset to normal font size"/></a></li>
- <li role="menuitem">Color Contrast: <a href="#" id="more1"><img src="images/black_white_16.png" alt="White and Black Color Contrast" title="White text on Black background"/></a>
- <a href="#" id="more2"><img src="images/white_black.png" alt="Black and White Color Contrast" title="Black text on White background"/></a>
-<a href="#" id="more3"><img src="images/standard.png" alt="Default Color Scheme" title="Reset to the default Color Scheme."/></a>
-</li>
- </ul>
- 
-			<div class="share"> <form method="get" action="https://www.google.com/search" onSubmit="this.target='_blank'" autocomplete="off">
-<label>Search <input type="text" name="q" size="8" maxlength=200 
-onfocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;" aria-label="Enter your search terms" /></label>
-<input type="submit" value="Go"/>
-<input type="hidden" name="sitesearch" value="http://megcooperation.gov.in/" />
-</form></div>
-</div>
-	</div>
-    
-	<div class="wrap-header zerogrid">
-		<h1 id="logo"><img src="img/top.jpg" alt="Logo of Department of Cooperation, Government of Meghalaya"></h1>
-	</div>
-</header>
+  <div class="lang-note" id="rd-lang-note" style="display:none">
+    Regional-language pages are being prepared. Content is shown in English until the translated pages are published.
+  </div>
 
-<div id="spacing"><nav>
-	<div class="wrap-nav zerogrid">
-		<div class="menu">
-			<ul>
-			 <li><a href="index.html">Home</a></li>
-			 <li><a href="introduction.html">Introduction</a></li>
-			 <li><a href="orgsetup.html">Organisational Setup</a></li>
-       <li><a href="committee.html">Committees</a></li>
-			 <li><a href="contact.html">Contact Persons</a></li>
-       <li><a href="contactus.html">Contact us</a></li>
-        <li><a href="desk-rcs.html" aria-label="Registrar of Cooperative Societies Desk">RCS Desk</a></li>  
-        <li><a href="sitemap.html">Sitemap</a></li>      
-			</ul>
-		</div>
-	</div>
-</nav>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <img class="emblem" src="img/rd-emblem.png" alt="State Emblem of India">
+        <span>
+          <span class="b-gov">Government of Meghalaya</span>
+          <span class="b-dept" style="display:block">Department of</span>
+          <span class="b-name" style="display:block">COOPERATION</span>
+          <span class="b-tag" style="display:block">Together for Growth, Together for All</span>
+        </span>
+      </a>
 
-<a id="main"></a>
-<div id="content">
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="rd-nav">&#9776; Menu</button>
 
-<div id="zoom"><div class="small">
-	<div class="wrap-content zerogrid">
-		<div class="row">
-			<div id="main-content" class="col-2-3">
-				<div class="wrap-col">
-				  <article>
-					  <h2><span class="info">Accessibility Options in Browsers</span></h2>
-					  <h3>Microsoft Internet Explorer for Windows</h3>
+      <nav class="main-nav" id="rd-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true" aria-expanded="false">About Us<span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="dropdown">
+            <a href="introduction.html">Introduction</a>
+            <a href="orgsetup.html">Organisational Setup</a>
+            <a href="suballocated.html">Subject Allocated</a>
+            <a href="functionnduties.html">Functions and Duties</a>
+            <a href="committee.html">Committees</a>
+            <a href="desk-rcs.html">RCS Desk</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true" aria-expanded="false">Schemes &amp; Programs<span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="dropdown">
+            <a href="schemes.html">Development Schemes</a>
+            <a href="subsidy.html">Subsidy Programme</a>
+            <a href="finassistance.html">Financial Assistance</a>
+            <a href="icdp.html">ICDP in Meghalaya</a>
+            <a href="piggery_mission.html">Piggery Mission (MLEADS)</a>
+            <a href="duckfarming_Coop.html">Duck Farming through Societies</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true" aria-expanded="false">Cooperative Societies<span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="dropdown">
+            <a href="mcab.html">Meghalaya Co-op Apex Bank</a>
+            <a href="mecofed.html">MECOFED</a>
+            <a href="mshfcsl.html">State Housing Finance Society</a>
+            <a href="mahwhcfl.html">Apex Handloom Weavers Federation</a>
+            <a href="list_coop_300319.html">Registered Societies — lists</a>
+            <a href="statistics.html">Statistical Data</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true" aria-expanded="false">Reports &amp; Publications<span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="dropdown">
+            <a href="notifications.html">Notifications</a>
+            <a href="publications.html">Publications</a>
+            <a href="rules.html">Rules and Regulations</a>
+            <a href="judgments.html">Important Judgments</a>
+            <a href="newsclips.html">News Clips</a>
+            <a href="advertisements.html">Advertisements</a>
+          </div>
+        </div>
+        <a href="rtimanuals.html">RTI</a>
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true" aria-expanded="false">Contact Us<span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="dropdown">
+            <a href="contactus.html">Contact Us</a>
+            <a href="contact.html">Contact Persons</a>
+            <a href="citizencharter.html">Citizen's Charter</a>
+            <a href="faqs.html">Frequently Asked Questions</a>
+          </div>
+        </div>
+      </nav>
 
-<ol class="lroman">
-<li>Open your Internet Explorer Web Browser</li>
-<li>Select 'Tools' from the menu at the top of your window.</li>
-<li>From the options which appear, select 'Internet options'.</li>
-<li>Click on the 'General' tab.</li>
-<li>Click on the button marked 'Accessibility'.</li>
-<li>To change your font size, select the checkbox marked 'Ignore font sizes specified on Web pages'.</li>
-<li>To remove background and font colours, select the checkbox marked 'Ignore colours specified on web pages'.</li>
-<li>Click OK (and again if necessary).</li>
-<li>Select 'View' from the menu at the top of your window.</li>
-<li>From the options which appear, select 'Text Size'.</li>
-<li>Select your desired text size.</li>
-</ol>
+      <form class="site-search" id="rd-search-form" role="search">
+        <label class="sr-only" for="rd-search-input">Search this website</label>
+        <input type="search" id="rd-search-input" placeholder="Search here..." autocomplete="off">
+        <button type="submit" aria-label="Search">Go</button>
+        <div class="search-results" id="rd-search-results" role="listbox"></div>
+      </form>
+    </div>
+  </header>
 
-<h3>Making Text larger in Mozilla Firefox</h3>
-<p>Follow these steps to increase or decrease the size of the text for the web page you are viewing:</p>
-<ol class="lroman">
-<li>Open the 'View' menu with the mouse or by press 'Alt' and 'V' at the same time.</li>
-<li>Select the 'Text Size' option with the mouse or by pressing 'Z'.</li>
-<li>Increase or decrease the text size with the mouse or by using the up and down arrow keys and pressing 'Enter'.</li>
-<li>Alternatively you can press 'Ctrl' and '+' to increase the text size, 'Ctrl' and '<span aria-label="minus">-</span>' to decrease the text size. 'Ctrl' and '0' returns you to the default 'normal' size.</li>
-<li>ollow these steps to set a minimum text size for all pages you visit:</li>
-<li>Open the 'Tools' menu with the mouse or press 'Alt' + 'T'.</li>
-<li>Click on 'Options', or press 'O' , to open the Options dialog box.</li>
-<li>Click the 'Content' tab or use the arrow keys until it is highlighted (in blue).</li>
-<li>In the Fonts and Colours box click on 'Advanced', or press 'Alt' + 'D' , to open the 'Fonts' dialog box. (See Figure 1 below).<br>
-<img alt="Making Text larger in Mozilla Firefox" src="images/firefox-accessibility.jpg">
-</li>
-<li>Click on 'Minimum font size 'box or press 'Alt' + 'O' . Use the up and down arrows to select a new font size and press 'Enter' - see Figure 2 below.</li>
-<li>Click 'OK' button or press 'Enter'.</li>
-<li>Click 'OK' button or tab to 'OK' button and press 'Enter'.<br>
-<img src="images/firefox-accessibility1.jpg" alt="Minimize font size in Firefox browser"></li>
-</ol>
+  <main id="main">
+  <div class="page-head">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><a href="help.html">Help</a><span aria-hidden="true">/</span>Accessibility Options in Browsers</nav>
+      <h1>Accessibility Options in Browsers</h1>
+      <p>How to enlarge text, change colours and turn on reading tools in your web browser and on your device.</p>
+    </div>
+  </div>
 
-<h3>Making text larger in Internet Explorer 7</h3>
-<ol class="lroman">
-<li>For the first time in Internet Explorer a zoom feature is included which allows you to enlarge the whole browser window.
-to do this press 'Ctrl' + '+' to increase the zoom and 'Ctrl' + '-' to decrease the zoom.</li>
-<li>You can also change the text size. The way to do this does depend on how the site has been built.</li>
-<li>For many sites you only need to do the following:
-<ol class="lalpha">
-<li>Open the 'Page' menu with the mouse or by pressing 'Alt' + 'P '</li>
-<li>Select the 'Text Size' option with the mouse or by pressing 'X'. See Figure 1</li>
-<li>Choose your preferred text size by clicking on it or by using the up and down arrow keys to select it and then press 'Enter'.<br>
-<img src="images/internet-explorer-accessibility.jpg" alt="Making text larger in Internet Explorer"></li>
-<li>The text on the website should now have changed to reflect your choice.</li>
-<li>However some websites have fixed the size of their text ('hard-coded') and as a result these websites will not show the change you have just made. If you would like to use larger text on these sites follow the following steps:<br>
-<ol><li>Click on the 'Tools' menu with the mouse or press 'Alt' + 'O'.</li>
-<li>Click on 'Internet Options' option with the mouse or press 'O'. You should now see the 'Internet Options' box as shown in Figure 2 below.<br>
-<img src="images/internet-explorer-accessibility1.jpg" alt="Accessibility options in Internet Explorer"></li></ol>
-</li>
-<li>Click on the 'Accessibility' button which is highlighted with a red circle in Figure 2 with the mouse or press 'Alt' + ' E '.<br>
+    <div class="section">
+      <div class="wrap layout">
+        <div class="prose">
 
-<img src="images/internet-explorer-accessibility2.jpg" alt="Ignore font sizes specified on web page"></li>
-<li>In the Accessibility box click the 'Ignore font sizes specified on web page 'checkbox to add a tick or press 'Alt' + 'Z' as shown in Figure 3.</li>
-<li>Click the 'OK' button to return to the Internet Options box.</li>
-<li>Click on the 'OK' button, or press 'Tab' until 'OK ' is selected and then press 'Enter' to return to Internet Explorer.</li>
-</ol>
+          <p class="lead">Every modern web browser can enlarge text, change colours and read pages aloud. The steps below show how to turn those options on. They apply to this website and to every other site you visit.</p>
 
-</li></ol>
+          <div class="callout">
+            <h3>The quickest option, in any browser</h3>
+            <p style="margin-bottom:0">Hold <kbd>Ctrl</kbd> (<kbd>Cmd</kbd> on a Mac) and press <kbd>+</kbd> to zoom in, <kbd>-</kbd> to zoom out, and <kbd>0</kbd> to return to the normal size. This website also has its own <strong>A- / A / A+</strong> text-size buttons and a <strong>High contrast</strong> switch in the bar at the very top of every page.</p>
+          </div>
 
+          <h2 id="browsers">Settings by browser</h2>
 
-<h3>How to Turn On Accessibility Features in Google Chrome</h3>
-<h4>Magnifying your screen</h4>
-This feature will increase and decrease the size of text and images on the screen for better visibility.
-<ol class="lroman">
-<li>Press and hold down the <span aria-label="Control Key">CTRL key</span> on your keyboard.</li>
-<li>At the same time as holding the <span aria-label="Control Key">CTRL key</span>:
-<ol class="lalpha"><li>
-press the + key to increase the size of the text and images or</li>
-<li>press the "-" key to decrease the size of the text and images.</li>
-</ol></li>
-<li>Keep repeating Step 2 until you reach the desired size. You can return to the standard size by pressing <span aria-label="Control Key">CTRL key</span> + '0'.</li>
-</ol>
-                  </article>
-			  </div>
-			</div>
-			<div id="sidebar" class="col-1-3">
-            <div class="box">
-						<div class="heading"><h2>Categories</h2></div>
-						<div class="content">
-							<div class="linklist">
-								<ul>
-                                    <li><a href="suballocated.html">Subject Allocated</a></li>
-									<li><a href="functionnduties.html">Functions and Duties</a></li>
-                                    <li><a href="rules.html">Rules and Regulations</a></li>
-									<li><a href="schemes.html">Development Schemes</a></li>
-									<li><a href="subsidy.html">Subsidy Programme</a></li>
-									<li><a href="icdp.html" aria-label="Integrated Cooperative Development Project in Meghalaya">ICDP in Meghalaya</a></li>
-									<li><a href="statistics.html">Statistical Data</a></li>
-                                    <li><a href="training.html">Education and Training</a></li>
-                                    <li><a href="faqs.html">Frequently Asked Questions</a></li>
-									<li><a href="success.html">Success Stories</a></li>
-                                    <li><a href="relatedsite.html">Related Websites</a></li>
-                                    <!-- <li><a href="photogallery.html">Photo Galleries</a></li> -->                  
-									<li><a href="notifications.html">Notifications</a></li>
-									<li><a href="publications.html">Publications</a></li>
-                                    <li><a href="citizencharter.html">Citizen's Charter</a></li>
-                                    <li><a href="newsclips.html">News Clips</a></li>
-                                    <li><a href="advertisements.html">Advertisements</a></li>
-									<li><a href="finassistance.html">Financial Assistance</a></li>
-									<li><a href="piggery_mission.html">Piggery Mission (MLEADS)</a></li>
-									<li><a href="duckfarming_Coop.html">Duck Farming through Cooperative Societies</a></li>
-									<li><a href="judgments.html">Important Judgments</a></li>                                    
-									<li><a href="rtimanuals.html">Right to Information (R.T.I.) Manuals</a></li>
+          <div class="tabs" data-tabs role="tablist" style="margin-bottom:20px">
+            <button type="button" class="tab is-on" data-tab="chrome" role="tab" aria-selected="true">Chrome</button>
+            <button type="button" class="tab" data-tab="edge" role="tab" aria-selected="false">Edge</button>
+            <button type="button" class="tab" data-tab="firefox" role="tab" aria-selected="false">Firefox</button>
+            <button type="button" class="tab" data-tab="safari" role="tab" aria-selected="false">Safari</button>
+          </div>
 
-							  </ul>
-							</div>
-						</div>
-			  </div>
-			</div>
-			</div>
-		</div>
-        </div></div><!--zoom-->
-    </div><!--spacing-->
-</div>
-<footer>
-	<div class="copyright">
-		<p>Site Designed and Maintained by National Informatics Centre, Meghalaya State Centre.
-     <br>
-     Content Owned and Updated by Department of Co-operation, Government of Meghalaya
-     <br>
-     All queries/ comments regarding the content on this site may be sent to:</p>
-		<p>The Registrar of Cooperative Societies, Department of Co-operation, Government of Meghalaya<br>
-   <script>
-function initArray() { 
-this.length = initArray.arguments.length
-for (var i = 0; i < this.length; i++) this[i+1] = initArray.arguments[i]
-} 
-var MOYArray = new initArray('January','February','March','April', 'May','June','July','August','September', 'October','November','December');
-var LastModDate = new Date(document.lastModified); 
-document.write('Last updated on ');
-document.write(MOYArray[(LastModDate.getMonth()+1)],' ');
-document.write(LastModDate.getDate(),', ',(LastModDate.getYear()+1900));
-document.write('');
-</script></p>
-	</div>
-<p><a href="terms-use.html">Term of Use</a> | <a href="help.html">Help</a> | <a href="accessibility-statement.html">Accessibility Statement</a></p></footer>
-<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="js/acsblt.js"></script>
+          <div class="tab-panel is-on" data-panel="chrome">
+            <h3>Make text and images larger</h3>
+            <ol>
+              <li>Hold down the <kbd>Ctrl</kbd> key (<kbd>Cmd</kbd> on a Mac).</li>
+              <li>While holding it, press <kbd>+</kbd> to enlarge or <kbd>-</kbd> to reduce the page.</li>
+              <li>Repeat until you reach a comfortable size. Press <kbd>Ctrl</kbd> + <kbd>0</kbd> to return to normal.</li>
+            </ol>
+            <h3>Set a permanent font size</h3>
+            <ol>
+              <li>Open the <strong>&#8942;</strong> menu at the top right and choose <strong>Settings</strong>.</li>
+              <li>Select <strong>Appearance</strong> in the left-hand list.</li>
+              <li>Change <strong>Font size</strong> and <strong>Page zoom</strong> to your preference. These apply to every website.</li>
+            </ol>
+            <h3>Other accessibility options</h3>
+            <ul>
+              <li><strong>Settings &rarr; Accessibility</strong> turns on caption preferences and lets you show a text cursor when browsing.</li>
+              <li>Extensions such as high-contrast themes and screen readers can be added from the Chrome Web Store.</li>
+            </ul>
+          </div>
 
+          <div class="tab-panel" data-panel="edge">
+            <h3>Make text and images larger</h3>
+            <ol>
+              <li>Hold <kbd>Ctrl</kbd> and press <kbd>+</kbd> to zoom in or <kbd>-</kbd> to zoom out. <kbd>Ctrl</kbd> + <kbd>0</kbd> resets the page.</li>
+              <li>Or open the <strong>&#8943;</strong> menu at the top right and use the <strong>Zoom</strong> controls.</li>
+            </ol>
+            <h3>Set a permanent font size</h3>
+            <ol>
+              <li>Open <strong>&#8943; &rarr; Settings &rarr; Appearance</strong>.</li>
+              <li>Adjust <strong>Font size</strong> and <strong>Page zoom</strong>.</li>
+            </ol>
+            <h3>Read a page aloud</h3>
+            <ol>
+              <li>Press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>U</kbd>, or open the <strong>&#8943;</strong> menu and choose <strong>Read aloud</strong>.</li>
+              <li>Use the toolbar that appears to pause, skip and change the voice or reading speed.</li>
+            </ol>
+            <h3>Immersive Reader</h3>
+            <p>On article-style pages, press <kbd>F9</kbd> to open <strong>Immersive Reader</strong>, which strips away the layout and lets you set text spacing, line focus and a picture dictionary.</p>
+          </div>
 
+          <div class="tab-panel" data-panel="firefox">
+            <h3>Make text larger</h3>
+            <ol>
+              <li>Hold <kbd>Ctrl</kbd> and press <kbd>+</kbd> to increase, <kbd>-</kbd> to decrease, and <kbd>Ctrl</kbd> + <kbd>0</kbd> to reset.</li>
+              <li>To enlarge text only, and leave images at their original size, open <strong>&#9776; &rarr; Settings &rarr; General</strong> and tick <strong>Zoom text only</strong>.</li>
+            </ol>
+            <h3>Set a minimum font size for all websites</h3>
+            <ol>
+              <li>Open the <strong>&#9776;</strong> menu and choose <strong>Settings</strong>.</li>
+              <li>Under <strong>Language and Appearance &rarr; Fonts</strong>, click <strong>Advanced</strong>.</li>
+              <li>Set <strong>Minimum font size</strong> to the smallest size you can read comfortably and click <strong>OK</strong>.</li>
+            </ol>
+            <h3>Use your own colours</h3>
+            <ol>
+              <li>In <strong>Settings &rarr; Language and Appearance &rarr; Colours</strong>, click <strong>Manage Colours</strong>.</li>
+              <li>Choose your text and background colours, then set <strong>Override the colours specified by the page</strong> to <strong>Always</strong>.</li>
+            </ol>
+            <h3>Reader View</h3>
+            <p>Press <kbd>F9</kbd> or click the page icon in the address bar to strip a page down to plain text, then adjust the font, width and colour theme.</p>
+          </div>
 
+          <div class="tab-panel" data-panel="safari">
+            <h3>Make text and images larger</h3>
+            <ol>
+              <li>Hold <kbd>Cmd</kbd> and press <kbd>+</kbd> to zoom in or <kbd>-</kbd> to zoom out. <kbd>Cmd</kbd> + <kbd>0</kbd> resets the page.</li>
+              <li>To set a permanent zoom level for every site, open <strong>Safari &rarr; Settings &rarr; Websites &rarr; Page Zoom</strong> and change the setting for <strong>All other websites</strong>.</li>
+            </ol>
+            <h3>Set a minimum font size</h3>
+            <ol>
+              <li>Open <strong>Safari &rarr; Settings &rarr; Advanced</strong>.</li>
+              <li>Tick <strong>Never use font sizes smaller than</strong> and choose a size.</li>
+            </ol>
+            <h3>Reader and VoiceOver</h3>
+            <ul>
+              <li>Press <kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>R</kbd> to open <strong>Reader</strong>, then change the font, size and background from the <strong>AA</strong> button.</li>
+              <li>Press <kbd>Cmd</kbd> + <kbd>F5</kbd> to switch <strong>VoiceOver</strong>, the built-in screen reader of macOS, on or off.</li>
+            </ul>
+          </div>
+
+          <h2 id="system">Settings in your operating system</h2>
+
+          <p>Changes made here apply to every application on the device, not just your browser.</p>
+
+          <div class="cards-2">
+            <div class="card">
+              <h3>Windows</h3>
+              <p>Open <strong>Settings &rarr; Accessibility</strong> for text size, Magnifier, Colour filters, High contrast themes and Narrator. Press <kbd>Win</kbd> + <kbd>+</kbd> to start Magnifier and <kbd>Win</kbd> + <kbd>Ctrl</kbd> + <kbd>Enter</kbd> to start Narrator.</p>
+            </div>
+            <div class="card">
+              <h3>macOS</h3>
+              <p>Open <strong>System Settings &rarr; Accessibility</strong> for Zoom, Display contrast, Larger text, and VoiceOver. Press <kbd>Cmd</kbd> + <kbd>F5</kbd> to switch VoiceOver on or off.</p>
+            </div>
+            <div class="card">
+              <h3>Android</h3>
+              <p>Open <strong>Settings &rarr; Accessibility</strong> for Font size, Display size, Magnification, Colour correction and the TalkBack screen reader.</p>
+            </div>
+            <div class="card">
+              <h3>iPhone and iPad</h3>
+              <p>Open <strong>Settings &rarr; Accessibility</strong> for Display &amp; Text Size, Zoom, Increase Contrast and VoiceOver.</p>
+            </div>
+          </div>
+
+          <h2 id="help">If you still cannot read a page</h2>
+
+          <div class="callout">
+            <h3>We will send you the content in another format</h3>
+            <p style="margin-bottom:0">Write to <a href="mailto:jrcs.estt@gmail.com">jrcs.estt@gmail.com</a> or telephone 0364 - 2223949, telling us which page you were on and what you were trying to do.</p>
+          </div>
+
+        </div>
+      <aside>
+        <div class="sidecard">
+          <h3>On this page</h3>
+          <ul>
+            <li><a href="#browsers">Settings by browser</a></li>
+            <li><a href="#system">Operating system settings</a></li>
+            <li><a href="#help">If you still cannot read a page</a></li>
+          </ul>
+        </div>
+        <div class="sidecard">
+          <h3>Related pages</h3>
+          <ul>
+            <li><a href="help.html">Help</a></li>
+            <li><a href="accessibility-statement.html">Accessibility Statement</a></li>
+            <li><a href="screen-reader-access.html">Screen Reader Access</a></li>
+            <li><a href="contactus.html">Contact Us</a></li>
+          </ul>
+        </div>
+      </aside>
+      </div>
+    </div>
+</main>
+
+  <footer class="site-footer">
+    <div class="wrap f-top">
+      <div>
+        <div class="f-brand">
+          <img src="img/rd-emblem.png" alt="">
+          <span>
+            <span class="f-name">DEPARTMENT OF<br>COOPERATION</span>
+            <span class="f-gov" style="display:block">Government of Meghalaya</span>
+          </span>
+        </div>
+        <p class="f-blurb">Building stronger communities through cooperation, for inclusive growth and self-reliance across Meghalaya.</p>
+      </div>
+      <div>
+        <div class="f-head">Quick Links</div>
+        <div class="f-links">
+          <a href="index.html">Home</a>
+          <a href="introduction.html">Introduction</a>
+          <a href="orgsetup.html">Organisational Setup</a>
+          <a href="schemes.html">Schemes &amp; Programs</a>
+          <a href="notifications.html">Notifications</a>
+          <a href="contact.html">Contact Persons</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+      <div>
+        <div class="f-head">Useful Links</div>
+        <div class="f-links">
+          <a href="http://meghalaya.gov.in" target="_blank" rel="noopener" title="External site that opens in a new window">Meghalaya Government</a>
+          <a href="https://cooperation.gov.in" target="_blank" rel="noopener" title="External site that opens in a new window">Ministry of Cooperation, GoI</a>
+          <a href="https://ncui.coop" target="_blank" rel="noopener" title="External site that opens in a new window">NCUI</a>
+          <a href="https://www.nabard.org" target="_blank" rel="noopener" title="External site that opens in a new window">NABARD</a>
+          <a href="https://www.ncdc.in" target="_blank" rel="noopener" title="External site that opens in a new window">NCDC</a>
+          <a href="relatedsite.html">Other resources</a>
+        </div>
+      </div>
+      <div>
+        <div class="f-head">Contact Us</div>
+        <div class="f-contact">
+          <span class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Office of the Registrar of Cooperative Societies,<br>New Administrative Building, Lower Lachumiere,<br>Shillong &mdash; 793001, Meghalaya</span></span>
+          <span class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><span>0364 - 2223949</span></span>
+          <span class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg><a href="mailto:jrcs.estt@gmail.com">jrcs.estt@gmail.com</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <div class="wrap">
+        <span>&copy; Department of Cooperation, Government of Meghalaya. All rights reserved. Last updated on <span id="rd-last-updated">&mdash;</span>.</span>
+        <span class="legal">
+          <a href="terms-use.html">Terms of Use</a>
+          <a href="help.html">Help</a>
+          <a href="sitemap.html">Sitemap</a>
+          <a href="accessibility-statement.html">Accessibility Statement</a>
+        </span>
+      </div>
+    </div>
+    <div class="wrap" style="padding-bottom:24px">
+      <p class="f-credit">Site designed and maintained by National Informatics Centre, Meghalaya State Centre. Content owned and updated by the Department of Cooperation, Government of Meghalaya.</p>
+    </div>
+  </footer>
+
+<script src="js/redesign.js"></script>
 </body>
 </html>

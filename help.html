@@ -1,178 +1,290 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Help: Cooperation Department, Government of Meghalaya</title>
-	<meta name="description" content="The department works for the development of Co-operatives in the state.">
-	<meta name="keywords" content="Co-operatives, Cooperation Department of Meghalaya,  Voluntary and open membership, Democratic members control, Members economic participation, Autonomy and Independence Education , Training and Information, Cooperation among cooperatives, Concern for the community, Financial Assistance to Societies">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
- 	<link rel="stylesheet" href="css/zerogrid.css">
-	<link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/responsive.css">
-	<link rel="stylesheet" href="css/responsiveslides.css" />
-  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Help | Department of Cooperation, Government of Meghalaya</title>
+<meta name="description" content="How to navigate the website of the Department of Cooperation, Government of Meghalaya, change text size and contrast, and open the documents published here.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<link rel="stylesheet" href="css/redesign.css">
 </head>
 <body>
+  <div class="topbar">
+    <div class="wrap">
+      <a class="skip" href="#main">Skip to Main Content</a>
+      <div class="right">
+        <a href="screen-reader-access.html">Screen Reader Access</a>
+        <div class="tb-group" role="group" aria-label="Text size">
+          <button type="button" class="tb-btn" id="rd-font-dec" aria-label="Decrease text size" style="font-size:12.5px">A-</button>
+          <button type="button" class="tb-btn" id="rd-font-rst" aria-label="Reset text size" style="font-size:14px">A</button>
+          <button type="button" class="tb-btn" id="rd-font-inc" aria-label="Increase text size" style="font-size:16px">A+</button>
+        </div>
+        <button type="button" class="tb-pill" id="rd-contrast" aria-pressed="false">High contrast</button>
+        <div class="lang-switch" role="group" aria-label="Language">
+          <button type="button" data-lang="en" class="is-on">English</button>
+          <button type="button" data-lang="kha">Khasi</button>
+          <button type="button" data-lang="gar">Garo</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<header>
-	<div class="subnav">
-		<div class="wrap-subnav zerogrid">
-			<ul role="menu">
- <li role="menuitem"><a href="screen-reader-access.html">Screen Reader Access</a></li>
- <li role="menuitem" id="magnifier"><a href="#" class="zoom_in_out">Text Magnifier <img src="images/play.png" id="zoom_in_out_img" alt="On or Off"/></a></li>
- <li role="menuitem"><a href="#" id="char1" onClick="set()" aria-label="on or off Character Spacing">Enable Character Spacing</a>
-<a href="#" id="char2" onClick="unset()" style="display:none;">Disable Character Spacing</a></li>
-	 <li role="menuitem"><a href="#main">Skip to main Content</a></li>
- <li role="menuitem">Font Resize: <a href="#" id="incfont"><img src="images/increase_16.png" alt="Increase Font size of the Page" title="Increase Font size" /></a>
-<a href="#" id="decfont"><img src="images/decrease_16.png" alt="Decrease Font size" title="Decrease Font size of the Page"/></a>
-<a href="#" id="rst"><img src="images/normal_16.png" alt="Reset to normal font size of the Page" title="Reset to normal font size"/></a></li>
- <li role="menuitem">Color Contrast: <a href="#" id="more1"><img src="images/black_white_16.png" alt="White and Black Color Contrast" title="White text on Black background"/></a>
- <a href="#" id="more2"><img src="images/white_black.png" alt="Black and White Color Contrast" title="Black text on White background"/></a>
-<a href="#" id="more3"><img src="images/standard.png" alt="Default Color Scheme" title="Reset to the default Color Scheme."/></a>
-</li>
- </ul>
- 
-			<div class="share"> <form method="get" action="https://www.google.com/search" onSubmit="this.target='_blank'" autocomplete="off">
-<label>Search <input type="text" name="q" size="8" maxlength=200 
-onfocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;" aria-label="Enter your search terms" /></label>
-<input type="submit" value="Go"/>
-<input type="hidden" name="sitesearch" value="http://megcooperation.gov.in/" />
-</form></div>
-</div>
-	</div>
-    
-	<div class="wrap-header zerogrid">
-		<h1 id="logo"><img src="img/top.jpg" alt="Logo of Department of Cooperation, Government of Meghalaya"></h1>
-	</div>
-</header>
+  <div class="lang-note" id="rd-lang-note" style="display:none">
+    Regional-language pages are being prepared. Content is shown in English until the translated pages are published.
+  </div>
 
-<div id="spacing"><nav>
-	<div class="wrap-nav zerogrid">
-		<div class="menu">
-			<ul>
-			 <li><a href="index.html">Home</a></li>
-			 <li><a href="introduction.html">Introduction</a></li>
-			 <li><a href="orgsetup.html">Organisational Setup</a></li>
-       <li><a href="committee.html">Committees</a></li>
-			 <li><a href="contact.html">Contact Persons</a></li>
-       <li><a href="contactus.html">Contact us</a></li>
-        <li><a href="desk-rcs.html" aria-label="Registrar of Cooperative Societies Desk">RCS Desk</a></li>  
-        <li><a href="sitemap.html">Sitemap</a></li>      
-			</ul>
-		</div>
-	</div>
-</nav>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">
+        <img class="emblem" src="img/rd-emblem.png" alt="State Emblem of India">
+        <span>
+          <span class="b-gov">Government of Meghalaya</span>
+          <span class="b-dept" style="display:block">Department of</span>
+          <span class="b-name" style="display:block">COOPERATION</span>
+          <span class="b-tag" style="display:block">Together for Growth, Together for All</span>
+        </span>
+      </a>
 
-<a id="main"></a>
-<div id="content">
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="rd-nav">&#9776; Menu</button>
 
-<div id="zoom"><div class="small">
-	<div class="wrap-content zerogrid">
-		<div class="row">
-			<div id="main-content" class="col-2-3">
-				<div class="wrap-col">
-				  <article>
-					  <h2><span class="info">Help</span></h2>
-					   <h3>Viewing different file formats</h3>
+      <nav class="main-nav" id="rd-nav" aria-label="Main">
+        <a href="index.html">Home</a>
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true" aria-expanded="false">About Us<span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="dropdown">
+            <a href="introduction.html">Introduction</a>
+            <a href="orgsetup.html">Organisational Setup</a>
+            <a href="suballocated.html">Subject Allocated</a>
+            <a href="functionnduties.html">Functions and Duties</a>
+            <a href="committee.html">Committees</a>
+            <a href="desk-rcs.html">RCS Desk</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true" aria-expanded="false">Schemes &amp; Programs<span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="dropdown">
+            <a href="schemes.html">Development Schemes</a>
+            <a href="subsidy.html">Subsidy Programme</a>
+            <a href="finassistance.html">Financial Assistance</a>
+            <a href="icdp.html">ICDP in Meghalaya</a>
+            <a href="piggery_mission.html">Piggery Mission (MLEADS)</a>
+            <a href="duckfarming_Coop.html">Duck Farming through Societies</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true" aria-expanded="false">Cooperative Societies<span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="dropdown">
+            <a href="mcab.html">Meghalaya Co-op Apex Bank</a>
+            <a href="mecofed.html">MECOFED</a>
+            <a href="mshfcsl.html">State Housing Finance Society</a>
+            <a href="mahwhcfl.html">Apex Handloom Weavers Federation</a>
+            <a href="list_coop_300319.html">Registered Societies — lists</a>
+            <a href="statistics.html">Statistical Data</a>
+          </div>
+        </div>
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true" aria-expanded="false">Reports &amp; Publications<span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="dropdown">
+            <a href="notifications.html">Notifications</a>
+            <a href="publications.html">Publications</a>
+            <a href="rules.html">Rules and Regulations</a>
+            <a href="judgments.html">Important Judgments</a>
+            <a href="newsclips.html">News Clips</a>
+            <a href="advertisements.html">Advertisements</a>
+          </div>
+        </div>
+        <a href="rtimanuals.html">RTI</a>
+        <div class="nav-item">
+          <button type="button" aria-haspopup="true" aria-expanded="false">Contact Us<span class="caret" aria-hidden="true">&#9662;</span></button>
+          <div class="dropdown">
+            <a href="contactus.html">Contact Us</a>
+            <a href="contact.html">Contact Persons</a>
+            <a href="citizencharter.html">Citizen's Charter</a>
+            <a href="faqs.html">Frequently Asked Questions</a>
+          </div>
+        </div>
+      </nav>
 
-<ol>
-<li>Portable Document Format (P.D.F.) content - <a href="http://www.adobe.com/products/acrobat/readstep2.html" target="_blank" title="Adobe, External website that opens in a new window">Adobe Acrobat Reader</a></li>
+      <form class="site-search" id="rd-search-form" role="search">
+        <label class="sr-only" for="rd-search-input">Search this website</label>
+        <input type="search" id="rd-search-input" placeholder="Search here..." autocomplete="off">
+        <button type="submit" aria-label="Search">Go</button>
+        <div class="search-results" id="rd-search-results" role="listbox"></div>
+      </form>
+    </div>
+  </header>
 
-<li>Audio Files - <a href="http://windows.microsoft.com/en-us/windows/download-windows-media-player" target="_blank" title="Microsoft, External website that opens in a new window">Windows Media Player</a></li>
-			
-            </ol>
-            
+  <main id="main">
+  <div class="page-head">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span>Help</nav>
+      <h1>Help</h1>
+      <p>Getting around this website, adjusting how pages look, and opening the documents we publish.</p>
+    </div>
+  </div>
 
-<h3>Accessibility Help</h3>
-<p>Use the accessibility options provided by this Web site to control the screen display. These options allow changing the text size and color scheme for clear visibility and better readability.</p>
-  <h4>Text Size Icons</h4>
- <p>Following different options are provided in the form of icons which are available on the top of each page:</p> 
-  <ul>
-	<li><img alt="Increase Text Size by four levels" src="images/increase_16.png"> <strong>Increase text size</strong>: Allows to increase the text size up to four levels.</li>
-	<li><img alt="Decrease Text Size by three levels" src="images/decrease_16.png"> <strong>Decrease text size</strong>: Allows to decrease the text size up to three levels.</li>
-	<li><img alt="Set to Normal Text Size" src="images/normal_16.png"> <strong>Normal text size</strong>: Allows to set default text size.</li>
-</ul>
+    <div class="section">
+      <div class="wrap layout">
+        <div class="prose">
 
-<h3>Accessibility Options</h3>
-<p>Changing the color scheme refers to applying a suitable background and text color that ensures clear readability. There are four options provided to change the color scheme. These are:</p>
+          <p class="lead">This page explains how to get around the website, how to change the way pages look, and what you need in order to open the documents published here.</p>
 
-<ul>
-	<li><strong><img alt="Reset to default Color Scheme" src="images/standard.png"> Standard:</strong>&nbsp;Applies white color as the background and black color to the foreground text to set the default contrast.</li>
-	<li><strong><img alt="White Text on Black Background" src="images/white_black.png" class="wb_border"> White on black:</strong> Applies black color as the background and white color to the foreground text to improve readability.</li>
-	<li><strong><img alt="Black Text on White Background" src="images/black_white_16.png"> Black on white</strong>: Applies white color as the background and black as the foreground text to improve readability.</li>
-	
-</ul>
-<br>
+          <h2 id="navigate">Finding your way around</h2>
 
-<p>Related Link - <a href="accessible-browsers.html">Accessibility Options in browsers</a> >></p>
-                  </article>
-			  </div>
-			</div>
-			<div id="sidebar" class="col-1-3">
-            <div class="box">
-						<div class="heading"><h2>Categories</h2></div>
-						<div class="content">
-							<div class="linklist">
-								<ul>
-                                    <li><a href="suballocated.html">Subject Allocated</a></li>
-									<li><a href="functionnduties.html">Functions and Duties</a></li>
-                                    <li><a href="rules.html">Rules and Regulations</a></li>
-									<li><a href="schemes.html">Development Schemes</a></li>
-									<li><a href="subsidy.html">Subsidy Programme</a></li>
-									<li><a href="icdp.html" aria-label="Integrated Cooperative Development Project in Meghalaya">ICDP in Meghalaya</a></li>
-									<li><a href="statistics.html">Statistical Data</a></li>
-                                    <li><a href="training.html">Education and Training</a></li>
-                                    <li><a href="faqs.html">Frequently Asked Questions</a></li>
-									<li><a href="success.html">Success Stories</a></li>
-                                    <li><a href="relatedsite.html">Related Websites</a></li>
-                                    <!-- <li><a href="photogallery.html">Photo Galleries</a></li> -->                  
-									<li><a href="notifications.html">Notifications</a></li>
-									<li><a href="publications.html">Publications</a></li>
-                                    <li><a href="citizencharter.html">Citizen's Charter</a></li>
-                                    <li><a href="newsclips.html">News Clips</a></li>
-                                    <li><a href="advertisements.html">Advertisements</a></li>
-									<li><a href="finassistance.html">Financial Assistance</a></li>
-									<li><a href="piggery_mission.html">Piggery Mission (MLEADS)</a></li>
-									<li><a href="duckfarming_Coop.html">Duck Farming through Cooperative Societies</a></li>
-									<li><a href="judgments.html">Important Judgments</a></li>                                    
-									<li><a href="rtimanuals.html">Right to Information (R.T.I.) Manuals</a></li>
+          <ul>
+            <li><strong>Main menu.</strong> The menu at the top of every page groups the site into About Us, Schemes &amp; Programs, Cooperative Societies, Reports &amp; Publications, RTI and Contact Us. Hover or click a heading to open its sub-menu.</li>
+            <li><strong>Search.</strong> Use the search box in the header to jump straight to a page. Results appear as you type.</li>
+            <li><strong>Breadcrumbs.</strong> The trail just below the header &mdash; for example <em>Home / Help</em> &mdash; shows where you are and lets you step back up.</li>
+            <li><strong>Sitemap.</strong> The <a href="sitemap.html">sitemap</a> lists every page on this website on a single page.</li>
+            <li><strong>On a phone or tablet.</strong> The menu collapses into a <strong>&#9776; Menu</strong> button. Tap it to open the navigation.</li>
+          </ul>
 
-							  </ul>
-							</div>
-						</div>
-			  </div>
-			</div>
-			</div>
-		</div>
-        </div></div><!--zoom-->
-    </div><!--spacing-->
-</div>
-<footer>
-	<div class="copyright">
-		<p>Site Designed and Maintained by National Informatics Centre, Meghalaya State Centre.
-     <br>
-     Content Owned and Updated by Department of Co-operation, Government of Meghalaya
-     <br>
-     All queries/ comments regarding the content on this site may be sent to:</p>
-		<p>The Registrar of Cooperative Societies, Department of Co-operation, Government of Meghalaya<br>
-   <script>
-function initArray() { 
-this.length = initArray.arguments.length
-for (var i = 0; i < this.length; i++) this[i+1] = initArray.arguments[i]
-} 
-var MOYArray = new initArray('January','February','March','April', 'May','June','July','August','September', 'October','November','December');
-var LastModDate = new Date(document.lastModified); 
-document.write('Last updated on ');
-document.write(MOYArray[(LastModDate.getMonth()+1)],' ');
-document.write(LastModDate.getDate(),', ',(LastModDate.getYear()+1900));
-document.write('');
-</script></p>
-	</div>
-<p><a href="terms-use.html">Term of Use</a> | <a href="help.html">Help</a> | <a href="accessibility-statement.html">Accessibility Statement</a></p></footer>
-<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
-<script type="text/javascript" src="js/acsblt.js"></script>
+          <h2 id="accessibility">Changing how pages look</h2>
 
+          <p>Use the controls in the bar at the very top of every page to adjust the display. Your choice is remembered as you move from page to page.</p>
 
+          <div class="cards-3">
+            <div class="card">
+              <h3>A-&nbsp; &nbsp;A&nbsp; &nbsp;A+</h3>
+              <p><strong>Text size.</strong> <strong>A+</strong> increases the text size, <strong>A-</strong> decreases it, and <strong>A</strong> returns the page to the default size.</p>
+            </div>
+            <div class="card">
+              <h3>High contrast</h3>
+              <p><strong>Colour scheme.</strong> Switches the site to a dark background with light text for stronger contrast. Press it again to go back to the standard scheme.</p>
+            </div>
+            <div class="card">
+              <h3>Skip to Main Content</h3>
+              <p><strong>Keyboard shortcut.</strong> The first link on every page. It takes you past the menu and straight into the page content.</p>
+            </div>
+          </div>
 
+          <p>Your browser and your device have their own accessibility settings as well &mdash; zoom, minimum font size, colour overrides and screen readers. See <a href="accessible-browsers.html">Accessibility Options in Browsers</a> for step-by-step instructions.</p>
+
+          <h2 id="keyboard">Using the keyboard</h2>
+
+          <ul>
+            <li><kbd>Tab</kbd> moves forward through links, buttons and form fields; <kbd>Shift</kbd> + <kbd>Tab</kbd> moves back.</li>
+            <li><kbd>Enter</kbd> follows a link or presses a button. <kbd>Space</kbd> also presses a button and scrolls the page.</li>
+            <li><kbd>Escape</kbd> closes an open menu or search result list.</li>
+            <li><kbd>Ctrl</kbd> + <kbd>+</kbd> and <kbd>Ctrl</kbd> + <kbd>-</kbd> zoom the whole page in and out (<kbd>Cmd</kbd> on a Mac).</li>
+          </ul>
+
+          <h2 id="formats">Opening documents and media</h2>
+
+          <p>Some material on this site is published in formats that need a reader or player. All of the following are available free of charge.</p>
+
+          <div class="tbl-wrap">
+            <table class="data">
+              <caption>File formats used on this website</caption>
+              <thead><tr><th scope="col">Format</th><th scope="col">What you need</th><th scope="col">Where to get it</th></tr></thead>
+              <tbody>
+                <tr><td>PDF (.pdf)</td><td>Adobe Acrobat Reader, or the PDF viewer built into your browser</td><td><a href="https://get.adobe.com/reader/" target="_blank" rel="noopener" title="External site that opens in a new window">get.adobe.com/reader</a></td></tr>
+                <tr><td>Word (.doc, .docx)</td><td>Microsoft Word, LibreOffice Writer or any compatible word processor</td><td><a href="https://www.libreoffice.org/download/" target="_blank" rel="noopener" title="External site that opens in a new window">libreoffice.org</a></td></tr>
+                <tr><td>Excel (.xls, .xlsx)</td><td>Microsoft Excel, LibreOffice Calc or any compatible spreadsheet program</td><td><a href="https://www.libreoffice.org/download/" target="_blank" rel="noopener" title="External site that opens in a new window">libreoffice.org</a></td></tr>
+                <tr><td>Audio and video</td><td>The media player built into your browser or device, or VLC</td><td><a href="https://www.videolan.org/vlc/" target="_blank" rel="noopener" title="External site that opens in a new window">videolan.org</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>Links to PDF documents and to external websites are labelled, and open in a new window, so that you know before you follow them. If you cannot open a document, write to us and we will send you the content in another format.</p>
+
+          <h2 id="contact">Still need help?</h2>
+
+          <div class="callout">
+            <h3>Get in touch</h3>
+            <p>If a page does not work, a document will not open, or you cannot find what you are looking for, tell us which page you were on and what you were trying to do.</p>
+            <p style="margin-bottom:0">Email <a href="mailto:jrcs.estt@gmail.com">jrcs.estt@gmail.com</a> &nbsp;&middot;&nbsp; Telephone 0364 - 2223949 &nbsp;&middot;&nbsp; <a href="contactus.html">Contact Us</a> &nbsp;&middot;&nbsp; <a href="faqs.html">Frequently Asked Questions</a></p>
+          </div>
+
+        </div>
+      <aside>
+        <div class="sidecard">
+          <h3>On this page</h3>
+          <ul>
+            <li><a href="#navigate">Finding your way around</a></li>
+            <li><a href="#accessibility">Changing how pages look</a></li>
+            <li><a href="#keyboard">Using the keyboard</a></li>
+            <li><a href="#formats">Opening documents and media</a></li>
+            <li><a href="#contact">Still need help?</a></li>
+          </ul>
+        </div>
+        <div class="sidecard">
+          <h3>Related pages</h3>
+          <ul>
+            <li><a href="accessible-browsers.html">Accessibility Options in Browsers</a></li>
+            <li><a href="accessibility-statement.html">Accessibility Statement</a></li>
+            <li><a href="screen-reader-access.html">Screen Reader Access</a></li>
+            <li><a href="faqs.html">Frequently Asked Questions</a></li>
+            <li><a href="sitemap.html">Sitemap</a></li>
+          </ul>
+        </div>
+      </aside>
+      </div>
+    </div>
+</main>
+
+  <footer class="site-footer">
+    <div class="wrap f-top">
+      <div>
+        <div class="f-brand">
+          <img src="img/rd-emblem.png" alt="">
+          <span>
+            <span class="f-name">DEPARTMENT OF<br>COOPERATION</span>
+            <span class="f-gov" style="display:block">Government of Meghalaya</span>
+          </span>
+        </div>
+        <p class="f-blurb">Building stronger communities through cooperation, for inclusive growth and self-reliance across Meghalaya.</p>
+      </div>
+      <div>
+        <div class="f-head">Quick Links</div>
+        <div class="f-links">
+          <a href="index.html">Home</a>
+          <a href="introduction.html">Introduction</a>
+          <a href="orgsetup.html">Organisational Setup</a>
+          <a href="schemes.html">Schemes &amp; Programs</a>
+          <a href="notifications.html">Notifications</a>
+          <a href="contact.html">Contact Persons</a>
+          <a href="sitemap.html">Sitemap</a>
+        </div>
+      </div>
+      <div>
+        <div class="f-head">Useful Links</div>
+        <div class="f-links">
+          <a href="http://meghalaya.gov.in" target="_blank" rel="noopener" title="External site that opens in a new window">Meghalaya Government</a>
+          <a href="https://cooperation.gov.in" target="_blank" rel="noopener" title="External site that opens in a new window">Ministry of Cooperation, GoI</a>
+          <a href="https://ncui.coop" target="_blank" rel="noopener" title="External site that opens in a new window">NCUI</a>
+          <a href="https://www.nabard.org" target="_blank" rel="noopener" title="External site that opens in a new window">NABARD</a>
+          <a href="https://www.ncdc.in" target="_blank" rel="noopener" title="External site that opens in a new window">NCDC</a>
+          <a href="relatedsite.html">Other resources</a>
+        </div>
+      </div>
+      <div>
+        <div class="f-head">Contact Us</div>
+        <div class="f-contact">
+          <span class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span>Office of the Registrar of Cooperative Societies,<br>New Administrative Building, Lower Lachumiere,<br>Shillong &mdash; 793001, Meghalaya</span></span>
+          <span class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg><span>0364 - 2223949</span></span>
+          <span class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg><a href="mailto:jrcs.estt@gmail.com">jrcs.estt@gmail.com</a></span>
+        </div>
+      </div>
+    </div>
+    <div class="f-bottom">
+      <div class="wrap">
+        <span>&copy; Department of Cooperation, Government of Meghalaya. All rights reserved. Last updated on <span id="rd-last-updated">&mdash;</span>.</span>
+        <span class="legal">
+          <a href="terms-use.html">Terms of Use</a>
+          <a href="help.html">Help</a>
+          <a href="sitemap.html">Sitemap</a>
+          <a href="accessibility-statement.html">Accessibility Statement</a>
+        </span>
+      </div>
+    </div>
+    <div class="wrap" style="padding-bottom:24px">
+      <p class="f-credit">Site designed and maintained by National Informatics Centre, Meghalaya State Centre. Content owned and updated by the Department of Cooperation, Government of Meghalaya.</p>
+    </div>
+  </footer>
+
+<script src="js/redesign.js"></script>
 </body>
 </html>

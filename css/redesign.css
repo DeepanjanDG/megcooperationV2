@@ -239,6 +239,7 @@ h2.h-serif,h3.h-serif{font-family:var(--serif);font-weight:700}
 .prose li{margin-bottom:8px}
 .prose .lead{font-size:17px;line-height:1.7;color:var(--muted)}
 .prose img{border-radius:8px;border:1px solid var(--line)}
+.prose kbd,kbd{display:inline-block;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.85em;line-height:1;padding:3px 6px;border:1px solid var(--line-2);border-bottom-width:2px;border-radius:4px;background:#F7F9F8;color:var(--ink);white-space:nowrap}
 .prose blockquote{margin:0 0 18px;padding:16px 20px;background:var(--green-050);border-left:3px solid var(--green-700);border-radius:0 6px 6px 0}
 
 .callout{background:var(--green-050);border:1px solid var(--line-2);border-radius:8px;padding:22px 24px;margin:0 0 24px}
