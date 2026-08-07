@@ -128,12 +128,15 @@ img{max-width:100%;height:auto}
 .hero-slide img{width:100%;height:460px;object-fit:cover;object-position:center 40%;display:block}
 .hero-scrim{position:absolute;inset:0;pointer-events:none;
   background:linear-gradient(90deg,rgba(8,61,41,.94) 0%,rgba(8,61,41,.76) 38%,rgba(8,61,41,.26) 70%,rgba(8,61,41,.08) 100%)}
-.hero-copy{position:absolute;inset:0;display:flex;align-items:center;pointer-events:none}
+/* The bottom padding reserves the band used by the dots (bottom:104px) and the
+   slide caption (bottom:56px), so the centred copy can never sit on top of them
+   when the paragraph wraps to an extra line. */
+.hero-copy{position:absolute;inset:0;display:flex;align-items:center;pointer-events:none;padding:20px 0 118px}
 .hero-copy .wrap{width:100%}
 .hero-inner{max-width:640px}
 .hero-inner h1{font-family:var(--serif);font-weight:700;font-size:52px;line-height:1.1;margin:0 0 6px;color:var(--white)}
 .hero-inner .h-sub{font-family:var(--serif);font-weight:700;font-size:52px;line-height:1.1;color:var(--green-300);margin-bottom:20px}
-.hero-inner p{font-size:17.5px;line-height:1.6;color:var(--green-100);margin:0 0 30px;max-width:56ch}
+.hero-inner p{font-size:17.5px;line-height:1.6;color:var(--green-100);margin:0 0 26px;max-width:56ch}
 .hero-cta{display:flex;gap:14px;pointer-events:auto;flex-wrap:wrap}
 .btn{display:inline-block;padding:14px 26px;border-radius:6px;font-size:15px;font-weight:600;border:1px solid transparent;cursor:pointer;font-family:inherit}
 .btn-primary{background:var(--green-700);color:var(--white);border-color:var(--green-600)}
@@ -150,7 +153,9 @@ img{max-width:100%;height:auto}
 .hero-dots button{width:10px;height:10px;border-radius:999px;border:0;cursor:pointer;padding:0;background:rgba(255,255,255,.55);transition:width .25s ease}
 .hero-dots button.is-on{width:26px;background:var(--white)}
 .hero-caption{position:absolute;left:0;right:0;bottom:56px;z-index:3;pointer-events:none}
-.hero-caption .cap{font-size:12.5px;color:rgba(255,255,255,.78);max-width:640px}
+/* Clamped to two lines so a long caption cannot grow upward into the copy. */
+.hero-caption .cap{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;
+  font-size:12.5px;line-height:1.4;color:rgba(255,255,255,.78);max-width:640px}
 
 /* ------------------------------------------------------------ quicklinks */
 .quicklinks-holder{position:relative;z-index:5}
@@ -376,6 +381,7 @@ body.hc{filter:contrast(1.4) saturate(1.15)}
   .hero-scrim{background:linear-gradient(90deg,rgba(8,61,41,.95) 0%,rgba(8,61,41,.85) 60%,rgba(8,61,41,.6) 100%)}
   .hero-dots{bottom:20px}
   .hero-caption{display:none}
+  .hero-copy{padding:20px 0 48px}
   .quicklinks{margin-top:0;grid-template-columns:repeat(2,1fr)}
   .quicklinks a:nth-child(3n){border-right:1px solid var(--line)}
   .quicklinks a:nth-child(2n){border-right:0}
@@ -395,6 +401,9 @@ body.hc{filter:contrast(1.4) saturate(1.15)}
   .cards-4,.cards-3,.cards-2,.people,.contact-grid,.principles{grid-template-columns:1fr}
   .hero-stage,.hero-slide img{height:360px}
   .hero-inner h1,.hero-inner .h-sub{font-size:28px}
+  .hero-inner .h-sub{margin-bottom:14px}
+  .hero-inner p{margin-bottom:22px}
+  .hero-copy{padding:16px 0 44px}
   .hero-arrow{display:none}
   .quicklinks{grid-template-columns:1fr}
   .quicklinks a{border-right:0 !important}
