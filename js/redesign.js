@@ -77,6 +77,26 @@
     if (buttons.length) setLang(get(STORE.lang, "en"));
   }
 
+  /* --------------------------------------------------------- header tiers */
+  /* The markup keeps the menu inside <header> so the page still reads
+     correctly without JS. Here we lift it into its own full-width band
+     directly below the header, which lets it stick to the top on scroll. */
+  function initHeader() {
+    var header = $(".site-header");
+    var nav = $(".main-nav");
+    if (!header || !nav) return;
+    if (nav.parentNode && nav.parentNode.parentNode &&
+        nav.parentNode.parentNode.className.indexOf("navbar") > -1) return;
+
+    var bar = document.createElement("div");
+    bar.className = "navbar";
+    var inner = document.createElement("div");
+    inner.className = "wrap";
+    bar.appendChild(inner);
+    inner.appendChild(nav);
+    header.parentNode.insertBefore(bar, header.nextSibling);
+  }
+
   /* ------------------------------------------------------------- nav menu */
   function initNav() {
     var items = $$(".nav-item");
@@ -325,6 +345,7 @@
 
   ready(function () {
     safely("a11y", initA11y);
+    safely("header", initHeader);
     safely("nav", initNav);
     safely("hero", initHero);
     safely("tabs", initTabs);
