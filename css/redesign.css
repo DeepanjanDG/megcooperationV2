@@ -60,10 +60,6 @@ img{max-width:100%;height:auto}
 .topbar a:hover{color:var(--white)}
 .topbar .skip{text-decoration:underline}
 .topbar .right{margin-left:auto;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.tb-btn{background:transparent;border:0;color:inherit;cursor:pointer;font-family:inherit;padding:2px 4px;line-height:1}
-.tb-group{display:flex;align-items:center;gap:8px}
-.tb-pill{padding:4px 12px;border-radius:999px;border:1px solid var(--green-600);cursor:pointer;font-family:inherit;font-size:12.5px;background:transparent;color:inherit}
-.tb-pill.is-on{background:var(--green-100);color:var(--green-900);font-weight:600}
 .lang-switch{display:flex;align-items:center;border:1px solid var(--green-600);border-radius:999px;overflow:hidden}
 .lang-switch button{padding:5px 13px;border:0;cursor:pointer;font-family:inherit;font-size:12.5px;background:transparent;color:inherit}
 .lang-switch button.is-on{background:var(--green-100);color:var(--green-900);font-weight:600}
@@ -375,8 +371,8 @@ table.data a{font-weight:500}
 .sm-col li a{display:block;padding:9px 0;font-size:14px;color:var(--ink-2)}
 .sm-col li a:hover{color:var(--green-700)}
 
-/* ------------------------------------------------------- high contrast */
-body.hc{filter:contrast(1.4) saturate(1.15)}
+/* The old topbar "High contrast" pill has been retired — contrast, saturation
+   and inversion are now handled by the accessibility widget further down. */
 
 /* ------------------------------------------------------------ responsive */
 @media (max-width:1200px){
@@ -470,5 +466,246 @@ body.hc{filter:contrast(1.4) saturate(1.15)}
 
 @media print{
   .topbar,.site-search,.main-nav,.navbar,.hero,.quicklinks,.nav-toggle,.site-footer .f-top{display:none}
+  #rd-a11y-root{display:none}
   body{background:#fff}
+}
+
+/* =========================================================================
+   ACCESSIBILITY WIDGET  (UX4G-style, self-hosted)
+   Markup is injected by redesign.js into #rd-a11y-root, which is deliberately
+   the only body child excluded from the page-wide colour filters below.
+   ========================================================================= */
+
+/* ------------------------------------------------ topbar launcher button */
+.topbar .tb-sr{text-decoration:underline}
+
+.tb-a11y{
+  display:inline-flex;align-items:center;gap:7px;
+  padding:4px 12px 4px 8px;border-radius:999px;
+  border:1px solid var(--green-600);background:transparent;color:inherit;
+  font-family:inherit;font-size:12.5px;line-height:1;cursor:pointer;
+}
+.tb-a11y svg{width:16px;height:16px;flex:none}
+.tb-a11y:hover{background:var(--green-700);color:var(--white)}
+.tb-a11y[aria-expanded="true"]{background:var(--green-100);color:var(--green-900);font-weight:600}
+
+/* --------------------------------------------------------- panel shell */
+#rd-a11y-root{font-family:var(--sans)}
+
+.a11y-scrim{
+  position:fixed;inset:0;z-index:9998;
+  background:rgba(8,61,41,.35);
+  opacity:0;visibility:hidden;transition:opacity .18s ease;
+}
+.a11y-scrim.is-open{opacity:1;visibility:visible}
+
+.a11y-panel{
+  position:fixed;top:0;right:0;z-index:9999;
+  width:min(420px,100vw);height:100vh;height:100dvh;
+  display:flex;flex-direction:column;
+  background:var(--white);color:var(--ink);
+  box-shadow:var(--shadow-lg);
+  transform:translateX(100%);transition:transform .22s ease;
+  font-size:14px;
+}
+.a11y-panel.is-open{transform:translateX(0)}
+@media (prefers-reduced-motion:reduce){
+  .a11y-panel,.a11y-scrim{transition:none}
+}
+
+.a11y-head{
+  flex:none;display:flex;align-items:center;gap:12px;
+  padding:16px 18px;background:var(--green-900);color:var(--green-100);
+}
+.a11y-head h2{margin:0;font-family:var(--serif);font-size:19px;color:var(--white);flex:1}
+.a11y-head .a11y-close{
+  border:1px solid var(--green-600);background:transparent;color:inherit;
+  width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:17px;line-height:1;
+}
+.a11y-head .a11y-close:hover{background:var(--green-700);color:var(--white)}
+
+.a11y-body{flex:1 1 auto;overflow-y:auto;padding:18px}
+.a11y-foot{
+  flex:none;display:flex;gap:10px;padding:14px 18px;
+  border-top:1px solid var(--line);background:var(--green-050);
+}
+.a11y-foot button{
+  flex:1;padding:10px 12px;border-radius:8px;cursor:pointer;
+  font-family:inherit;font-size:13.5px;font-weight:600;
+}
+.a11y-reset{border:1px solid var(--line-2);background:var(--white);color:var(--ink-2)}
+.a11y-reset:hover{background:var(--green-100)}
+.a11y-done{border:1px solid var(--green-700);background:var(--green-700);color:var(--white)}
+.a11y-done:hover{background:var(--green-600)}
+
+.a11y-sec{margin:0 0 22px}
+.a11y-sec > h3{
+  margin:0 0 10px;font-family:var(--sans);font-size:11.5px;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--muted);
+}
+
+/* ------------------------------------------------------------ tool grid */
+.a11y-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}
+.a11y-tool{
+  display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+  gap:7px;padding:12px 6px 10px;min-height:92px;
+  border:1px solid var(--line);border-radius:10px;background:var(--white);
+  color:var(--ink-2);font-family:inherit;font-size:11.5px;font-weight:600;
+  line-height:1.25;text-align:center;cursor:pointer;
+}
+.a11y-tool svg{width:22px;height:22px;flex:none;color:var(--green-700)}
+.a11y-tool:hover{border-color:var(--green-300);background:var(--green-050)}
+.a11y-tool[aria-pressed="true"]{
+  border-color:var(--green-700);background:var(--green-100);color:var(--green-900);
+}
+.a11y-tool[aria-pressed="true"] svg{color:var(--green-900)}
+.a11y-step{
+  display:block;font-size:10.5px;font-weight:700;letter-spacing:.04em;
+  color:var(--green-700);min-height:13px;
+}
+.a11y-tool[aria-pressed="true"] .a11y-step{color:var(--green-900)}
+
+/* ------------------------------------------------------------- profiles */
+.a11y-profiles{display:grid;gap:8px}
+.a11y-profile{
+  display:flex;align-items:flex-start;gap:11px;text-align:left;
+  padding:11px 13px;border:1px solid var(--line);border-radius:10px;
+  background:var(--white);color:var(--ink-2);font-family:inherit;cursor:pointer;
+}
+.a11y-profile svg{width:20px;height:20px;flex:none;margin-top:1px;color:var(--green-700)}
+.a11y-profile span{display:block}
+.a11y-profile .p-name{font-size:13.5px;font-weight:700;color:var(--ink)}
+.a11y-profile .p-desc{font-size:12px;color:var(--muted);line-height:1.45}
+.a11y-profile:hover{border-color:var(--green-300);background:var(--green-050)}
+.a11y-profile[aria-pressed="true"]{border-color:var(--green-700);background:var(--green-100)}
+.a11y-profile[aria-pressed="true"] .p-name{color:var(--green-900)}
+
+.a11y-note{
+  margin:0;padding:11px 13px;border-radius:8px;
+  background:var(--amber-bg);color:var(--amber-ink);font-size:12px;line-height:1.5;
+}
+
+@media (max-width:520px){
+  .a11y-panel{width:100vw}
+  .a11y-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+/* =========================================================================
+   Effect classes — set on <html> by the widget
+   ========================================================================= */
+
+/* colour filters: composed by JS into --a11y-filter, applied per body child so
+   that <body> itself stays filter-free (see the high-contrast note above) */
+html.a11y-filter body > *:not(#rd-a11y-root){filter:var(--a11y-filter)}
+html.a11y-filter.a11y-invert img,
+html.a11y-filter.a11y-invert video,
+html.a11y-filter.a11y-invert picture{filter:invert(1) hue-rotate(180deg)}
+
+/* readability */
+html.a11y-spacing body :is(p,li,dd,dt,td,th,a,span,label,h1,h2,h3,h4,h5,h6,button,figcaption,summary){
+  letter-spacing:.09em !important;word-spacing:.19em !important;
+}
+html.a11y-leading body :is(p,li,dd,dt,td,th,figcaption,blockquote){line-height:2 !important}
+
+html.a11y-dyslexia body,
+html.a11y-dyslexia body :not(svg):not(svg *){
+  font-family:"Atkinson Hyperlegible","Comic Sans MS",Verdana,Tahoma,sans-serif !important;
+  letter-spacing:.06em !important;word-spacing:.16em !important;
+}
+html.a11y-dyslexia body :is(p,li,dd,td){line-height:1.95 !important}
+
+html.a11y-links body a{
+  text-decoration:underline !important;text-underline-offset:2px !important;
+  background:#FFF0A8 !important;color:#0B2E1F !important;
+  box-shadow:0 0 0 2px #FFF0A8 !important;border-radius:2px;
+}
+html.a11y-links body a:hover,html.a11y-links body a:focus-visible{
+  background:#FFE04D !important;
+}
+
+html.a11y-hide-img body :is(img,picture,svg,video,iframe){visibility:hidden !important}
+html.a11y-hide-img body :is(.hero-slide,.hero-stage,.card-img,[style*="background-image"]){background-image:none !important}
+/* the topbar launcher and the panel itself must stay visible */
+html.a11y-hide-img .tb-a11y svg,
+html.a11y-hide-img #rd-a11y-root :is(img,picture,svg,video){visibility:visible !important}
+
+/* motion */
+html.a11y-pause body *,
+html.a11y-pause body *::before,
+html.a11y-pause body *::after{
+  animation-play-state:paused !important;
+  animation:none !important;
+  transition:none !important;
+}
+html.a11y-pause{scroll-behavior:auto !important}
+
+/* cursor */
+html.a11y-cursor-1 body,html.a11y-cursor-1 body *{
+  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 24 24'><path d='M5 2l14 9-6 1.2 3.2 6.6-2.9 1.4L10 13.7 5 18z' fill='%23000' stroke='%23fff' stroke-width='1.3'/></svg>") 4 2,auto !important;
+}
+html.a11y-cursor-2 body,html.a11y-cursor-2 body *{
+  cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 24 24'><path d='M5 2l14 9-6 1.2 3.2 6.6-2.9 1.4L10 13.7 5 18z' fill='%23000' stroke='%23fff' stroke-width='1.3'/></svg>") 6 3,auto !important;
+}
+
+/* dark mode — a light-touch inversion of the palette tokens */
+html.a11y-dark{
+  --white:#161A18;
+  --bg:#101413;
+  --bg-2:#171C1A;
+  --green-050:#141A17;
+  --green-100:#1B2A23;
+  --line:#2C3733;
+  --line-2:#394741;
+  --ink:#EDF2EF;
+  --ink-2:#DCE4E0;
+  --muted:#A5B2AC;
+  --muted-2:#8E9B95;
+  --green-700:#6FD3A2;
+  --green-600:#8FE0B8;
+  --amber-bg:#3A2E10;
+  --amber-ink:#FFD98A;
+}
+html.a11y-dark body{background:#101413;color:#EDF2EF}
+html.a11y-dark body :is(section,article,aside,table,thead,tbody,tr,td,th,details,summary,input,select,textarea){
+  background-color:transparent;color:inherit;
+}
+html.a11y-dark body :is(img,video,iframe){filter:brightness(.86) contrast(1.04)}
+
+/* reading guide */
+.a11y-guide{
+  position:fixed;left:0;right:0;height:32px;z-index:9997;pointer-events:none;
+  border-top:3px solid #0F5B3A;border-bottom:3px solid #0F5B3A;
+  box-shadow:0 0 0 1px rgba(255,255,255,.85);
+  display:none;
+}
+html.a11y-guide-on .a11y-guide{display:block}
+
+/* focus mode — dim everything except the hovered block */
+html.a11y-focus body{background:#0B0E0D}
+html.a11y-focus body > *:not(#rd-a11y-root):not(.topbar){opacity:.28;transition:opacity .12s ease}
+html.a11y-focus body .a11y-focus-hit{opacity:1;position:relative;z-index:5}
+
+/* hover magnifier */
+.a11y-magnify{
+  position:fixed;z-index:9997;max-width:min(560px,86vw);
+  padding:12px 16px;border-radius:10px;pointer-events:none;display:none;
+  background:#0B2E1F;color:#fff;font-size:24px;line-height:1.4;
+  box-shadow:0 14px 34px rgba(0,0,0,.35);
+}
+.a11y-magnify.is-on{display:block}
+
+/* screen-reader (read aloud) status pill */
+.a11y-speak{
+  position:fixed;left:50%;bottom:22px;transform:translateX(-50%);z-index:9997;
+  display:none;align-items:center;gap:10px;
+  padding:10px 16px;border-radius:999px;
+  background:#0B2E1F;color:#fff;font-size:13px;box-shadow:var(--shadow-lg);
+}
+.a11y-speak.is-on{display:flex}
+.a11y-speak button{
+  border:1px solid rgba(255,255,255,.45);background:transparent;color:#fff;
+  border-radius:999px;padding:3px 11px;font-family:inherit;font-size:12px;cursor:pointer;
+}
+html.a11y-read body :is(p,li,h1,h2,h3,h4,td,th,dd,blockquote,figcaption):hover{
+  outline:2px dashed var(--green-600);outline-offset:2px;cursor:help;
 }
