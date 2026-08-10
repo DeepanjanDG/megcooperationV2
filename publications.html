@@ -9,16 +9,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
 <link rel="stylesheet" href="css/redesign.css">
-<style>
-.pubs{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
-.pub{background:var(--white);border:1px solid var(--line);border-radius:8px;padding:20px;display:flex;flex-direction:column;gap:12px;text-align:center}
-.pub img{width:100%;max-width:150px;margin:0 auto;height:auto;border-radius:4px;border:1px solid var(--line)}
-.pub .t{font-size:14.5px;font-weight:600;line-height:1.45;flex:1}
-.pub a.dl{font-size:13px;font-weight:600}
-.pub .sz{font-size:12px;color:var(--muted-2)}
-@media (max-width:900px){.pubs{grid-template-columns:repeat(2,1fr)}}
-@media (max-width:560px){.pubs{grid-template-columns:1fr}}
-</style>
 </head>
 <body>
   <div class="topbar">
@@ -36,7 +26,7 @@
     </div>
   </div>
 
-  <div class="lang-note" id="rd-lang-note" style="display:none">
+  <div class="lang-note" id="rd-lang-note">
     Regional-language pages are being prepared. Content is shown in English until the translated pages are published.
   </div>
 
@@ -46,9 +36,9 @@
         <img class="emblem" src="img/rd-emblem.png" alt="State Emblem of India">
         <span>
           <span class="b-gov">Government of Meghalaya</span>
-          <span class="b-dept" style="display:block">Department of</span>
-          <span class="b-name" style="display:block">COOPERATION</span>
-          <span class="b-tag" style="display:block">Together for Growth, Together for All</span>
+          <span class="b-dept">Department of</span>
+          <span class="b-name">COOPERATION</span>
+          <span class="b-tag">Together for Growth, Together for All</span>
         </span>
       </a>
 
@@ -132,7 +122,7 @@
 
     <div class="section">
       <div class="wrap">
-        <p class="lead" style="max-width:76ch;margin:0 0 32px;font-size:17px;line-height:1.7;color:var(--muted)">Each publication is a PDF and opens in a new window. Some are large files and may take time to download on a slow connection.</p>
+        <p class="lede">Each publication is a PDF and opens in a new window. Some are large files and may take time to download on a slow connection.</p>
 
         <div class="pubs">
 
@@ -229,7 +219,7 @@
 
         </div>
 
-        <p style="margin-top:32px;font-size:14px;color:var(--muted)">See also <a href="statistics.html">Statistical Data</a>, <a href="newsclips.html">News Clips</a> and <a href="success.html">Success Stories</a>.</p>
+        <p class="note">See also <a href="statistics.html">Statistical Data</a>, <a href="newsclips.html">News Clips</a> and <a href="success.html">Success Stories</a>.</p>
       </div>
     </div>
   </main>
@@ -241,7 +231,7 @@
           <img src="img/rd-emblem.png" alt="">
           <span>
             <span class="f-name">DEPARTMENT OF<br>COOPERATION</span>
-            <span class="f-gov" style="display:block">Government of Meghalaya</span>
+            <span class="f-gov">Government of Meghalaya</span>
           </span>
         </div>
         <p class="f-blurb">Building stronger communities through cooperation, for inclusive growth and self-reliance across Meghalaya.</p>
@@ -289,7 +279,7 @@
         </span>
       </div>
     </div>
-    <div class="wrap" style="padding-bottom:24px">
+    <div class="wrap f-credit-wrap">
       <p class="f-credit">Site designed and maintained by National Informatics Centre, Meghalaya State Centre. Content owned and updated by the Department of Cooperation, Government of Meghalaya.</p>
     </div>
   </footer>
