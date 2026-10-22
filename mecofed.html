@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MECOFED | Department of Cooperation, Government of Meghalaya</title>
 <meta name="description" content="The Meghalaya State Cooperative Marketing and Consumers' Federation Limited (MECOFED) — constitution, business activities, turnover and strategy.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<meta name="keywords" content="MECOFED, Department of Cooperation, Government of Meghalaya, cooperative societies, Meghalaya">
+<link rel="preload" href="fonts/noto-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" type="image/png" href="img/rd-emblem.png">
 <link rel="stylesheet" href="css/redesign.css">
 </head>
 <body>
-  <div class="topbar">
+  <div class="topbar" role="region" aria-label="Accessibility and language options">
     <div class="wrap">
       <a class="skip" href="#main">Skip to Main Content</a>
       <a class="tb-sr" href="screen-reader-access.html">Screen Reader Access</a>
@@ -26,14 +26,14 @@
     </div>
   </div>
 
-  <div class="lang-note" id="rd-lang-note">
+  <div class="lang-note" id="rd-lang-note" role="status">
     Regional-language pages are being prepared. Content is shown in English until the translated pages are published.
   </div>
 
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="index.html">
-        <img class="emblem" src="img/rd-emblem.png" alt="State Emblem of India">
+        <img class="emblem" src="img/rd-emblem.png" alt="State Emblem of India" width="523" height="587">
         <span>
           <span class="b-name">Department of Cooperation</span>
           <span class="b-gov">Government of Meghalaya</span>
@@ -41,7 +41,7 @@
         </span>
       </a>
 
-      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="rd-nav">&#9776; Menu</button>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="rd-nav"><span aria-hidden="true">&#9776;</span> Menu</button>
 
       <nav class="main-nav" id="rd-nav" aria-label="Main">
         <a href="index.html">Home</a>
@@ -97,6 +97,7 @@
             <a href="contact.html">Contact Persons</a>
             <a href="citizencharter.html">Citizen's Charter</a>
             <a href="faqs.html">Frequently Asked Questions</a>
+            <a href="feedback.html">Feedback</a>
           </div>
         </div>
       </nav>
@@ -104,8 +105,8 @@
       <form class="site-search" id="rd-search-form" role="search">
         <label class="sr-only" for="rd-search-input">Search this website</label>
         <input type="search" id="rd-search-input" placeholder="Search here..." autocomplete="off">
-        <button type="submit" aria-label="Search">Go</button>
-        <div class="search-results" id="rd-search-results" role="listbox"></div>
+        <button type="submit">Search</button>
+        <div class="search-results" id="rd-search-results" aria-live="polite"></div>
       </form>
     </div>
   </header>
@@ -146,13 +147,13 @@
                 <tr><th scope="col">Item</th><th scope="col">2000&ndash;01</th><th scope="col">2001&ndash;02</th><th scope="col">2002&ndash;03</th><th scope="col">2003&ndash;04</th><th scope="col">2004&ndash;05</th></tr>
               </thead>
               <tbody>
-                <tr><th scope="row">Fertilisers</th><td>337.41</td><td>478.33</td><td>514.84</td><td>493.68</td><td>605.66</td></tr>
-                <tr><th scope="row">Marketing</th><td>309.22</td><td>43.40</td><td>92.79</td><td>67.36</td><td>77.11</td></tr>
-                <tr><th scope="row">Consumers</th><td>199.44</td><td>224.23</td><td>321.29</td><td>274.83</td><td>282.67</td></tr>
-                <tr><th scope="row">Total turnover</th><td>607.77</td><td>745.96</td><td>928.92</td><td>835.87</td><td>1,010.00</td></tr>
-                <tr><th scope="row">Gross profit</th><td>41.57</td><td>58.61</td><td>110.45</td><td>72.45</td><td>&mdash;</td></tr>
-                <tr><th scope="row">Overhead expenses</th><td>249.21</td><td>269.21</td><td>319.82</td><td>319.39</td><td>304.00</td></tr>
-                <tr><th scope="row">Net loss</th><td>176.60</td><td>174.48</td><td>168.92</td><td>217.54</td><td>&mdash;</td></tr>
+                <tr><th scope="row">Fertilisers</th><td class="r">337.41</td><td class="r">478.33</td><td class="r">514.84</td><td class="r">493.68</td><td class="r">605.66</td></tr>
+                <tr><th scope="row">Marketing</th><td class="r">309.22</td><td class="r">43.40</td><td class="r">92.79</td><td class="r">67.36</td><td class="r">77.11</td></tr>
+                <tr><th scope="row">Consumers</th><td class="r">199.44</td><td class="r">224.23</td><td class="r">321.29</td><td class="r">274.83</td><td class="r">282.67</td></tr>
+                <tr><th scope="row">Total turnover</th><td class="r">607.77</td><td class="r">745.96</td><td class="r">928.92</td><td class="r">835.87</td><td class="r">1,010.00</td></tr>
+                <tr><th scope="row">Gross profit</th><td class="r">41.57</td><td class="r">58.61</td><td class="r">110.45</td><td class="r">72.45</td><td>&mdash;</td></tr>
+                <tr><th scope="row">Overhead expenses</th><td class="r">249.21</td><td class="r">269.21</td><td class="r">319.82</td><td class="r">319.39</td><td class="r">304.00</td></tr>
+                <tr><th scope="row">Net loss</th><td class="r">176.60</td><td class="r">174.48</td><td class="r">168.92</td><td class="r">217.54</td><td>&mdash;</td></tr>
               </tbody>
             </table>
           </div>
@@ -193,35 +194,35 @@
                 <tr><th scope="col">No.</th><th scope="col">Year</th><th scope="col">Turnover</th><th scope="col">Gross profit</th><th scope="col">Net profit</th><th scope="col">Net loss</th><th scope="col">Accumulated loss</th></tr>
               </thead>
               <tbody>
-                <tr><td>1</td><td>1975&ndash;76</td><td>14.49</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
-                <tr><td>2</td><td>1976&ndash;77</td><td>45.97</td><td>(&minus;) 2.04</td><td>&mdash;</td><td>6.10</td><td>2.90</td></tr>
-                <tr><td>3</td><td>1977&ndash;78</td><td>58.54</td><td>7.45</td><td>0.85</td><td>&mdash;</td><td>2.05</td></tr>
-                <tr><td>4</td><td>1978&ndash;79</td><td>105.46</td><td>13.14</td><td>1.41</td><td>&mdash;</td><td>0.63</td></tr>
-                <tr><td>5</td><td>1979&ndash;80</td><td>144.39</td><td>6.68</td><td>0.70</td><td>&mdash;</td><td>0.06</td></tr>
-                <tr><td>6</td><td>1980&ndash;81</td><td>216.63</td><td>8.87</td><td>0.04</td><td>18.22</td><td>0.10</td></tr>
-                <tr><td>7</td><td>1981&ndash;82</td><td>219.40</td><td>(&minus;) 1.34</td><td>&mdash;</td><td>37.59</td><td>37.48</td></tr>
-                <tr><td>8</td><td>1982&ndash;83</td><td>298.83</td><td>(&minus;) 12.96</td><td>&mdash;</td><td>66.44</td><td>103.92</td></tr>
-                <tr><td>9</td><td>1983&ndash;84</td><td>246.84</td><td>0.59</td><td>&mdash;</td><td>46.15</td><td>150.08</td></tr>
-                <tr><td>10</td><td>1984&ndash;85</td><td>368.29</td><td>19.53</td><td>&mdash;</td><td>40.81</td><td>198.89</td></tr>
-                <tr><td>11</td><td>1985&ndash;86</td><td>378.85</td><td>9.53</td><td>&mdash;</td><td>78.21</td><td>276.99</td></tr>
-                <tr><td>12</td><td>1986&ndash;87</td><td>473.37</td><td>(&minus;) 0.81</td><td>&mdash;</td><td>95.96</td><td>373.06</td></tr>
-                <tr><td>13</td><td>1987&ndash;88</td><td>540.12</td><td>39.30</td><td>&mdash;</td><td>73.60</td><td>446.67</td></tr>
-                <tr><td>14</td><td>1988&ndash;89</td><td>720.34</td><td>47.54</td><td>&mdash;</td><td>71.43</td><td>518.10</td></tr>
-                <tr><td>15</td><td>1989&ndash;90</td><td>524.91</td><td>0.79</td><td>&mdash;</td><td>109.43</td><td>627.53</td></tr>
-                <tr><td>16</td><td>1990&ndash;91</td><td>353.83</td><td>1.85</td><td>&mdash;</td><td>58.03</td><td>685.57</td></tr>
-                <tr><td>17</td><td>1991&ndash;92</td><td>463.03</td><td>23.91</td><td>&mdash;</td><td>94.01</td><td>779.58</td></tr>
-                <tr><td>18</td><td>1992&ndash;93</td><td>682.01</td><td>71.74</td><td>&mdash;</td><td>78.52</td><td>858.11</td></tr>
-                <tr><td>19</td><td>1993&ndash;94</td><td>705.83</td><td>80.85</td><td>&mdash;</td><td>70.08</td><td>928.19</td></tr>
-                <tr><td>20</td><td>1994&ndash;95</td><td>565.19</td><td>49.14</td><td>&mdash;</td><td>39.67</td><td>767.87</td></tr>
-                <tr><td>21</td><td>1995&ndash;96</td><td>827.33</td><td>73.74</td><td>&mdash;</td><td>85.15</td><td>1,053.02</td></tr>
-                <tr><td>22</td><td>1996&ndash;97</td><td>826.05</td><td>71.65</td><td>&mdash;</td><td>150.51</td><td>1,203.54</td></tr>
-                <tr><td>23</td><td>1997&ndash;98</td><td>659.53</td><td>67.87</td><td>&mdash;</td><td>93.65</td><td>1,297.19</td></tr>
-                <tr><td>24</td><td>1998&ndash;99</td><td>681.11</td><td>73.28</td><td>&mdash;</td><td>90.03</td><td>1,387.23</td></tr>
-                <tr><td>25</td><td>1999&ndash;2000</td><td>673.17</td><td>62.97</td><td>&mdash;</td><td>137.65</td><td>1,524.58</td></tr>
-                <tr><td>26</td><td>2000&ndash;01</td><td>607.77</td><td>41.57</td><td>&mdash;</td><td>176.60</td><td>1,701.49</td></tr>
-                <tr><td>27</td><td>2001&ndash;02</td><td>745.96</td><td>58.61</td><td>&mdash;</td><td>174.48</td><td>1,875.97</td></tr>
-                <tr><td>28</td><td>2002&ndash;03</td><td>928.91</td><td>110.45</td><td>&mdash;</td><td>168.92</td><td>2,044.89</td></tr>
-                <tr><td>29</td><td>2003&ndash;04</td><td>835.87</td><td>72.45</td><td>&mdash;</td><td>217.54</td><td>2,262.44</td></tr>
+                <tr><td class="r">1</td><td>1975&ndash;76</td><td class="r">14.49</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td></tr>
+                <tr><td class="r">2</td><td>1976&ndash;77</td><td class="r">45.97</td><td>(&minus;) 2.04</td><td>&mdash;</td><td class="r">6.10</td><td class="r">2.90</td></tr>
+                <tr><td class="r">3</td><td>1977&ndash;78</td><td class="r">58.54</td><td class="r">7.45</td><td class="r">0.85</td><td>&mdash;</td><td class="r">2.05</td></tr>
+                <tr><td class="r">4</td><td>1978&ndash;79</td><td class="r">105.46</td><td class="r">13.14</td><td class="r">1.41</td><td>&mdash;</td><td class="r">0.63</td></tr>
+                <tr><td class="r">5</td><td>1979&ndash;80</td><td class="r">144.39</td><td class="r">6.68</td><td class="r">0.70</td><td>&mdash;</td><td class="r">0.06</td></tr>
+                <tr><td class="r">6</td><td>1980&ndash;81</td><td class="r">216.63</td><td class="r">8.87</td><td class="r">0.04</td><td class="r">18.22</td><td class="r">0.10</td></tr>
+                <tr><td class="r">7</td><td>1981&ndash;82</td><td class="r">219.40</td><td>(&minus;) 1.34</td><td>&mdash;</td><td class="r">37.59</td><td class="r">37.48</td></tr>
+                <tr><td class="r">8</td><td>1982&ndash;83</td><td class="r">298.83</td><td>(&minus;) 12.96</td><td>&mdash;</td><td class="r">66.44</td><td class="r">103.92</td></tr>
+                <tr><td class="r">9</td><td>1983&ndash;84</td><td class="r">246.84</td><td class="r">0.59</td><td>&mdash;</td><td class="r">46.15</td><td class="r">150.08</td></tr>
+                <tr><td class="r">10</td><td>1984&ndash;85</td><td class="r">368.29</td><td class="r">19.53</td><td>&mdash;</td><td class="r">40.81</td><td class="r">198.89</td></tr>
+                <tr><td class="r">11</td><td>1985&ndash;86</td><td class="r">378.85</td><td class="r">9.53</td><td>&mdash;</td><td class="r">78.21</td><td class="r">276.99</td></tr>
+                <tr><td class="r">12</td><td>1986&ndash;87</td><td class="r">473.37</td><td>(&minus;) 0.81</td><td>&mdash;</td><td class="r">95.96</td><td class="r">373.06</td></tr>
+                <tr><td class="r">13</td><td>1987&ndash;88</td><td class="r">540.12</td><td class="r">39.30</td><td>&mdash;</td><td class="r">73.60</td><td class="r">446.67</td></tr>
+                <tr><td class="r">14</td><td>1988&ndash;89</td><td class="r">720.34</td><td class="r">47.54</td><td>&mdash;</td><td class="r">71.43</td><td class="r">518.10</td></tr>
+                <tr><td class="r">15</td><td>1989&ndash;90</td><td class="r">524.91</td><td class="r">0.79</td><td>&mdash;</td><td class="r">109.43</td><td class="r">627.53</td></tr>
+                <tr><td class="r">16</td><td>1990&ndash;91</td><td class="r">353.83</td><td class="r">1.85</td><td>&mdash;</td><td class="r">58.03</td><td class="r">685.57</td></tr>
+                <tr><td class="r">17</td><td>1991&ndash;92</td><td class="r">463.03</td><td class="r">23.91</td><td>&mdash;</td><td class="r">94.01</td><td class="r">779.58</td></tr>
+                <tr><td class="r">18</td><td>1992&ndash;93</td><td class="r">682.01</td><td class="r">71.74</td><td>&mdash;</td><td class="r">78.52</td><td class="r">858.11</td></tr>
+                <tr><td class="r">19</td><td>1993&ndash;94</td><td class="r">705.83</td><td class="r">80.85</td><td>&mdash;</td><td class="r">70.08</td><td class="r">928.19</td></tr>
+                <tr><td class="r">20</td><td>1994&ndash;95</td><td class="r">565.19</td><td class="r">49.14</td><td>&mdash;</td><td class="r">39.67</td><td class="r">767.87</td></tr>
+                <tr><td class="r">21</td><td>1995&ndash;96</td><td class="r">827.33</td><td class="r">73.74</td><td>&mdash;</td><td class="r">85.15</td><td class="r">1,053.02</td></tr>
+                <tr><td class="r">22</td><td>1996&ndash;97</td><td class="r">826.05</td><td class="r">71.65</td><td>&mdash;</td><td class="r">150.51</td><td class="r">1,203.54</td></tr>
+                <tr><td class="r">23</td><td>1997&ndash;98</td><td class="r">659.53</td><td class="r">67.87</td><td>&mdash;</td><td class="r">93.65</td><td class="r">1,297.19</td></tr>
+                <tr><td class="r">24</td><td>1998&ndash;99</td><td class="r">681.11</td><td class="r">73.28</td><td>&mdash;</td><td class="r">90.03</td><td class="r">1,387.23</td></tr>
+                <tr><td class="r">25</td><td>1999&ndash;2000</td><td class="r">673.17</td><td class="r">62.97</td><td>&mdash;</td><td class="r">137.65</td><td class="r">1,524.58</td></tr>
+                <tr><td class="r">26</td><td>2000&ndash;01</td><td class="r">607.77</td><td class="r">41.57</td><td>&mdash;</td><td class="r">176.60</td><td class="r">1,701.49</td></tr>
+                <tr><td class="r">27</td><td>2001&ndash;02</td><td class="r">745.96</td><td class="r">58.61</td><td>&mdash;</td><td class="r">174.48</td><td class="r">1,875.97</td></tr>
+                <tr><td class="r">28</td><td>2002&ndash;03</td><td class="r">928.91</td><td class="r">110.45</td><td>&mdash;</td><td class="r">168.92</td><td class="r">2,044.89</td></tr>
+                <tr><td class="r">29</td><td>2003&ndash;04</td><td class="r">835.87</td><td class="r">72.45</td><td>&mdash;</td><td class="r">217.54</td><td class="r">2,262.44</td></tr>
               </tbody>
             </table>
           </div>
@@ -237,16 +238,16 @@
                 <tr><th scope="col">Item</th><th scope="col">2005&ndash;2006</th><th scope="col">2006&ndash;2007</th></tr>
               </thead>
               <tbody>
-                <tr><th scope="row">Groceries, toiletries and similar</th><td>3.25</td><td>3.00</td></tr>
-                <tr><th scope="row">SK oil</th><td>116.00</td><td>110.00</td></tr>
-                <tr><th scope="row">Tyres, tubes and batteries</th><td>24.57</td><td>49.25</td></tr>
-                <tr><th scope="row">LPG</th><td>82.76</td><td>84.93</td></tr>
-                <tr><th scope="row">Office stationery and similar</th><td>38.72</td><td>201.42</td></tr>
-                <tr><th scope="row">Fertilisers</th><td>567.71</td><td>671.58</td></tr>
-                <tr><th scope="row">Cement</th><td>3.03</td><td>5.18</td></tr>
-                <tr><th scope="row">Wild pipple</th><td>70.02</td><td>33.00</td></tr>
-                <tr><th scope="row">Other surplus agricultural produce</th><td>&mdash;</td><td>13.76</td></tr>
-                <tr><th scope="row">Total</th><td>906.06</td><td>1,172.12</td></tr>
+                <tr><th scope="row">Groceries, toiletries and similar</th><td class="r">3.25</td><td class="r">3.00</td></tr>
+                <tr><th scope="row">SK oil</th><td class="r">116.00</td><td class="r">110.00</td></tr>
+                <tr><th scope="row">Tyres, tubes and batteries</th><td class="r">24.57</td><td class="r">49.25</td></tr>
+                <tr><th scope="row">LPG</th><td class="r">82.76</td><td class="r">84.93</td></tr>
+                <tr><th scope="row">Office stationery and similar</th><td class="r">38.72</td><td class="r">201.42</td></tr>
+                <tr><th scope="row">Fertilisers</th><td class="r">567.71</td><td class="r">671.58</td></tr>
+                <tr><th scope="row">Cement</th><td class="r">3.03</td><td class="r">5.18</td></tr>
+                <tr><th scope="row">Wild pipple</th><td class="r">70.02</td><td class="r">33.00</td></tr>
+                <tr><th scope="row">Other surplus agricultural produce</th><td>&mdash;</td><td class="r">13.76</td></tr>
+                <tr><th scope="row">Total</th><td class="r">906.06</td><td class="r">1,172.12</td></tr>
               </tbody>
             </table>
           </div>
@@ -282,7 +283,7 @@
     <div class="wrap f-top">
       <div>
         <div class="f-brand">
-          <img src="img/rd-emblem.png" alt="">
+          <img src="img/rd-emblem.png" alt="" width="523" height="587">
           <span>
             <span class="f-name">DEPARTMENT OF<br>COOPERATION</span>
             <span class="f-gov">Government of Meghalaya</span>
@@ -305,11 +306,12 @@
       <div>
         <div class="f-head">Useful Links</div>
         <div class="f-links">
-          <a href="http://meghalaya.gov.in" target="_blank" rel="noopener" title="External site that opens in a new window">Meghalaya Government</a>
-          <a href="https://cooperation.gov.in" target="_blank" rel="noopener" title="External site that opens in a new window">Ministry of Cooperation, GoI</a>
-          <a href="https://ncui.coop" target="_blank" rel="noopener" title="External site that opens in a new window">NCUI</a>
-          <a href="https://www.nabard.org" target="_blank" rel="noopener" title="External site that opens in a new window">NABARD</a>
-          <a href="https://www.ncdc.in" target="_blank" rel="noopener" title="External site that opens in a new window">NCDC</a>
+          <a href="https://meghalaya.gov.in" target="_blank" rel="noopener">Meghalaya Government<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://www.india.gov.in" target="_blank" rel="noopener">National Portal of India<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://cooperation.gov.in" target="_blank" rel="noopener">Ministry of Cooperation, GoI<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://ncui.coop" target="_blank" rel="noopener">NCUI<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://www.nabard.org" target="_blank" rel="noopener">NABARD<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://www.ncdc.in" target="_blank" rel="noopener">NCDC<span class="sr-only"> (external website, opens in a new window)</span></a>
           <a href="relatedsite.html">Other resources</a>
         </div>
       </div>
@@ -326,15 +328,20 @@
       <div class="wrap">
         <span>&copy; Department of Cooperation, Government of Meghalaya. All rights reserved. Last updated on <span id="rd-last-updated">&mdash;</span>.</span>
         <span class="legal">
-          <a href="terms-use.html">Terms of Use</a>
+          <a href="terms-use.html">Terms and Conditions</a>
+          <a href="terms-use.html#privacy">Privacy Policy</a>
+          <a href="terms-use.html#copyright">Copyright Policy</a>
+          <a href="terms-use.html#hyperlinking">Hyperlinking Policy</a>
+          <a href="feedback.html">Feedback</a>
           <a href="help.html">Help</a>
+          <a href="screen-reader-access.html">Screen Reader Access</a>
           <a href="sitemap.html">Sitemap</a>
           <a href="accessibility-statement.html">Accessibility Statement</a>
         </span>
       </div>
     </div>
     <div class="wrap f-credit-wrap">
-      <p class="f-credit">Site designed and maintained by National Informatics Centre, Meghalaya State Centre. Content owned and updated by the Department of Cooperation, Government of Meghalaya.</p>
+      <p class="f-credit">The website belongs to the Department of Cooperation, Government of Meghalaya. Site designed and maintained by National Informatics Centre, Meghalaya State Centre.</p>
     </div>
   </footer>
 

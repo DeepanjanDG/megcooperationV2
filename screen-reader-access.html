@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Screen Reader Access | Department of Cooperation, Government of Meghalaya</title>
 <meta name="description" content="Assistive technologies and screen readers that can be used to access the website of the Department of Cooperation, Government of Meghalaya.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<meta name="keywords" content="Screen Reader Access, Department of Cooperation, Government of Meghalaya, cooperative societies, Meghalaya">
+<link rel="preload" href="fonts/noto-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" type="image/png" href="img/rd-emblem.png">
 <link rel="stylesheet" href="css/redesign.css">
 </head>
 <body>
-  <div class="topbar">
+  <div class="topbar" role="region" aria-label="Accessibility and language options">
     <div class="wrap">
       <a class="skip" href="#main">Skip to Main Content</a>
       <a class="tb-sr" href="screen-reader-access.html" aria-current="page">Screen Reader Access</a>
@@ -26,14 +26,14 @@
     </div>
   </div>
 
-  <div class="lang-note" id="rd-lang-note">
+  <div class="lang-note" id="rd-lang-note" role="status">
     Regional-language pages are being prepared. Content is shown in English until the translated pages are published.
   </div>
 
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="index.html">
-        <img class="emblem" src="img/rd-emblem.png" alt="State Emblem of India">
+        <img class="emblem" src="img/rd-emblem.png" alt="State Emblem of India" width="523" height="587">
         <span>
           <span class="b-name">Department of Cooperation</span>
           <span class="b-gov">Government of Meghalaya</span>
@@ -41,7 +41,7 @@
         </span>
       </a>
 
-      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="rd-nav">&#9776; Menu</button>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="rd-nav"><span aria-hidden="true">&#9776;</span> Menu</button>
 
       <nav class="main-nav" id="rd-nav" aria-label="Main">
         <a href="index.html">Home</a>
@@ -97,6 +97,7 @@
             <a href="contact.html">Contact Persons</a>
             <a href="citizencharter.html">Citizen's Charter</a>
             <a href="faqs.html">Frequently Asked Questions</a>
+            <a href="feedback.html">Feedback</a>
           </div>
         </div>
       </nav>
@@ -104,8 +105,8 @@
       <form class="site-search" id="rd-search-form" role="search">
         <label class="sr-only" for="rd-search-input">Search this website</label>
         <input type="search" id="rd-search-input" placeholder="Search here..." autocomplete="off">
-        <button type="submit" aria-label="Search">Go</button>
-        <div class="search-results" id="rd-search-results" role="listbox"></div>
+        <button type="submit">Search</button>
+        <div class="search-results" id="rd-search-results" aria-live="polite"></div>
       </form>
     </div>
   </header>
@@ -140,17 +141,17 @@
               <caption>Information related to the various screen readers</caption>
               <thead><tr><th scope="col">Screen Reader</th><th scope="col">Website</th><th scope="col">Free or Commercial</th></tr></thead>
               <tbody>
-            <tr><td>Non Visual Desktop Access (N.V.D.A.)</td><td><a href="https://www.nvaccess.org/" target="_blank" rel="noopener" title="External site that opens in a new window">www.nvaccess.org</a></td><td><span class="chip">Free</span></td></tr>
-            <tr><td>System Access To Go</td><td><a href="https://www.satogo.com/" target="_blank" rel="noopener" title="External site that opens in a new window">www.satogo.com</a></td><td><span class="chip">Free</span></td></tr>
-            <tr><td>Thunder</td><td><a href="https://www.screenreader.net/" target="_blank" rel="noopener" title="External site that opens in a new window">www.screenreader.net</a></td><td><span class="chip">Free</span></td></tr>
-            <tr><td>Orca (Linux)</td><td><a href="https://help.gnome.org/users/orca/stable/" target="_blank" rel="noopener" title="External site that opens in a new window">help.gnome.org/users/orca/stable</a></td><td><span class="chip">Free</span></td></tr>
-            <tr><td>VoiceOver (macOS and iOS)</td><td><a href="https://www.apple.com/accessibility/vision/" target="_blank" rel="noopener" title="External site that opens in a new window">www.apple.com/accessibility/vision</a></td><td><span class="chip">Built in</span></td></tr>
-            <tr><td>Narrator (Windows)</td><td><a href="https://support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1" target="_blank" rel="noopener" title="External site that opens in a new window">support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1</a></td><td><span class="chip">Built in</span></td></tr>
-            <tr><td>TalkBack (Android)</td><td><a href="https://support.google.com/accessibility/android/answer/6283677" target="_blank" rel="noopener" title="External site that opens in a new window">support.google.com/accessibility/android/answer/6283677</a></td><td><span class="chip">Built in</span></td></tr>
-            <tr><td>Hal</td><td><a href="https://yourdolphin.com/" target="_blank" rel="noopener" title="External site that opens in a new window">yourdolphin.com</a></td><td><span class="chip chip-amber">Commercial</span></td></tr>
-            <tr><td>J.A.W.S.</td><td><a href="https://www.freedomscientific.com/products/software/jaws/" target="_blank" rel="noopener" title="External site that opens in a new window">www.freedomscientific.com/products/software/jaws</a></td><td><span class="chip chip-amber">Commercial</span></td></tr>
-            <tr><td>Supernova</td><td><a href="https://yourdolphin.com/supernova" target="_blank" rel="noopener" title="External site that opens in a new window">yourdolphin.com/supernova</a></td><td><span class="chip chip-amber">Commercial</span></td></tr>
-            <tr><td>Window-Eyes</td><td><a href="http://www.gwmicro.com/Window-Eyes/" target="_blank" rel="noopener" title="External site that opens in a new window">www.gwmicro.com/Window-Eyes</a></td><td><span class="chip chip-grey">Discontinued</span></td></tr>
+            <tr><td>Non Visual Desktop Access (N.V.D.A.)</td><td><a href="https://www.nvaccess.org/" target="_blank" rel="noopener">www.nvaccess.org<span class="sr-only"> (external website, opens in a new window)</span></a></td><td><span class="chip">Free</span></td></tr>
+            <tr><td>System Access To Go</td><td><a href="https://www.satogo.com/" target="_blank" rel="noopener">www.satogo.com<span class="sr-only"> (external website, opens in a new window)</span></a></td><td><span class="chip">Free</span></td></tr>
+            <tr><td>Thunder</td><td><a href="https://www.screenreader.net/" target="_blank" rel="noopener">www.screenreader.net<span class="sr-only"> (external website, opens in a new window)</span></a></td><td><span class="chip">Free</span></td></tr>
+            <tr><td>Orca (Linux)</td><td><a href="https://help.gnome.org/users/orca/stable/" target="_blank" rel="noopener">help.gnome.org/users/orca/stable<span class="sr-only"> (external website, opens in a new window)</span></a></td><td><span class="chip">Free</span></td></tr>
+            <tr><td>VoiceOver (macOS and iOS)</td><td><a href="https://www.apple.com/accessibility/vision/" target="_blank" rel="noopener">www.apple.com/accessibility/vision<span class="sr-only"> (external website, opens in a new window)</span></a></td><td><span class="chip">Built in</span></td></tr>
+            <tr><td>Narrator (Windows)</td><td><a href="https://support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1" target="_blank" rel="noopener">support.microsoft.com/windows/complete-guide-to-narrator-e4397a0d-ef4f-b386-d8ae-c172f109bdb1<span class="sr-only"> (external website, opens in a new window)</span></a></td><td><span class="chip">Built in</span></td></tr>
+            <tr><td>TalkBack (Android)</td><td><a href="https://support.google.com/accessibility/android/answer/6283677" target="_blank" rel="noopener">support.google.com/accessibility/android/answer/6283677<span class="sr-only"> (external website, opens in a new window)</span></a></td><td><span class="chip">Built in</span></td></tr>
+            <tr><td>Hal</td><td><a href="https://yourdolphin.com/" target="_blank" rel="noopener">yourdolphin.com<span class="sr-only"> (external website, opens in a new window)</span></a></td><td><span class="chip chip-amber">Commercial</span></td></tr>
+            <tr><td>J.A.W.S.</td><td><a href="https://www.freedomscientific.com/products/software/jaws/" target="_blank" rel="noopener">www.freedomscientific.com/products/software/jaws<span class="sr-only"> (external website, opens in a new window)</span></a></td><td><span class="chip chip-amber">Commercial</span></td></tr>
+            <tr><td>Supernova</td><td><a href="https://yourdolphin.com/supernova" target="_blank" rel="noopener">yourdolphin.com/supernova<span class="sr-only"> (external website, opens in a new window)</span></a></td><td><span class="chip chip-amber">Commercial</span></td></tr>
+            <tr><td>Window-Eyes</td><td><a href="http://www.gwmicro.com/Window-Eyes/" target="_blank" rel="noopener">www.gwmicro.com/Window-Eyes<span class="sr-only"> (external website, opens in a new window)</span></a></td><td><span class="chip chip-grey">Discontinued</span></td></tr>
               </tbody>
             </table>
           </div>
@@ -168,10 +169,10 @@
           <h2 id="more">Learn more about assistive technologies</h2>
 
           <div class="doclist no-date">
-            <a href="https://www.screenreader.net" target="_blank" rel="noopener" title="External site that opens in a new window"><span class="txt">screenreader.net</span><span class="chip">External</span></a>
-            <a href="https://www.freedomscientific.com" target="_blank" rel="noopener" title="External site that opens in a new window"><span class="txt">Freedom Scientific</span><span class="chip">External</span></a>
-            <a href="https://yourdolphin.com" target="_blank" rel="noopener" title="External site that opens in a new window"><span class="txt">Dolphin Computer Access</span><span class="chip">External</span></a>
-            <a href="https://www.w3.org/WAI/people-use-web/" target="_blank" rel="noopener" title="External site that opens in a new window"><span class="txt">W3C &mdash; How people with disabilities use the web</span><span class="chip">External</span></a>
+            <a href="https://www.screenreader.net" target="_blank" rel="noopener"><span class="txt">screenreader.net</span><span class="chip">External</span><span class="sr-only"> (external website, opens in a new window)</span></a>
+            <a href="https://www.freedomscientific.com" target="_blank" rel="noopener"><span class="txt">Freedom Scientific</span><span class="chip">External</span><span class="sr-only"> (external website, opens in a new window)</span></a>
+            <a href="https://yourdolphin.com" target="_blank" rel="noopener"><span class="txt">Dolphin Computer Access</span><span class="chip">External</span><span class="sr-only"> (external website, opens in a new window)</span></a>
+            <a href="https://www.w3.org/WAI/people-use-web/" target="_blank" rel="noopener"><span class="txt">W3C &mdash; How people with disabilities use the web</span><span class="chip">External</span><span class="sr-only"> (external website, opens in a new window)</span></a>
           </div>
 
           <div class="callout">
@@ -208,7 +209,7 @@
     <div class="wrap f-top">
       <div>
         <div class="f-brand">
-          <img src="img/rd-emblem.png" alt="">
+          <img src="img/rd-emblem.png" alt="" width="523" height="587">
           <span>
             <span class="f-name">DEPARTMENT OF<br>COOPERATION</span>
             <span class="f-gov">Government of Meghalaya</span>
@@ -231,11 +232,12 @@
       <div>
         <div class="f-head">Useful Links</div>
         <div class="f-links">
-          <a href="http://meghalaya.gov.in" target="_blank" rel="noopener" title="External site that opens in a new window">Meghalaya Government</a>
-          <a href="https://cooperation.gov.in" target="_blank" rel="noopener" title="External site that opens in a new window">Ministry of Cooperation, GoI</a>
-          <a href="https://ncui.coop" target="_blank" rel="noopener" title="External site that opens in a new window">NCUI</a>
-          <a href="https://www.nabard.org" target="_blank" rel="noopener" title="External site that opens in a new window">NABARD</a>
-          <a href="https://www.ncdc.in" target="_blank" rel="noopener" title="External site that opens in a new window">NCDC</a>
+          <a href="https://meghalaya.gov.in" target="_blank" rel="noopener">Meghalaya Government<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://www.india.gov.in" target="_blank" rel="noopener">National Portal of India<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://cooperation.gov.in" target="_blank" rel="noopener">Ministry of Cooperation, GoI<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://ncui.coop" target="_blank" rel="noopener">NCUI<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://www.nabard.org" target="_blank" rel="noopener">NABARD<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://www.ncdc.in" target="_blank" rel="noopener">NCDC<span class="sr-only"> (external website, opens in a new window)</span></a>
           <a href="relatedsite.html">Other resources</a>
         </div>
       </div>
@@ -252,15 +254,20 @@
       <div class="wrap">
         <span>&copy; Department of Cooperation, Government of Meghalaya. All rights reserved. Last updated on <span id="rd-last-updated">&mdash;</span>.</span>
         <span class="legal">
-          <a href="terms-use.html">Terms of Use</a>
+          <a href="terms-use.html">Terms and Conditions</a>
+          <a href="terms-use.html#privacy">Privacy Policy</a>
+          <a href="terms-use.html#copyright">Copyright Policy</a>
+          <a href="terms-use.html#hyperlinking">Hyperlinking Policy</a>
+          <a href="feedback.html">Feedback</a>
           <a href="help.html">Help</a>
+          <a href="screen-reader-access.html">Screen Reader Access</a>
           <a href="sitemap.html">Sitemap</a>
           <a href="accessibility-statement.html">Accessibility Statement</a>
         </span>
       </div>
     </div>
     <div class="wrap f-credit-wrap">
-      <p class="f-credit">Site designed and maintained by National Informatics Centre, Meghalaya State Centre. Content owned and updated by the Department of Cooperation, Government of Meghalaya.</p>
+      <p class="f-credit">The website belongs to the Department of Cooperation, Government of Meghalaya. Site designed and maintained by National Informatics Centre, Meghalaya State Centre.</p>
     </div>
   </footer>
 

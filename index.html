@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Department of Cooperation, Government of Meghalaya</title>
 <meta name="description" content="The Department of Cooperation, Government of Meghalaya promotes, supports and strengthens the cooperative movement in the state.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<meta name="keywords" content="Building Stronger Communities Through Cooperation, Department of Cooperation, Government of Meghalaya, cooperative societies, Meghalaya">
+<link rel="preload" href="fonts/noto-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" type="image/png" href="img/rd-emblem.png">
 <link rel="stylesheet" href="css/redesign.css">
 </head>
 <body>
-  <div class="topbar">
+  <div class="topbar" role="region" aria-label="Accessibility and language options">
     <div class="wrap">
       <a class="skip" href="#main">Skip to Main Content</a>
       <a class="tb-sr" href="screen-reader-access.html">Screen Reader Access</a>
@@ -26,14 +26,14 @@
     </div>
   </div>
 
-  <div class="lang-note" id="rd-lang-note">
+  <div class="lang-note" id="rd-lang-note" role="status">
     Regional-language pages are being prepared. Content is shown in English until the translated pages are published.
   </div>
 
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="index.html">
-        <img class="emblem" src="img/rd-emblem.png" alt="State Emblem of India">
+        <img class="emblem" src="img/rd-emblem.png" alt="State Emblem of India" width="523" height="587">
         <span>
           <span class="b-name">Department of Cooperation</span>
           <span class="b-gov">Government of Meghalaya</span>
@@ -41,7 +41,7 @@
         </span>
       </a>
 
-      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="rd-nav">&#9776; Menu</button>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="rd-nav"><span aria-hidden="true">&#9776;</span> Menu</button>
 
       <nav class="main-nav" id="rd-nav" aria-label="Main">
         <a href="index.html" class="is-current" aria-current="page">Home</a>
@@ -97,6 +97,7 @@
             <a href="contact.html">Contact Persons</a>
             <a href="citizencharter.html">Citizen's Charter</a>
             <a href="faqs.html">Frequently Asked Questions</a>
+            <a href="feedback.html">Feedback</a>
           </div>
         </div>
       </nav>
@@ -104,30 +105,30 @@
       <form class="site-search" id="rd-search-form" role="search">
         <label class="sr-only" for="rd-search-input">Search this website</label>
         <input type="search" id="rd-search-input" placeholder="Search here..." autocomplete="off">
-        <button type="submit" aria-label="Search">Go</button>
-        <div class="search-results" id="rd-search-results" role="listbox"></div>
+        <button type="submit">Search</button>
+        <div class="search-results" id="rd-search-results" aria-live="polite"></div>
       </form>
     </div>
   </header>
 
   <main id="main">
 
-    <section class="hero" aria-label="Featured">
+    <section class="hero" aria-label="Featured" aria-roledescription="carousel">
       <div class="hero-stage">
-        <div class="hero-slide is-active" data-caption="A view of the Mawphanlur Traveller's Nests, run by the Mawphanlur Integrated Village Cooperative Society Limited.">
-          <img src="img/slide01.jpg" alt="Mawphanlur village, West Khasi Hills">
+        <div class="hero-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 5" data-caption="A view of the Mawphanlur Traveller's Nests, run by the Mawphanlur Integrated Village Cooperative Society Limited.">
+          <img src="img/slide01.jpg" alt="Mawphanlur village, West Khasi Hills" width="960" height="260">
         </div>
-        <div class="hero-slide" data-caption="Mendipathar Multipurpose Cooperative Society Limited, East Garo Hills.">
-          <img src="img/slide02.jpg" alt="Mendipathar, East Garo Hills">
+        <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="2 of 5" data-caption="Mendipathar Multipurpose Cooperative Society Limited, East Garo Hills.">
+          <img src="img/slide02.jpg" alt="Mendipathar, East Garo Hills" width="960" height="260" loading="lazy">
         </div>
-        <div class="hero-slide" data-caption="Nongpriang Handicraft Weavers Cooperative Society Limited and Nongtluh Women Weaving Cooperative Society Limited.">
-          <img src="img/slide03.jpg" alt="Handloom weavers at work">
+        <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="3 of 5" data-caption="Nongpriang Handicraft Weavers Cooperative Society Limited and Nongtluh Women Weaving Cooperative Society Limited.">
+          <img src="img/slide03.jpg" alt="Handloom weavers at work" width="960" height="260" loading="lazy">
         </div>
-        <div class="hero-slide" data-caption="Urlong Tea Integrated Village Cooperative Society Limited.">
-          <img src="img/slide04.jpg" alt="Urlong tea gardens">
+        <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="4 of 5" data-caption="Urlong Tea Integrated Village Cooperative Society Limited.">
+          <img src="img/slide04.jpg" alt="Urlong tea gardens" width="960" height="260" loading="lazy">
         </div>
-        <div class="hero-slide" data-caption="Garo Hills Cooperative Cotton Ginning Mills and Oil Mills Limited.">
-          <img src="img/slide05.jpg" alt="Cotton ginning and oil mills, Garo Hills">
+        <div class="hero-slide" role="group" aria-roledescription="slide" aria-label="5 of 5" data-caption="Garo Hills Cooperative Cotton Ginning Mills and Oil Mills Limited.">
+          <img src="img/slide05.jpg" alt="Cotton ginning and oil mills, Garo Hills" width="960" height="260" loading="lazy">
         </div>
         <div class="hero-scrim"></div>
         <div class="hero-copy">
@@ -143,6 +144,7 @@
           </div>
         </div>
         <div class="hero-caption"><div class="wrap"><span class="cap" id="hero-caption-text"></span></div></div>
+        <button type="button" class="hero-pause" aria-pressed="false"><svg class="i-pause" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="7" y="5" width="3.5" height="14" rx="1"/><rect x="13.5" y="5" width="3.5" height="14" rx="1"/></svg><svg class="i-play" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M8 5v14l11-7z"/></svg><span class="hp-label">Pause</span><span class="sr-only"> slideshow</span></button>
         <button type="button" class="hero-arrow prev" aria-label="Previous slide">&#8249;</button>
         <button type="button" class="hero-arrow next" aria-label="Next slide">&#8250;</button>
         <div class="hero-dots" role="group" aria-label="Choose slide">
@@ -176,7 +178,7 @@
           <a class="btn btn-primary btn-sm" href="introduction.html">Read More About Us &nbsp;&rarr;</a>
         </div>
         <div>
-          <img class="about-photo" src="img/slide02.jpg" alt="Mendipathar Multipurpose Cooperative Society Limited, East Garo Hills">
+          <img class="about-photo" src="img/slide02.jpg" alt="Mendipathar Multipurpose Cooperative Society Limited, East Garo Hills" width="960" height="260" loading="lazy">
         </div>
         <div>
           <div class="updates-head">
@@ -185,19 +187,19 @@
           </div>
           <div>
           <a class="update-item" href="rti/pios_apios_01-08-2026.pdf">
-            <span class="update-date"><span class="d">01</span><span class="m">Aug 2026</span></span>
+            <span class="update-date"><span class="d">01</span><span class="m">08.2026</span></span>
             <span><span class="update-title">Names of Public Information Officers of the Department updated</span><span class="update-more">Read More &nbsp;&rarr;</span></span>
           </a>
           <a class="update-item" href="rti/Public_Authority_PIO_August-2026.pdf">
-            <span class="update-date"><span class="d">01</span><span class="m">Aug 2026</span></span>
+            <span class="update-date"><span class="d">01</span><span class="m">08.2026</span></span>
             <span><span class="update-title">Name of the Public Authority of the Department updated</span><span class="update-more">Read More &nbsp;&rarr;</span></span>
           </a>
           <a class="update-item" href="contact.html">
-            <span class="update-date"><span class="d">01</span><span class="m">Aug 2026</span></span>
+            <span class="update-date"><span class="d">01</span><span class="m">08.2026</span></span>
             <span><span class="update-title">Contact persons directory revised across all districts</span><span class="update-more">Read More &nbsp;&rarr;</span></span>
           </a>
           <a class="update-item" href="notifications/Cancellation_NonFunctioning_CS_01May2023.pdf">
-            <span class="update-date"><span class="d">01</span><span class="m">May 2023</span></span>
+            <span class="update-date"><span class="d">01</span><span class="m">05.2023</span></span>
             <span><span class="update-title">List of cooperative societies cancelled under Section 66 published</span><span class="update-more">Read More &nbsp;&rarr;</span></span>
           </a>
           </div>
@@ -253,23 +255,23 @@
 
         <div class="tab-panel is-on" data-panel="notices">
           <div class="doclist">
-          <a href="rti/pios_apios_01-08-2026.pdf" target="_blank" rel="noopener" title="PDF that opens in a new window"><span class="date">01 Aug 2026</span><span class="txt">Names of Public Information Officers of the Department [updated 1 August 2026]</span><span class="chip ">PDF 628 KB</span></a>
-          <a href="rti/Public_Authority_PIO_August-2026.pdf" target="_blank" rel="noopener" title="PDF that opens in a new window"><span class="date">01 Aug 2026</span><span class="txt">Name of the Public Authority of the Department [updated 1 August 2026]</span><span class="chip ">PDF 666 KB</span></a>
-          <a href="contact.html"><span class="date">01 Aug 2026</span><span class="txt">Contact persons of the Department &mdash; revised directory</span><span class="chip ">Web page</span></a>
+          <a href="rti/pios_apios_01-08-2026.pdf" target="_blank" rel="noopener"><span class="date">01.08.2026</span><span class="txt">Names of Public Information Officers of the Department [updated 01.08.2026]</span><span class="chip ">PDF 628 KB</span><span class="sr-only"> (PDF, opens in a new window)</span></a>
+          <a href="rti/Public_Authority_PIO_August-2026.pdf" target="_blank" rel="noopener"><span class="date">01.08.2026</span><span class="txt">Name of the Public Authority of the Department [updated 01.08.2026]</span><span class="chip ">PDF 666 KB</span><span class="sr-only"> (PDF, opens in a new window)</span></a>
+          <a href="contact.html"><span class="date">01.08.2026</span><span class="txt">Contact persons of the Department &mdash; revised directory</span><span class="chip ">Web page</span></a>
           </div>
         </div>
         <div class="tab-panel" data-panel="tenders">
           <div class="doclist">
-          <a href="advertisement/Advertisement_for_GM.pdf" target="_blank" rel="noopener" title="PDF that opens in a new window"><span class="date">&mdash;</span><span class="txt">Advertisement for the post of General Manager, Meghalaya Cooperative Apex Bank</span><span class="chip chip-amber">PDF</span></a>
-          <a href="advertisement/Advertisement_for_MD.pdf" target="_blank" rel="noopener" title="PDF that opens in a new window"><span class="date">&mdash;</span><span class="txt">Advertisement for the post of Managing Director</span><span class="chip chip-amber">PDF</span></a>
+          <a href="advertisement/Advertisement_for_GM.pdf" target="_blank" rel="noopener"><span class="date">&mdash;</span><span class="txt">Advertisement for the post of General Manager, Meghalaya Cooperative Apex Bank</span><span class="chip chip-amber">PDF</span><span class="sr-only"> (PDF, opens in a new window)</span></a>
+          <a href="advertisement/Advertisement_for_MD.pdf" target="_blank" rel="noopener"><span class="date">&mdash;</span><span class="txt">Advertisement for the post of Managing Director</span><span class="chip chip-amber">PDF</span><span class="sr-only"> (PDF, opens in a new window)</span></a>
           <a href="advertisements.html"><span class="date">&mdash;</span><span class="txt">All recruitment advertisements and results</span><span class="chip chip-grey">Browse</span></a>
           </div>
         </div>
         <div class="tab-panel" data-panel="circulars">
           <div class="doclist">
-          <a href="notifications/Strengthening_Meghalaya_Cooperatives.pdf" target="_blank" rel="noopener" title="PDF that opens in a new window"><span class="date">&mdash;</span><span class="txt">Strengthening Meghalaya Cooperatives &mdash; A Five Year Action Plan</span><span class="chip ">PDF 4.5 MB</span></a>
-          <a href="notifications/notification_meghalaya_cooperation_five_year.pdf" target="_blank" rel="noopener" title="PDF that opens in a new window"><span class="date">&mdash;</span><span class="txt">Notification of the Five Year Action Plan by the Governor of Meghalaya</span><span class="chip ">PDF 267 KB</span></a>
-          <a href="notifications/RevisedGuidelines_Promotion.pdf" target="_blank" rel="noopener" title="PDF that opens in a new window"><span class="date">&mdash;</span><span class="txt">Revised guidelines for promotion, organisation and registration of cooperative societies</span><span class="chip ">PDF 125 KB</span></a>
+          <a href="notifications/Strengthening_Meghalaya_Cooperatives.pdf" target="_blank" rel="noopener"><span class="date">&mdash;</span><span class="txt">Strengthening Meghalaya Cooperatives &mdash; A Five Year Action Plan</span><span class="chip ">PDF 4.5 MB</span><span class="sr-only"> (PDF, opens in a new window)</span></a>
+          <a href="notifications/notification_meghalaya_cooperation_five_year.pdf" target="_blank" rel="noopener"><span class="date">&mdash;</span><span class="txt">Notification of the Five Year Action Plan by the Governor of Meghalaya</span><span class="chip ">PDF 267 KB</span><span class="sr-only"> (PDF, opens in a new window)</span></a>
+          <a href="notifications/RevisedGuidelines_Promotion.pdf" target="_blank" rel="noopener"><span class="date">&mdash;</span><span class="txt">Revised guidelines for promotion, organisation and registration of cooperative societies</span><span class="chip ">PDF 125 KB</span><span class="sr-only"> (PDF, opens in a new window)</span></a>
           </div>
         </div>
       </div>
@@ -283,7 +285,7 @@
         </div>
         <div class="people">
           <div class="person">
-            <img src="img/conrad.jpg" alt="">
+            <img src="img/conrad.jpg" alt="" width="60" height="75" loading="lazy">
             <div>
               <p class="p-name">Shri Conrad Kongkal Sangma</p>
               <p class="p-role">Chief Minister of Meghalaya</p>
@@ -311,10 +313,10 @@
             <p>Apply through the Invest Meghalaya single-window portal. Download the application form, list of enclosures and promoters list before you begin.</p>
           </div>
           <div class="cs-actions">
-            <a class="btn btn-primary btn-sm" href="https://investmeghalaya.gov.in/directApply.do?serviceId=5" target="_blank" rel="noopener" title="External link that opens in a new window">Apply Online &nbsp;&rarr;</a>
-            <a class="btn btn-sm btn-ghost" href="online_regn/Registration-Cooperative-Society.pdf" target="_blank" rel="noopener">Application Form</a>
-            <a class="btn btn-sm btn-ghost" href="online_regn/Enclosures.pdf" target="_blank" rel="noopener">Enclosures</a>
-            <a class="btn btn-sm btn-ghost" href="online_regn/PromotersList_Coop.pdf" target="_blank" rel="noopener">Promoters List</a>
+            <a class="btn btn-primary btn-sm" href="https://investmeghalaya.gov.in/directApply.do?serviceId=5" target="_blank" rel="noopener">Apply Online &nbsp;&rarr;<span class="sr-only"> (external website, opens in a new window)</span></a>
+            <a class="btn btn-sm btn-ghost" href="online_regn/Registration-Cooperative-Society.pdf" target="_blank" rel="noopener">Application Form<span class="sr-only"> (PDF, opens in a new window)</span></a>
+            <a class="btn btn-sm btn-ghost" href="online_regn/Enclosures.pdf" target="_blank" rel="noopener">Enclosures<span class="sr-only"> (PDF, opens in a new window)</span></a>
+            <a class="btn btn-sm btn-ghost" href="online_regn/PromotersList_Coop.pdf" target="_blank" rel="noopener">Promoters List<span class="sr-only"> (PDF, opens in a new window)</span></a>
           </div>
         </div>
       </div>
@@ -326,7 +328,7 @@
     <div class="wrap f-top">
       <div>
         <div class="f-brand">
-          <img src="img/rd-emblem.png" alt="">
+          <img src="img/rd-emblem.png" alt="" width="523" height="587">
           <span>
             <span class="f-name">DEPARTMENT OF<br>COOPERATION</span>
             <span class="f-gov">Government of Meghalaya</span>
@@ -349,11 +351,12 @@
       <div>
         <div class="f-head">Useful Links</div>
         <div class="f-links">
-          <a href="http://meghalaya.gov.in" target="_blank" rel="noopener" title="External site that opens in a new window">Meghalaya Government</a>
-          <a href="https://cooperation.gov.in" target="_blank" rel="noopener" title="External site that opens in a new window">Ministry of Cooperation, GoI</a>
-          <a href="https://ncui.coop" target="_blank" rel="noopener" title="External site that opens in a new window">NCUI</a>
-          <a href="https://www.nabard.org" target="_blank" rel="noopener" title="External site that opens in a new window">NABARD</a>
-          <a href="https://www.ncdc.in" target="_blank" rel="noopener" title="External site that opens in a new window">NCDC</a>
+          <a href="https://meghalaya.gov.in" target="_blank" rel="noopener">Meghalaya Government<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://www.india.gov.in" target="_blank" rel="noopener">National Portal of India<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://cooperation.gov.in" target="_blank" rel="noopener">Ministry of Cooperation, GoI<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://ncui.coop" target="_blank" rel="noopener">NCUI<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://www.nabard.org" target="_blank" rel="noopener">NABARD<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://www.ncdc.in" target="_blank" rel="noopener">NCDC<span class="sr-only"> (external website, opens in a new window)</span></a>
           <a href="relatedsite.html">Other resources</a>
         </div>
       </div>
@@ -370,15 +373,20 @@
       <div class="wrap">
         <span>&copy; Department of Cooperation, Government of Meghalaya. All rights reserved. Last updated on <span id="rd-last-updated">&mdash;</span>.</span>
         <span class="legal">
-          <a href="terms-use.html">Terms of Use</a>
+          <a href="terms-use.html">Terms and Conditions</a>
+          <a href="terms-use.html#privacy">Privacy Policy</a>
+          <a href="terms-use.html#copyright">Copyright Policy</a>
+          <a href="terms-use.html#hyperlinking">Hyperlinking Policy</a>
+          <a href="feedback.html">Feedback</a>
           <a href="help.html">Help</a>
+          <a href="screen-reader-access.html">Screen Reader Access</a>
           <a href="sitemap.html">Sitemap</a>
           <a href="accessibility-statement.html">Accessibility Statement</a>
         </span>
       </div>
     </div>
     <div class="wrap f-credit-wrap">
-      <p class="f-credit">Site designed and maintained by National Informatics Centre, Meghalaya State Centre. Content owned and updated by the Department of Cooperation, Government of Meghalaya.</p>
+      <p class="f-credit">The website belongs to the Department of Cooperation, Government of Meghalaya. Site designed and maintained by National Informatics Centre, Meghalaya State Centre.</p>
     </div>
   </footer>
 

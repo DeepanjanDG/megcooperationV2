@@ -132,10 +132,14 @@
     if (slides.length < 2) return;
 
     var i = 0, timer = null, DELAY = 6000;
+    var userPaused = false;
 
     function show(n) {
       i = (n + slides.length) % slides.length;
-      slides.forEach(function (s, k) { s.classList.toggle("is-active", k === i); });
+      slides.forEach(function (s, k) {
+        s.classList.toggle("is-active", k === i);
+        s.setAttribute("aria-hidden", k === i ? "false" : "true");
+      });
       dots.forEach(function (d, k) {
         d.classList.toggle("is-on", k === i);
         d.setAttribute("aria-current", k === i ? "true" : "false");
@@ -144,7 +148,7 @@
     }
     function next() { show(i + 1); }
     function prev() { show(i - 1); }
-    function start() { stop(); timer = setInterval(next, DELAY); }
+    function start() { stop(); if (userPaused) return; timer = setInterval(next, DELAY); }
     function stop() { if (timer) { clearInterval(timer); timer = null; } }
 
     var nextBtn = $(".hero-arrow.next"), prevBtn = $(".hero-arrow.prev");
@@ -163,8 +167,23 @@
     document.addEventListener("rd:motion-pause", function () { motionPaused = true; stop(); });
     document.addEventListener("rd:motion-resume", function () { motionPaused = false; start(); });
 
+    /* Pause / play control: automatic movement lasting more than five seconds
+       must be stoppable from the page itself (GIGW 5.2.25). */
+    var pauseBtn = $(".hero-pause");
+    var pauseLabel = pauseBtn ? $(".hp-label", pauseBtn) : null;
+    function setPaused(p) {
+      userPaused = p;
+      if (p) { stop(); } else if (!motionPaused) { start(); }
+      stage.setAttribute("aria-live", p ? "polite" : "off");
+      if (pauseBtn) {
+        pauseBtn.setAttribute("aria-pressed", p ? "true" : "false");
+        if (pauseLabel) pauseLabel.textContent = p ? "Play" : "Pause";
+      }
+    }
+    if (pauseBtn) pauseBtn.addEventListener("click", function () { setPaused(!userPaused); });
+
     show(0);
-    if (!media("(prefers-reduced-motion: reduce)")) start();
+    setPaused(media("(prefers-reduced-motion: reduce)"));
   }
 
   /* ----------------------------------------------------------------- tabs */
@@ -174,23 +193,69 @@
       /* panels live alongside the tab strip, inside the same .wrap / section */
       var scope = group.closest ? (group.closest(".wrap") || group.closest("section") || document) : document;
       var panels = $$("[data-panel]", scope);
+
+      function panelOf(tab) {
+        var name = tab.getAttribute("data-tab");
+        return panels.filter(function (p) { return p.getAttribute("data-panel") === name; })[0];
+      }
+
+      /* wire each tab to its panel (name, role, relationship) */
       tabs.forEach(function (tab) {
-        tab.addEventListener("click", function () {
-          var name = tab.getAttribute("data-tab");
-          tabs.forEach(function (t) {
-            var on = t === tab;
-            t.classList.toggle("is-on", on);
-            t.setAttribute("aria-selected", on ? "true" : "false");
-          });
-          panels.forEach(function (p) {
-            p.classList.toggle("is-on", p.getAttribute("data-panel") === name);
-          });
+        var panel = panelOf(tab);
+        tab.id = tab.id || "tab-" + tab.getAttribute("data-tab");
+        if (panel) {
+          panel.id = panel.id || "panel-" + tab.getAttribute("data-tab");
+          tab.setAttribute("aria-controls", panel.id);
+          panel.setAttribute("role", "tabpanel");
+          panel.setAttribute("aria-labelledby", tab.id);
+        }
+      });
+
+      function select(tab, moveFocus) {
+        var name = tab.getAttribute("data-tab");
+        tabs.forEach(function (t) {
+          var on = t === tab;
+          t.classList.toggle("is-on", on);
+          t.setAttribute("aria-selected", on ? "true" : "false");
+          t.setAttribute("tabindex", on ? "0" : "-1");
+        });
+        panels.forEach(function (p) {
+          p.classList.toggle("is-on", p.getAttribute("data-panel") === name);
+        });
+        if (moveFocus) tab.focus();
+      }
+
+      tabs.forEach(function (tab, k) {
+        tab.addEventListener("click", function () { select(tab, false); });
+        tab.addEventListener("keydown", function (e) {
+          var n = -1;
+          if (e.key === "ArrowRight") n = (k + 1) % tabs.length;
+          else if (e.key === "ArrowLeft") n = (k - 1 + tabs.length) % tabs.length;
+          else if (e.key === "Home") n = 0;
+          else if (e.key === "End") n = tabs.length - 1;
+          if (n > -1) { e.preventDefault(); select(tabs[n], true); }
         });
       });
+
+      var current = tabs.filter(function (t) { return t.classList.contains("is-on"); })[0] || tabs[0];
+      if (current) select(current, false);
+
+      /* a link such as notifications.html#forms opens the tab that holds it */
+      function fromHash() {
+        var id = (window.location.hash || "").slice(1);
+        if (!id) return;
+        var panel = panels.filter(function (p) { return p.id === id; })[0];
+        if (!panel) return;
+        var tab = tabs.filter(function (t) { return t.getAttribute("aria-controls") === id; })[0];
+        if (tab) { select(tab, false); panel.scrollIntoView(); }
+      }
+      fromHash();
+      window.addEventListener("hashchange", fromHash);
     });
   }
 
-  /* --------------------------------------------------------------- search */
+  /* ------------------------------------------------------------- search
+ */
   var SEARCH_INDEX = [
     { kind: "Page",     title: "Introduction to the Department",                    url: "introduction.html" },
     { kind: "Page",     title: "Organisational Setup",                              url: "orgsetup.html" },
@@ -226,7 +291,7 @@
     { kind: "Report",   title: "Personnel Department instructions",                 url: "rules_personnel.html" },
     { kind: "Report",   title: "Important judgments",                               url: "judgments.html" },
     { kind: "Report",   title: "News clips",                                        url: "newsclips.html" },
-    { kind: "Report",   title: "Registered societies as on 31 March 2019",          url: "list_coop_300319.html" },
+    { kind: "Report",   title: "Registered societies as on 31.03.2019",          url: "list_coop_300319.html" },
     { kind: "Report",   title: "Archives — success stories and older lists",        url: "archives.html" },
     { kind: "Report",   title: "What's New archive",                                url: "news-archive.html" },
     { kind: "Report",   title: "Statistical data on cooperative societies",         url: "statistics.html" },
@@ -243,7 +308,11 @@
     { kind: "Page",     title: "Accessibility statement",                           url: "accessibility-statement.html" },
     { kind: "Page",     title: "Screen reader access and assistive technologies",   url: "screen-reader-access.html" },
     { kind: "Page",     title: "Accessibility options in browsers",                 url: "accessible-browsers.html" },
-    { kind: "Page",     title: "Terms of use, copyright and privacy policy",        url: "terms-use.html" }
+    { kind: "Page",     title: "Terms of use, copyright and privacy policy",        url: "terms-use.html" },
+    { kind: "Policy",   title: "Privacy policy",                                    url: "terms-use.html#privacy" },
+    { kind: "Policy",   title: "Copyright policy",                                  url: "terms-use.html#copyright" },
+    { kind: "Policy",   title: "Hyperlinking policy",                               url: "terms-use.html#hyperlinking" },
+    { kind: "Page",     title: "Feedback form",                                     url: "feedback.html" }
   ];
 
   function initSearch() {
@@ -293,9 +362,9 @@
     if (!el) return;
     var d = new Date(document.lastModified);
     if (isNaN(d.getTime())) return;
-    var months = ["January", "February", "March", "April", "May", "June",
-                  "July", "August", "September", "October", "November", "December"];
-    el.textContent = months[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+    function pad(n) { return n < 10 ? "0" + n : "" + n; }
+    /* DBIM date style: DD.MM.YYYY */
+    el.textContent = pad(d.getDate()) + "." + pad(d.getMonth() + 1) + "." + d.getFullYear();
   }
 
   /* -------------------------------------------------------- table filter */
@@ -318,6 +387,75 @@
     });
   }
 
+  /* ------------------------------------------------------------- feedback */
+  /* The site has no server-side handler, so a valid form opens the visitor's
+     email application with the message ready to send. The address is built
+     here so it never appears in the page source in readable form. */
+  function initFeedback() {
+    var form = $("#fb-form");
+    if (!form) return;
+    var status = $("#fb-status");
+    var FIELDS = ["name", "email", "subject", "message"];
+    var TO = "rcs" + "@" + "meghalaya" + "." + "gov" + "." + "in";
+
+    function bad(key) {
+      var v = $("#fb-" + key).value.trim();
+      if (!v) return true;
+      return key === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+    }
+    function mark(key) {
+      var inp = $("#fb-" + key), isBad = bad(key);
+      inp.closest(".field").classList.toggle("has-error", isBad);
+      inp.setAttribute("aria-invalid", isBad ? "true" : "false");
+      return isBad;
+    }
+    FIELDS.forEach(function (k) {
+      $("#fb-" + k).addEventListener("input", function () {
+        if ($("#fb-" + k).closest(".field").classList.contains("has-error")) mark(k);
+      });
+    });
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var firstBad = null;
+      FIELDS.forEach(function (k) { if (mark(k) && !firstBad) firstBad = $("#fb-" + k); });
+      if (firstBad) {
+        status.textContent = "Some fields need your attention. Please correct the fields marked below.";
+        firstBad.focus();
+        return;
+      }
+      var phone = $("#fb-phone").value.trim();
+      var body = $("#fb-message").value.trim() + "\n\n" +
+                 "Name: " + $("#fb-name").value.trim() + "\n" +
+                 "Email: " + $("#fb-email").value.trim() + (phone ? "\nTelephone: " + phone : "");
+      status.textContent = "Your email application should now open with your message. If it does not, write to " +
+                           "rcs[at]meghalaya[dot]gov[dot]in.";
+      window.location.href = "mailto:" + TO + "?subject=" + encodeURIComponent($("#fb-subject").value.trim()) +
+                             "&body=" + encodeURIComponent(body);
+    });
+  }
+
+  /* A table wider than its box scrolls sideways inside .tbl-wrap. Give that
+     scroll area a name and a tab stop so keyboard users can reach it. */
+  function initTableScroll() {
+    var wraps = $$(".tbl-wrap");
+    function check() {
+      wraps.forEach(function (w) {
+        var scrolls = w.scrollWidth > w.clientWidth + 1;
+        if (scrolls) {
+          var cap = $("caption", w);
+          w.setAttribute("tabindex", "0");
+          w.setAttribute("role", "region");
+          w.setAttribute("aria-label", (cap ? cap.textContent.trim() : "Table") + " (scrolls sideways)");
+        } else {
+          w.removeAttribute("tabindex"); w.removeAttribute("role"); w.removeAttribute("aria-label");
+        }
+      });
+    }
+    check();
+    window.addEventListener("resize", check);
+  }
+
   function ready(fn) {
     if (document.readyState !== "loading") { fn(); }
     else { document.addEventListener("DOMContentLoaded", fn); }
@@ -338,6 +476,8 @@
     safely("search", initSearch);
     safely("lastUpdated", initLastUpdated);
     safely("tableFilter", initTableFilter);
+    safely("feedback", initFeedback);
+    safely("tableScroll", initTableScroll);
   });
 })();
 

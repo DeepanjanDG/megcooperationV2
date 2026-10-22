@@ -5,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Meghalaya Cooperative Apex Bank | Department of Cooperation, Government of Meghalaya</title>
 <meta name="description" content="The Meghalaya Cooperative Apex Bank Limited — banking products, loan schemes, financial position, achievements and mobile banking service.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;family=Figtree:wght@400;500;600;700&amp;display=swap">
+<meta name="keywords" content="Meghalaya Cooperative Apex Bank, Department of Cooperation, Government of Meghalaya, cooperative societies, Meghalaya">
+<link rel="preload" href="fonts/noto-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="icon" type="image/png" href="img/rd-emblem.png">
 <link rel="stylesheet" href="css/redesign.css">
 </head>
 <body>
-  <div class="topbar">
+  <div class="topbar" role="region" aria-label="Accessibility and language options">
     <div class="wrap">
       <a class="skip" href="#main">Skip to Main Content</a>
       <a class="tb-sr" href="screen-reader-access.html">Screen Reader Access</a>
@@ -26,14 +26,14 @@
     </div>
   </div>
 
-  <div class="lang-note" id="rd-lang-note">
+  <div class="lang-note" id="rd-lang-note" role="status">
     Regional-language pages are being prepared. Content is shown in English until the translated pages are published.
   </div>
 
   <header class="site-header">
     <div class="wrap">
       <a class="brand" href="index.html">
-        <img class="emblem" src="img/rd-emblem.png" alt="State Emblem of India">
+        <img class="emblem" src="img/rd-emblem.png" alt="State Emblem of India" width="523" height="587">
         <span>
           <span class="b-name">Department of Cooperation</span>
           <span class="b-gov">Government of Meghalaya</span>
@@ -41,7 +41,7 @@
         </span>
       </a>
 
-      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="rd-nav">&#9776; Menu</button>
+      <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="rd-nav"><span aria-hidden="true">&#9776;</span> Menu</button>
 
       <nav class="main-nav" id="rd-nav" aria-label="Main">
         <a href="index.html">Home</a>
@@ -97,6 +97,7 @@
             <a href="contact.html">Contact Persons</a>
             <a href="citizencharter.html">Citizen's Charter</a>
             <a href="faqs.html">Frequently Asked Questions</a>
+            <a href="feedback.html">Feedback</a>
           </div>
         </div>
       </nav>
@@ -104,8 +105,8 @@
       <form class="site-search" id="rd-search-form" role="search">
         <label class="sr-only" for="rd-search-input">Search this website</label>
         <input type="search" id="rd-search-input" placeholder="Search here..." autocomplete="off">
-        <button type="submit" aria-label="Search">Go</button>
-        <div class="search-results" id="rd-search-results" role="listbox"></div>
+        <button type="submit">Search</button>
+        <div class="search-results" id="rd-search-results" aria-live="polite"></div>
       </form>
     </div>
   </header>
@@ -128,8 +129,8 @@
           <p>The Bank has been managed by an elected Board since its inception, and its Managing Director is a professional banker. It has implemented ICDP in East Khasi Hills, Jaintia Hills and West Garo Hills under NCDC assistance, and enjoys a strong reputation among cooperatives.</p>
 
           <div class="callout">
-            <h3>Bank website</h3>
-            <p class="callout-note">Detailed and current information on products, branches and rates is published by the Bank at <a href="http://megcab.com/" target="_blank" rel="noopener" title="External site that opens in a new window">megcab.com</a>.</p>
+            <h2>Bank website</h2>
+            <p class="callout-note">Detailed and current information on products, branches and rates is published by the Bank at <a href="http://megcab.com/" target="_blank" rel="noopener">megcab.com<span class="sr-only"> (external website, opens in a new window)</span></a>.</p>
           </div>
 
           <h2 id="financials">Comparative financial position</h2>
@@ -141,22 +142,22 @@
                 <tr><th scope="col">No.</th><th scope="col">Item</th><th scope="col">March 2002</th><th scope="col">March 2003</th><th scope="col">March 2004</th></tr>
               </thead>
               <tbody>
-                <tr><td>1</td><td>Share capital</td><td>355.34</td><td>386.88</td><td>438.02</td></tr>
-                <tr><td>2</td><td>Reserve fund, other reserves and provisions</td><td>297.29</td><td>510.56</td><td>516.19</td></tr>
-                <tr><td>3</td><td>Deposits</td><td>34,951.17</td><td>36,499.18</td><td>38,750.44</td></tr>
-                <tr><td>4</td><td>Borrowings</td><td>1,296.93</td><td>1,933.40</td><td>2,650.61</td></tr>
-                <tr><td>5</td><td>Cash and bank balance</td><td>3,303.76</td><td>3,261.15</td><td>2,492.97</td></tr>
-                <tr><td>6</td><td>Investment in Government and trustee securities</td><td>9,303.00</td><td>11,076.00</td><td>18,633.11</td></tr>
-                <tr><td>7</td><td>Money at call and short notice</td><td>8,885.69</td><td>10,497.83</td><td>13,009.82</td></tr>
-                <tr><td>8</td><td>Loans and advances</td><td>8,918.29</td><td>8,901.10</td><td>34,057.59</td></tr>
-                <tr><td>9</td><td>Accumulated profit</td><td>&mdash;</td><td>&mdash;</td><td>(+) 93.02</td></tr>
-                <tr><td>10</td><td>Net profit</td><td>(+) 295.22</td><td>(+) 296.00</td><td>(+) 70.44</td></tr>
-                <tr><td>11</td><td>Number of branches</td><td>38</td><td>39</td><td>40</td></tr>
+                <tr><td class="r">1</td><td>Share capital</td><td class="r">355.34</td><td class="r">386.88</td><td class="r">438.02</td></tr>
+                <tr><td class="r">2</td><td>Reserve fund, other reserves and provisions</td><td class="r">297.29</td><td class="r">510.56</td><td class="r">516.19</td></tr>
+                <tr><td class="r">3</td><td>Deposits</td><td class="r">34,951.17</td><td class="r">36,499.18</td><td class="r">38,750.44</td></tr>
+                <tr><td class="r">4</td><td>Borrowings</td><td class="r">1,296.93</td><td class="r">1,933.40</td><td class="r">2,650.61</td></tr>
+                <tr><td class="r">5</td><td>Cash and bank balance</td><td class="r">3,303.76</td><td class="r">3,261.15</td><td class="r">2,492.97</td></tr>
+                <tr><td class="r">6</td><td>Investment in Government and trustee securities</td><td class="r">9,303.00</td><td class="r">11,076.00</td><td class="r">18,633.11</td></tr>
+                <tr><td class="r">7</td><td>Money at call and short notice</td><td class="r">8,885.69</td><td class="r">10,497.83</td><td class="r">13,009.82</td></tr>
+                <tr><td class="r">8</td><td>Loans and advances</td><td class="r">8,918.29</td><td class="r">8,901.10</td><td class="r">34,057.59</td></tr>
+                <tr><td class="r">9</td><td>Accumulated profit</td><td>&mdash;</td><td>&mdash;</td><td>(+) 93.02</td></tr>
+                <tr><td class="r">10</td><td>Net profit</td><td>(+) 295.22</td><td>(+) 296.00</td><td>(+) 70.44</td></tr>
+                <tr><td class="r">11</td><td>Number of branches</td><td class="r">38</td><td class="r">39</td><td class="r">40</td></tr>
               </tbody>
             </table>
           </div>
 
-          <p>The Bank has consistently maintained the highest credit-deposit ratio in the state. Its C:D ratio stood at 32 per cent as on 31 March 2004, against 17 per cent for public sector banks.</p>
+          <p>The Bank has consistently maintained the highest credit-deposit ratio in the state. Its C:D ratio stood at 32 per cent as on 31.03.2004, against 17 per cent for public sector banks.</p>
 
           <h2 id="deposits">Deposit schemes</h2>
           <ul>
@@ -176,55 +177,55 @@
           <h2 id="loans">Loan schemes</h2>
           <div class="cards-2">
             <article class="card">
-              <h3>Crop loans</h3>
+              <h2>Crop loans</h2>
               <p>Short-term loans for seasonal agricultural operations, in cash and kind, provided to farmers through service cooperative societies across Meghalaya as per approved scales of finance, under NCL, cash credit systems and Kisan Credit Cards.</p>
             </article>
             <article class="card">
-              <h3>Term loans</h3>
+              <h2>Term loans</h2>
               <p>Medium and long-term loans extended to farmers through affiliated service cooperative societies for allied agricultural activity: land development, minor irrigation, farm machinery, poultry, goat rearing, pisciculture, dairy, horticulture and plantation.</p>
             </article>
             <article class="card">
-              <h3>Cash credit accommodation</h3>
+              <h2>Cash credit accommodation</h2>
               <p>Provided to cooperative societies for procurement and marketing of agricultural and minor forest produce, and for dealing in consumer goods.</p>
             </article>
             <article class="card">
-              <h3>Housing loans</h3>
+              <h2>Housing loans</h2>
               <p>Extended to salaried persons for construction of residential houses in CD Block headquarters and other selected areas, against adequate security.</p>
             </article>
             <article class="card">
-              <h3>Transport vehicle loans</h3>
+              <h2>Transport vehicle loans</h2>
               <p>MT loans to transport societies and to educated unemployed youth, for self-employment generation and to extend easy mobility to the people of the state.</p>
             </article>
             <article class="card">
-              <h3>Consumer durables loans</h3>
+              <h2>Consumer durables loans</h2>
               <p>For salaried persons, to purchase televisions, radios, refrigerators, two-wheelers, musical instruments, cooking gas, furniture and other approved items.</p>
             </article>
             <article class="card">
-              <h3>Cash credit facilities</h3>
+              <h2>Cash credit facilities</h2>
               <p>Government-appointed wholesalers are extended cash credit and loan facilities for dealing in controlled commodities, against adequate security.</p>
             </article>
             <article class="card">
-              <h3>Tourism development term loans</h3>
+              <h2>Tourism development term loans</h2>
               <p>To encourage young and enterprising entrepreneurs and unemployed persons to create self-employment opportunities through tourism development.</p>
             </article>
             <article class="card">
-              <h3>Deposit-linked housing loans</h3>
+              <h2>Deposit-linked housing loans</h2>
               <p>For regular constituents of the Bank, to construct residential houses with financial assistance from the Bank.</p>
             </article>
             <article class="card">
-              <h3>Integrated Village Development Scheme</h3>
+              <h2>Integrated Village Development Scheme</h2>
               <p>Helps form homogeneous groups of 5 to 20 members in rural areas in the cooperative sector, and extends loan assistance for socially useful and economically viable activity.</p>
             </article>
             <article class="card">
-              <h3>Personal loans</h3>
+              <h2>Personal loans</h2>
               <p>Salaried persons are provided personal loans for any bona fide, non-speculative need, as overdraft facilities against adequate security.</p>
             </article>
             <article class="card">
-              <h3>Educational loans</h3>
+              <h2>Educational loans</h2>
               <p>Provided to parents and deserving students for higher studies in India or abroad, against adequate security.</p>
             </article>
             <article class="card">
-              <h3>Loans for professionals and technocrats</h3>
+              <h2>Loans for professionals and technocrats</h2>
               <p>Credit facilities for doctors, lawyers, technocrats and other professionals to set up clinics, consultancy firms and similar practices, against adequate security.</p>
             </article>
           </div>
@@ -262,20 +263,20 @@
           </ol>
 
           <h2 id="mobile">Mobile banking</h2>
-          <p>To popularise the idea of cooperatives, encourage saving among members and the public in East Khasi Hills District, and bring banking to people&rsquo;s doorsteps, mobile banking was started under the district&rsquo;s Integrated Cooperative Development Project on an experimental basis from 5 March 1993, covering nine rural centres held in the premises of service cooperative societies: Mawryngkneng, Sohryngkham, Mawklot, Mawphlang, Mawtawar, Laitkroh, Mawkriah, Sohiong and Tynring.</p>
+          <p>To popularise the idea of cooperatives, encourage saving among members and the public in East Khasi Hills District, and bring banking to people&rsquo;s doorsteps, mobile banking was started under the district&rsquo;s Integrated Cooperative Development Project on an experimental basis from 05.03.1993, covering nine rural centres held in the premises of service cooperative societies: Mawryngkneng, Sohryngkham, Mawklot, Mawphlang, Mawtawar, Laitkroh, Mawkriah, Sohiong and Tynring.</p>
 
           <p>A mobile van was allotted, with one wing for publicity and one for banking, under the supervision of the Branch Manager, Shillong Main Branch. That van is now out of service and a Tata Sumo is used instead. The intention was that Bank staff would run the service and in time train the cadre secretaries of the societies, so that operations could be handed over and each registered society could run a mini bank at its own office to meet members&rsquo; cash and micro-credit needs.</p>
 
           <p>The service is staffed by five Bank employees &mdash; a junior assistant, a cashier, a guard, a helper and a driver. Salaries and the running and maintenance of the vehicle are borne entirely by the Bank: about Rs. 0.77 lakh per month in salary and approximately Rs. 10,000 per month in running costs.</p>
 
-          <p>At the outset the Bank mobilised deposits of Rs. 1.25 lakh across 372 accounts, mostly savings and recurring deposits. As on 31 December 2009 deposits mobilised had risen to Rs. 167.27 lakh across 3,140 accounts.</p>
+          <p>At the outset the Bank mobilised deposits of Rs. 1.25 lakh across 372 accounts, mostly savings and recurring deposits. As on 31.12.2009 deposits mobilised had risen to Rs. 167.27 lakh across 3,140 accounts.</p>
 
           <p>Visits are timed to coincide with local market days, so that rural households can withdraw money for their daily requirements and deposit the proceeds of produce sold at the market. Withdrawals above Rs. 50,000 require prior intimation, so that payment can be arranged for the van&rsquo;s next visit. The exercise serves not only to mobilise deposits but to extend social service to rural people, especially members of cooperative societies.</p>
 
         </div>
       <aside>
         <div class="sidecard">
-          <h3>On this page</h3>
+          <h2>On this page</h2>
           <ul>
             <li><a href="#financials">Financial position</a></li>
             <li><a href="#deposits">Deposit schemes</a></li>
@@ -285,7 +286,7 @@
           </ul>
         </div>
         <div class="sidecard">
-          <h3>Other apex societies</h3>
+          <h2>Other apex societies</h2>
           <ul>
             <li><a href="mecofed.html">MECOFED</a></li>
             <li><a href="mshfcsl.html">State Housing Finance Society</a></li>
@@ -295,9 +296,9 @@
           </ul>
         </div>
         <div class="sidecard sidecard-soft">
-          <h3>Visit the Bank</h3>
+          <h2>Visit the Bank</h2>
           <p>Current products, branch details and rates are published on the Bank&rsquo;s own website.</p>
-          <a class="btn btn-primary btn-sm" href="http://megcab.com/" target="_blank" rel="noopener" title="External site that opens in a new window">megcab.com &nbsp;&rarr;</a>
+          <a class="btn btn-primary btn-sm" href="http://megcab.com/" target="_blank" rel="noopener">megcab.com &nbsp;&rarr;<span class="sr-only"> (external website, opens in a new window)</span></a>
         </div>
       </aside>
       </div>
@@ -308,7 +309,7 @@
     <div class="wrap f-top">
       <div>
         <div class="f-brand">
-          <img src="img/rd-emblem.png" alt="">
+          <img src="img/rd-emblem.png" alt="" width="523" height="587">
           <span>
             <span class="f-name">DEPARTMENT OF<br>COOPERATION</span>
             <span class="f-gov">Government of Meghalaya</span>
@@ -331,11 +332,12 @@
       <div>
         <div class="f-head">Useful Links</div>
         <div class="f-links">
-          <a href="http://meghalaya.gov.in" target="_blank" rel="noopener" title="External site that opens in a new window">Meghalaya Government</a>
-          <a href="https://cooperation.gov.in" target="_blank" rel="noopener" title="External site that opens in a new window">Ministry of Cooperation, GoI</a>
-          <a href="https://ncui.coop" target="_blank" rel="noopener" title="External site that opens in a new window">NCUI</a>
-          <a href="https://www.nabard.org" target="_blank" rel="noopener" title="External site that opens in a new window">NABARD</a>
-          <a href="https://www.ncdc.in" target="_blank" rel="noopener" title="External site that opens in a new window">NCDC</a>
+          <a href="https://meghalaya.gov.in" target="_blank" rel="noopener">Meghalaya Government<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://www.india.gov.in" target="_blank" rel="noopener">National Portal of India<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://cooperation.gov.in" target="_blank" rel="noopener">Ministry of Cooperation, GoI<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://ncui.coop" target="_blank" rel="noopener">NCUI<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://www.nabard.org" target="_blank" rel="noopener">NABARD<span class="sr-only"> (external website, opens in a new window)</span></a>
+          <a href="https://www.ncdc.in" target="_blank" rel="noopener">NCDC<span class="sr-only"> (external website, opens in a new window)</span></a>
           <a href="relatedsite.html">Other resources</a>
         </div>
       </div>
@@ -352,15 +354,20 @@
       <div class="wrap">
         <span>&copy; Department of Cooperation, Government of Meghalaya. All rights reserved. Last updated on <span id="rd-last-updated">&mdash;</span>.</span>
         <span class="legal">
-          <a href="terms-use.html">Terms of Use</a>
+          <a href="terms-use.html">Terms and Conditions</a>
+          <a href="terms-use.html#privacy">Privacy Policy</a>
+          <a href="terms-use.html#copyright">Copyright Policy</a>
+          <a href="terms-use.html#hyperlinking">Hyperlinking Policy</a>
+          <a href="feedback.html">Feedback</a>
           <a href="help.html">Help</a>
+          <a href="screen-reader-access.html">Screen Reader Access</a>
           <a href="sitemap.html">Sitemap</a>
           <a href="accessibility-statement.html">Accessibility Statement</a>
         </span>
       </div>
     </div>
     <div class="wrap f-credit-wrap">
-      <p class="f-credit">Site designed and maintained by National Informatics Centre, Meghalaya State Centre. Content owned and updated by the Department of Cooperation, Government of Meghalaya.</p>
+      <p class="f-credit">The website belongs to the Department of Cooperation, Government of Meghalaya. Site designed and maintained by National Informatics Centre, Meghalaya State Centre.</p>
     </div>
   </footer>
 
