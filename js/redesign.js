@@ -43,18 +43,26 @@
   function initA11y() {
     clearLegacyPrefs();
 
-    /* language switch — the site is English-only for now, so we surface a notice */
-    var note = $("#rd-lang-note");
-    var buttons = $$("[data-lang]");
-    function setLang(code) {
-      buttons.forEach(function (b) { b.classList.toggle("is-on", b.getAttribute("data-lang") === code); });
-      if (note) note.style.display = code === "en" ? "none" : "block";
-      set(STORE.lang, code);
+    /* Language: the Bhashini translation plugin (loaded at the end of each page)
+       draws its own selector inside .bhashini-plugin-container. It keeps the
+       visitor's choice in localStorage.preferredLanguage; we mirror that onto
+       <html lang> so assistive technology reads the page in the right language
+       (GIGW 5.2.38). English is the authoritative text.                       */
+    function syncLang() {
+      var code = "";
+      try { code = window.localStorage.getItem("preferredLanguage") || ""; } catch (e) {}
+      if (/^[a-z]{2,3}(-[A-Za-z]{2,4})?$/.test(code)) document.documentElement.lang = code;
+      else document.documentElement.lang = "en";
     }
-    buttons.forEach(function (b) {
-      b.addEventListener("click", function () { setLang(b.getAttribute("data-lang")); });
+    syncLang();
+    window.addEventListener("storage", syncLang);
+    window.addEventListener("load", syncLang);
+    document.addEventListener("click", function (e) {
+      if (e.target.closest && e.target.closest(".bhashini-plugin-container")) {
+        window.setTimeout(syncLang, 800);
+        window.setTimeout(syncLang, 2500);
+      }
     });
-    if (buttons.length) setLang(get(STORE.lang, "en"));
   }
 
   /* --------------------------------------------------------- header tiers */
@@ -257,7 +265,7 @@
   /* ------------------------------------------------------------- search
  */
   var SEARCH_INDEX = [
-    { kind: "Page",     title: "Introduction to the Department",                    url: "introduction.html" },
+    { kind: "Page",     title: "About Us: introduction to the Department",           url: "introduction.html" },
     { kind: "Page",     title: "Organisational Setup",                              url: "orgsetup.html" },
     { kind: "Page",     title: "Development Schemes",                               url: "schemes.html" },
     { kind: "Page",     title: "Notifications",                                     url: "notifications.html" },
@@ -565,7 +573,7 @@
 
   /* ------------------------------------------------------------ icon pack */
   function svg(inner) {
-    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" ' +
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" ' +
            'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
            inner + '</svg>';
   }
@@ -718,7 +726,7 @@
 
     panel.innerHTML =
       '<div class="a11y-head">' +
-        I.person.replace("<svg", '<svg style="width:26px;height:26px;flex:none"') +
+        I.person.replace("<svg", '<svg style="width:24px;height:24px;flex:none"') +
         '<h2 id="rd-a11y-title">Accessibility options</h2>' +
         '<button type="button" class="a11y-close" aria-label="Close accessibility options">&#10005;</button>' +
       '</div>' +

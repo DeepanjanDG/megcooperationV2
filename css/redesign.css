@@ -97,13 +97,9 @@ img{max-width:100%;height:auto}
 .topbar a:hover{color:var(--white)}
 .topbar .skip{text-decoration:underline}
 .topbar .right{margin-left:auto;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
-.lang-switch{display:flex;align-items:center;border:1px solid var(--green-300);border-radius:999px;overflow:hidden}
-.lang-switch button{padding:5px 13px;border:0;cursor:pointer;font-family:inherit;font-size:var(--fs-sm);background:transparent;color:inherit}
-.lang-switch button.is-on{background:var(--green-100);color:var(--green-900);font-weight:600}
-
-/* Hidden until the language switcher asks for it; redesign.js flips the
-   inline display when a regional language is selected.                    */
-.lang-note{display:none;background:var(--green-100);color:var(--green-700);font-size:var(--fs-p2);padding:10px var(--pad);text-align:center;border-bottom:1px solid var(--line)}
+/* Language selector: drawn by the Bhashini translation plugin, which mounts
+   into this container. The plugin icon is set to white on the dark top bar. */
+.bhashini-plugin-container{display:inline-flex;align-items:center;min-height:32px;color:var(--white)}
 
 /* ---------------------------------------------------------------- header
    Two tiers. Tier 1 (.site-header) is the identity row: emblem, department
@@ -115,7 +111,8 @@ img{max-width:100%;height:auto}
 
 .brand{display:flex;align-items:center;gap:18px;flex:1 1 auto;min-width:0;text-decoration:none}
 .brand:hover{text-decoration:none}
-.brand img.emblem{width:58px;height:66px;object-fit:contain;flex:none}
+.brand img.emblem{width:auto;height:72px;object-fit:contain;flex:none}
+.brand img.cobrand{width:auto;height:72px;object-fit:contain;flex:none;margin-left:-4px}
 .brand > span{display:block;padding-left:18px;border-left:1px solid var(--line)}
 .brand .b-name{display:block;font-family:var(--serif);font-weight:700;font-size:var(--fs-h2);line-height:1.2;color:var(--green-700);letter-spacing:.005em;white-space:nowrap}
 .brand .b-gov{display:block;font-size:var(--fs-sm);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;line-height:1.4;margin-top:2px}
@@ -140,7 +137,7 @@ img{max-width:100%;height:auto}
 .main-nav > a.is-current,.main-nav .nav-item > button.is-current{font-weight:600;color:var(--white);border-bottom-color:var(--green-300)}
 .navbar *:focus-visible{outline:2px solid var(--white);outline-offset:-3px}
 .nav-item{position:relative;display:flex}
-.nav-item .caret{font-size:.68em;opacity:.75;transition:transform .15s ease}
+.nav-item .caret{width:24px;height:24px;flex:none;margin:0 -4px 0 2px;transition:transform .15s ease}
 .nav-item.is-open .caret{transform:rotate(180deg)}
 .dropdown{
   position:absolute;top:100%;left:0;min-width:266px;background:var(--white);
@@ -208,10 +205,11 @@ img{max-width:100%;height:auto}
 .btn-light:hover{background:var(--white);color:var(--green-700);text-decoration:none}
 .btn-sm{padding:11px 20px;font-size:var(--fs-p2)}
 
-.hero-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:999px;border:0;background:rgba(255,255,255,.9);color:var(--green-700);font-size:var(--fs-h3);cursor:pointer;font-family:inherit;line-height:1;z-index:4}
-.hero-arrow:hover{background:var(--white)}
-.hero-arrow.prev{left:24px}
-.hero-arrow.next{right:24px}
+.hero-arrow{position:absolute;top:auto;bottom:87px;width:44px;height:44px;border-radius:999px;border:0;background:rgba(0,0,0,.55);color:var(--white);display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer;font-family:inherit;line-height:1;z-index:4}
+.hero-arrow:hover{background:#000}
+.hero-arrow svg{width:24px;height:24px;flex:none}
+.hero-arrow.prev{left:calc(50% - 112px)}
+.hero-arrow.next{right:calc(50% - 112px)}
 .hero-dots{position:absolute;bottom:104px;left:0;right:0;display:flex;justify-content:center;gap:9px;z-index:4}
 .hero-dots button{width:10px;height:10px;border-radius:999px;border:0;cursor:pointer;padding:0;background:rgba(255,255,255,.55);transition:width .25s ease}
 .hero-dots button.is-on{width:26px;background:var(--white)}
@@ -364,7 +362,7 @@ table.data a{font-weight:500}
 .site-footer a{color:inherit}
 .site-footer a:hover{color:var(--white)}
 .f-brand{display:flex;align-items:center;gap:14px;margin-bottom:16px}
-.f-brand img{width:44px;height:52px;object-fit:contain}
+.f-brand img{width:auto;height:64px;object-fit:contain}
 .f-brand .f-name{font-family:var(--serif);font-weight:700;font-size:var(--fs-h3);color:var(--white);line-height:1.2}
 .f-brand .f-gov{display:block;font-size:var(--fs-sm);letter-spacing:.1em;text-transform:uppercase;margin-top:4px;opacity:.8}
 .site-footer .f-blurb{font-size:var(--fs-p2);line-height:1.5;margin:0;opacity:.85}
@@ -372,12 +370,16 @@ table.data a{font-weight:500}
 .f-links{display:flex;flex-direction:column;gap:10px;font-size:var(--fs-p2)}
 .f-contact{display:flex;flex-direction:column;gap:14px;font-size:var(--fs-p2);line-height:1.5}
 .f-contact .row{display:flex;gap:10px;align-items:flex-start}
-.f-contact svg{width:24px;height:24px;flex:none;margin-top:0;opacity:.9}
+.f-contact svg{width:24px;height:24px;flex:none;margin-top:0;color:var(--white)}
 .f-bottom{border-top:1px solid var(--green-600)}
-.f-bottom .wrap{padding-top:18px;padding-bottom:18px;display:flex;gap:20px;flex-wrap:wrap;font-size:var(--fs-sm);opacity:.85}
-.f-bottom .legal{margin-left:auto;display:flex;gap:18px;flex-wrap:wrap}
-.f-credit-wrap{padding-bottom:24px}
-.f-credit{font-size:var(--fs-sm);opacity:.75;line-height:1.5;margin:0}
+/* Bottom of the footer: policy links, copyright and the lineage statement are
+   three centred rows with the same size, colour and spacing.                */
+.f-bottom .wrap{padding-top:22px;padding-bottom:0;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center;font-size:var(--fs-sm);line-height:1.5;opacity:.9}
+.f-bottom .legal{margin:0;display:flex;flex-wrap:wrap;justify-content:center;row-gap:8px}
+.f-bottom .legal a{padding:0 14px;border-left:1px solid var(--green-600);line-height:1.4}
+.f-bottom .legal a:first-child{border-left:0}
+.f-credit-wrap{padding-top:14px;padding-bottom:26px;text-align:center}
+.f-credit{font-size:var(--fs-sm);opacity:.9;line-height:1.5;margin:0 auto;max-width:120ch}
 
 /* ----------------------------------------------------------- faq accordion */
 .faq{border:1px solid var(--line);border-radius:8px;background:var(--white);overflow:hidden;margin:0 0 28px}
@@ -388,7 +390,7 @@ table.data a{font-weight:500}
 .faq summary:hover{background:var(--green-050);color:var(--green-700)}
 .faq summary .q{color:var(--green-700);font-size:var(--fs-sm);font-weight:700;letter-spacing:.05em;flex:none;min-width:36px;padding-top:4px}
 .faq summary .t{flex:1}
-.faq summary::after{content:"\203A";transform:rotate(90deg);font-size:var(--fs-h3);line-height:1;color:var(--green-700);flex:none;transition:transform .2s ease;padding-top:1px}
+.faq summary::after{content:"";width:24px;height:24px;background:currentColor;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E") center/24px 24px no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E") center/24px 24px no-repeat;transform:rotate(90deg);color:var(--green-900);flex:none;transition:transform .2s ease}
 .faq details[open] > summary{background:var(--green-050)}
 .faq details[open] > summary::after{transform:rotate(-90deg)}
 .faq .a{padding:2px 22px 20px 72px;font-size:var(--fs-p1);line-height:1.5;color:var(--ink-2)}
@@ -528,7 +530,8 @@ table.data th.yr{white-space:nowrap;color:var(--green-700);font-weight:700}
 .lb-bar .spacer{margin-left:auto}
 .lb button{background:rgba(255,255,255,.14);border:0;color:#fff;font-family:inherit;font-size:var(--fs-p1);border-radius:6px;padding:9px 14px;cursor:pointer;line-height:1}
 .lb button:hover{background:rgba(255,255,255,.28)}
-.lb .nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:999px;font-size:var(--fs-h3);padding:0}
+.lb .nav{position:absolute;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:999px;padding:0;display:flex;align-items:center;justify-content:center}
+.lb button svg{width:24px;height:24px;flex:none;vertical-align:middle}
 .lb .prev{left:20px}
 .lb .next{right:20px}
 .lb-cap{position:absolute;bottom:22px;left:0;right:0;text-align:center;color:rgba(255,255,255,.85);font-size:var(--fs-p2);padding:0 24px}
@@ -562,7 +565,8 @@ table.data th.yr{white-space:nowrap;color:var(--green-700);font-weight:700}
   .nav-toggle{display:block;order:2;margin-left:auto;flex:none}
   .site-header .wrap{flex-wrap:wrap;gap:14px;padding-top:14px;padding-bottom:14px}
   .brand{flex:1 1 auto;gap:14px}
-  .brand img.emblem{width:46px;height:52px}
+  .brand img.emblem{width:auto;height:56px}
+  .brand img.cobrand{height:56px}
   .brand > span{padding-left:14px}
   .brand .b-name{font-size:var(--fs-h2)}
 
@@ -610,7 +614,8 @@ table.data th.yr{white-space:nowrap;color:var(--green-700);font-weight:700}
 @media (max-width:640px){
   :root{--pad:18px}
   .topbar .wrap{font-size:var(--fs-sm);gap:12px}
-  .brand img.emblem{width:40px;height:46px}
+  .brand img.emblem{width:auto;height:48px}
+  .brand img.cobrand{height:48px}
   .brand .b-name{font-size:var(--fs-h2);white-space:normal}
   .brand .b-tag{display:none}
   .brand > span{padding-left:12px}
@@ -625,7 +630,7 @@ table.data th.yr{white-space:nowrap;color:var(--green-700);font-weight:700}
   .quicklinks a{border-right:0 !important}
   .doclist a,.doclist .row{grid-template-columns:1fr;gap:8px;padding:16px 18px}
   .site-footer .f-top{grid-template-columns:1fr}
-  .f-bottom .legal{margin-left:0}
+  .f-bottom .legal a{border-left:0;padding:0 10px}
   .person{flex-direction:column}
   .sitemap{grid-template-columns:1fr}
   .faq summary{padding:15px 18px;font-size:var(--fs-p1)}
@@ -947,7 +952,7 @@ html.a11y-dark .field.has-error :is(input,select,textarea){border-color:#FF9B9B}
    dark bands print as plain text and outside links show their address.    */
 @page{size:A4;margin:15mm}
 @media print{
-  .topbar,.site-search,.main-nav,.navbar,.hero,.quicklinks,.nav-toggle,.site-footer .f-top,.lang-note,
+  .topbar,.site-search,.main-nav,.navbar,.hero,.quicklinks,.nav-toggle,.site-footer .f-top,.bhashini-plugin-container,
   .hero-pause,.tabs,#rd-a11y-root,.skip,.sidecard-soft .btn{display:none !important}
   body{background:#fff;color:#000;font-size:11pt;line-height:1.4}
   .wrap{max-width:none;padding-left:0;padding-right:0}
@@ -993,6 +998,21 @@ html.a11y-dark .field.has-error :is(input,select,textarea){border-color:#FF9B9B}
 html.a11y-dark :is(.topbar,.page-head,.site-footer,.a11y-head){color:#E8E9EC}
 html.a11y-dark :is(.page-head h1,.f-brand .f-name,.f-head,.a11y-head h2,.hero-inner h1,table.data thead th){color:#FFFFFF}
 html.a11y-dark .hero-inner p{color:#E8E9EC}
-html.a11y-dark :is(.lang-switch button.is-on,.tb-a11y[aria-expanded="true"]){background:#FFFF00;color:#000000}
+html.a11y-dark :is(.tb-a11y[aria-expanded="true"]){background:#FFFF00;color:#000000}
 html.a11y-dark .btn-light{color:#000000}
 html.a11y-dark .btn-primary,html.a11y-dark .site-search button,html.a11y-dark .tab.is-on,html.a11y-dark .a11y-done{color:#000000}
+
+/* ------------------------------------------------------------ DBIM icons
+   One style (line), one stroke weight, 24 px grid, key colour (darkest green)
+   or white on dark backgrounds. Icons never stretch: width and height are
+   always set together and the viewBox is square.                           */
+svg[viewBox="0 0 24 24"]{stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.nav-toggle svg{width:24px;height:24px;vertical-align:middle;margin-right:4px}
+/* On a photograph the icon is white over a black overlay at 80% transparency. */
+.hero-slide::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.2);pointer-events:none}
+.faq summary:hover::after{color:var(--green-900)}
+.main-nav .nav-item > button{gap:0}
+html.a11y-dark :is(kbd,.chip-grey){background:#23232A;color:#FFFFFF;border-color:#FFFF00}
+/* Dark theme: the header turns dark, so the emblem switches from black to white. */
+html.a11y-dark .brand img.emblem{filter:invert(1)}
+html.a11y-dark .brand img.cobrand{background:#fff;padding:2px;border-radius:4px}
