@@ -1,53 +1,18 @@
-/* =========================================================================
-   Department of Cooperation, Government of Meghalaya
-   Redesign behaviour — nav, hero slider, tabs, search, accessibility tools
-   Vanilla JS, no dependencies.
-   ========================================================================= */
+/* Department of Cooperation, Government of Meghalaya: site behaviour (no dependencies) */
 (function () {
   "use strict";
-
-  var STORE = {
-    scale: "rd-font-scale",
-    contrast: "rd-contrast",
-    lang: "rd-lang"
-  };
 
   function $(sel, ctx) { return (ctx || document).querySelector(sel); }
   function $$(sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); }
 
-  /* matchMedia is missing in some embedded/legacy engines — degrade gracefully */
   function media(query) {
     if (typeof window.matchMedia === "function") { return window.matchMedia(query).matches; }
     return false;
   }
 
-  function get(key, fallback) {
-    try { var v = window.localStorage.getItem(key); return v === null ? fallback : v; }
-    catch (e) { return fallback; }
-  }
-  function set(key, val) {
-    try { window.localStorage.setItem(key, val); } catch (e) { /* private mode */ }
-  }
-
-  /* -------------------------------------------------------- topbar tools */
-  /* Text sizing and contrast used to live here as A-/A/A+ and a High contrast
-     pill. Both are now owned by the accessibility widget at the bottom of this
-     file, so all that remains in the topbar is the language switch. Any scale
-     or contrast preference stored by the old controls is cleared once. */
-  function clearLegacyPrefs() {
-    if (get(STORE.contrast, "0") === "1") document.body.classList.remove("hc");
-    set(STORE.scale, "0");
-    set(STORE.contrast, "0");
-  }
-
   function initA11y() {
-    clearLegacyPrefs();
-
-    /* Language: the Bhashini translation plugin (loaded at the end of each page)
-       draws its own selector inside .bhashini-plugin-container. It keeps the
-       visitor's choice in localStorage.preferredLanguage; we mirror that onto
-       <html lang> so assistive technology reads the page in the right language
-       (GIGW 5.2.38). English is the authoritative text.                       */
+    /* Bhashini stores the chosen language in localStorage.preferredLanguage;
+       mirror it onto <html lang> for screen readers (GIGW 5.2.38). */
     function syncLang() {
       var code = "";
       try { code = window.localStorage.getItem("preferredLanguage") || ""; } catch (e) {}
@@ -65,10 +30,6 @@
     });
   }
 
-  /* --------------------------------------------------------- header tiers */
-  /* The markup keeps the menu inside <header> so the page still reads
-     correctly without JS. Here we lift it into its own full-width band
-     directly below the header, which lets it stick to the top on scroll. */
   function initHeader() {
     var header = $(".site-header");
     var nav = $(".main-nav");
@@ -85,7 +46,6 @@
     header.parentNode.insertBefore(bar, header.nextSibling);
   }
 
-  /* ------------------------------------------------------------- nav menu */
   function initNav() {
     var items = $$(".nav-item");
 
@@ -129,7 +89,6 @@
     }
   }
 
-  /* ---------------------------------------------------------- hero slider */
   function initHero() {
     var stage = $(".hero-stage");
     if (!stage) return;
@@ -171,12 +130,10 @@
     stage.addEventListener("focusin", stop);
     stage.addEventListener("focusout", function () { if (!motionPaused) start(); });
 
-    /* the accessibility widget's "Pause animation" tool broadcasts these */
     document.addEventListener("rd:motion-pause", function () { motionPaused = true; stop(); });
     document.addEventListener("rd:motion-resume", function () { motionPaused = false; start(); });
 
-    /* Pause / play control: automatic movement lasting more than five seconds
-       must be stoppable from the page itself (GIGW 5.2.25). */
+    /* Pause control required for auto-moving content (GIGW 5.2.25) */
     var pauseBtn = $(".hero-pause");
     var pauseLabel = pauseBtn ? $(".hp-label", pauseBtn) : null;
     function setPaused(p) {
@@ -194,11 +151,9 @@
     setPaused(media("(prefers-reduced-motion: reduce)"));
   }
 
-  /* ----------------------------------------------------------------- tabs */
   function initTabs() {
     $$("[data-tabs]").forEach(function (group) {
       var tabs = $$(".tab", group);
-      /* panels live alongside the tab strip, inside the same .wrap / section */
       var scope = group.closest ? (group.closest(".wrap") || group.closest("section") || document) : document;
       var panels = $$("[data-panel]", scope);
 
@@ -207,7 +162,6 @@
         return panels.filter(function (p) { return p.getAttribute("data-panel") === name; })[0];
       }
 
-      /* wire each tab to its panel (name, role, relationship) */
       tabs.forEach(function (tab) {
         var panel = panelOf(tab);
         tab.id = tab.id || "tab-" + tab.getAttribute("data-tab");
@@ -248,7 +202,6 @@
       var current = tabs.filter(function (t) { return t.classList.contains("is-on"); })[0] || tabs[0];
       if (current) select(current, false);
 
-      /* a link such as notifications.html#forms opens the tab that holds it */
       function fromHash() {
         var id = (window.location.hash || "").slice(1);
         if (!id) return;
@@ -262,8 +215,6 @@
     });
   }
 
-  /* ------------------------------------------------------------- search
- */
   var SEARCH_INDEX = [
     { kind: "Page",     title: "About Us: introduction to the Department",           url: "introduction.html" },
     { kind: "Page",     title: "Organisational Setup",                              url: "orgsetup.html" },
@@ -364,18 +315,15 @@
     });
   }
 
-  /* --------------------------------------------------------- last updated */
   function initLastUpdated() {
     var el = $("#rd-last-updated");
     if (!el) return;
     var d = new Date(document.lastModified);
     if (isNaN(d.getTime())) return;
     function pad(n) { return n < 10 ? "0" + n : "" + n; }
-    /* DBIM date style: DD.MM.YYYY */
     el.textContent = pad(d.getDate()) + "." + pad(d.getMonth() + 1) + "." + d.getFullYear();
   }
 
-  /* -------------------------------------------------------- table filter */
   function initTableFilter() {
     $$("[data-filter-table]").forEach(function (input) {
       var table = document.getElementById(input.getAttribute("data-filter-table"));
@@ -395,10 +343,27 @@
     });
   }
 
-  /* ------------------------------------------------------------- feedback */
-  /* The site has no server-side handler, so a valid form opens the visitor's
-     email application with the message ready to send. The address is built
-     here so it never appears in the page source in readable form. */
+  function initDirFilter() {
+    var input = document.getElementById("dir-filter");
+    if (!input) return;
+    var tables = $$("table.data");
+    input.addEventListener("input", function () {
+      var q = input.value.trim().toLowerCase();
+      tables.forEach(function (t) {
+        var shown = 0;
+        $$("tbody tr", t).forEach(function (tr) {
+          var hit = !q || tr.textContent.toLowerCase().indexOf(q) > -1;
+          tr.style.display = hit ? "" : "none";
+          if (hit) shown++;
+        });
+        var wrap = t.closest(".tbl-wrap");
+        if (wrap) wrap.style.display = shown ? "" : "none";
+      });
+    });
+  }
+
+  /* No server-side handler: the form opens the visitor's email app.
+     The address is assembled in code to keep it away from scrapers. */
   function initFeedback() {
     var form = $("#fb-form");
     if (!form) return;
@@ -443,8 +408,6 @@
     });
   }
 
-  /* A table wider than its box scrolls sideways inside .tbl-wrap. Give that
-     scroll area a name and a tab stop so keyboard users can reach it. */
   function initTableScroll() {
     var wraps = $$(".tbl-wrap");
     function check() {
@@ -469,7 +432,6 @@
     else { document.addEventListener("DOMContentLoaded", fn); }
   }
 
-  /* each feature is isolated so a failure in one cannot disable the others */
   function safely(name, fn) {
     try { fn(); }
     catch (e) { if (window.console && console.warn) console.warn("redesign.js: " + name + " failed", e); }
@@ -484,44 +446,37 @@
     safely("search", initSearch);
     safely("lastUpdated", initLastUpdated);
     safely("tableFilter", initTableFilter);
+    safely("dirFilter", initDirFilter);
     safely("feedback", initFeedback);
     safely("tableScroll", initTableScroll);
   });
 })();
 
-
-/* =========================================================================
-   ACCESSIBILITY WIDGET — UX4G-style, self-hosted, no dependencies.
-   Mirrors the tool set published at ux4g.gov.in/resources/accessibility-widget.
-   Styles live in css/redesign.css under "ACCESSIBILITY WIDGET".
-
-   If the Department later registers for the official NeGD-issued widget,
-   drop its <script> tag in and delete this block — nothing else references it.
-   ========================================================================= */
+/* Accessibility widget (UX4G-style, self-hosted). If the Department adopts
+   the official NeGD widget, add its script tag and delete this block. */
 (function () {
   "use strict";
 
   var KEY = "rd-a11y-state";
   var ROOT = document.documentElement;
 
-  /* ------------------------------------------------------------- defaults */
   function blank() {
     return {
-      text: 0,        /* 0-3   bigger text            */
-      spacing: false, /*       letter / word spacing  */
-      leading: false, /*       line height            */
-      links: false,   /*       highlight links        */
-      read: false,    /*       screen reader          */
-      cursor: 0,      /* 0-2   cursor size            */
-      pause: false,   /*       pause animation        */
-      sat: "",        /*       mono | high | low      */
-      invert: false,  /*       invert colours         */
-      dark: false,    /*       dark mode              */
+      text: 0,
+      spacing: false,
+      leading: false,
+      links: false,
+      read: false,
+      cursor: 0,
+      pause: false,
+      sat: "",
+      invert: false,
+      dark: false,
       dyslexia: false,
       hideImg: false,
-      focus: false,   /*       focus mode             */
-      guide: false,   /*       reading guide          */
-      magnify: false, /*       text magnify           */
+      focus: false,
+      guide: false,
+      magnify: false,
       profile: ""
     };
   }
@@ -537,13 +492,12 @@
       Object.keys(S).forEach(function (k) {
         if (Object.prototype.hasOwnProperty.call(saved, k)) S[k] = saved[k];
       });
-    } catch (e) { /* corrupt or unavailable — fall back to defaults */ }
+    } catch (e) { }
   }
   function save() {
     try { window.localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {}
   }
 
-  /* ------------------------------------------------------------- profiles */
   var PROFILES = [
     { id: "seizure",  name: "Seizure safe",
       desc: "Stops motion and softens colour intensity.",
@@ -571,7 +525,6 @@
       set: { focus: true, pause: true, hideImg: true } }
   ];
 
-  /* ------------------------------------------------------------ icon pack */
   function svg(inner) {
     return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" ' +
            'stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
@@ -599,13 +552,11 @@
     reset:   svg('<path d="M4 12a8 8 0 1 0 2.3-5.6M4 4v4h4"/>')
   };
 
-  /* --------------------------------------------------------- text scaling */
   var TEXT_SEL = "h1,h2,h3,h4,h5,h6,p,li,dd,dt,td,th,caption,a,span,strong,em,b,i,small,label," +
                  "button,input,select,textarea,figcaption,summary,blockquote,cite,legend,time,address";
 
   var lastMult = 1;
   function scaleText(mult) {
-    /* nothing to do if we are at 1x and have never scaled away from it */
     if (mult === 1 && lastMult === 1) return;
     lastMult = mult;
     var nodes = document.body.querySelectorAll(TEXT_SEL);
@@ -624,7 +575,6 @@
     }
   }
 
-  /* --------------------------------------------------------------- render */
   function applyAll() {
     var cl = ROOT.classList;
 
@@ -643,14 +593,12 @@
     cl.toggle("a11y-guide-on", !!S.guide);
     cl.toggle("a11y-invert", !!S.invert);
 
-    /* motion */
     var wasPaused = cl.contains("a11y-pause");
     cl.toggle("a11y-pause", !!S.pause);
     if (!!S.pause !== wasPaused) {
       document.dispatchEvent(new CustomEvent(S.pause ? "rd:motion-pause" : "rd:motion-resume"));
     }
 
-    /* composed colour filter */
     var fx = [];
     if (S.sat === "mono") fx.push("grayscale(1)");
     if (S.sat === "high") fx.push("saturate(2)");
@@ -673,7 +621,6 @@
     save();
   }
 
-  /* ------------------------------------------------------------ DOM build */
   var root, scrim, panel, launcher, guideBar, magnifier, speakPill, lastFocus;
 
   var TOOLS = [
@@ -763,7 +710,6 @@
     document.body.appendChild(root);
   }
 
-  /* ------------------------------------------------------------ open/close */
   function isOpen() { return panel.classList.contains("is-open"); }
 
   function open() {
@@ -794,7 +740,6 @@
     else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
   }
 
-  /* -------------------------------------------------------------- toggling */
   function toggleTool(id) {
     S.profile = "";
     if (id === "text")   { S.text = (S.text + 1) % 4; }
@@ -842,7 +787,6 @@
     });
   }
 
-  /* ------------------------------------------------------- pointer effects */
   var focusHit = null;
   function clearFocusHit() {
     if (focusHit) { focusHit.classList.remove("a11y-focus-hit"); focusHit = null; }
@@ -897,7 +841,6 @@
     window.speechSynthesis.speak(u);
   }
 
-  /* ----------------------------------------------------------------- wire */
   function init() {
     if (!document.body) return;
     build();
@@ -922,19 +865,6 @@
       if (window.speechSynthesis) window.speechSynthesis.cancel();
       speakPill.classList.remove("is-on");
     });
-
-    /* small public surface so the topbar A-/A/A+ buttons can drive the same
-       text scale instead of fighting it with their own inline sizes */
-    window.rdA11y = {
-      nudgeText: function (step) {
-        S.profile = "";
-        S.text = step === 0 ? 0 : Math.max(0, Math.min(3, S.text + step));
-        applyAll();
-      },
-      open: open,
-      close: close,
-      reset: resetAll
-    };
 
     document.addEventListener("mousemove", onPointerMove, { passive: true });
     document.addEventListener("mouseover", onMagnify, { passive: true });

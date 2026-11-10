@@ -299,27 +299,6 @@
     </div>
   </main>
 
-  <script>
-  /* filter every directory table from the one search box */
-  (function () {
-    var input = document.getElementById("dir-filter");
-    if (!input) return;
-    var tables = Array.prototype.slice.call(document.querySelectorAll("table.data"));
-    input.addEventListener("input", function () {
-      var q = input.value.trim().toLowerCase();
-      tables.forEach(function (t) {
-        var shown = 0;
-        Array.prototype.slice.call(t.querySelectorAll("tbody tr")).forEach(function (tr) {
-          var hit = !q || tr.textContent.toLowerCase().indexOf(q) > -1;
-          tr.style.display = hit ? "" : "none";
-          if (hit) shown++;
-        });
-        var wrap = t.closest(".tbl-wrap");
-        if (wrap) wrap.style.display = shown ? "" : "none";
-      });
-    });
-  })();
-  </script>
 
   <footer class="site-footer">
     <div class="wrap f-top">
